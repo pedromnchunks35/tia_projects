@@ -205,8 +205,8 @@ public class App {
         System.out.println("**ESCRITA FEITA COM SUCESSO**");
 
         }else{
-        /*MENSAGEM CASO O FICHEIRO JÁ EXISTA*/
-        System.out.println("O file bd.pl já existe..tem que o eliminar se pretende correr esta script novamente");
+        /*MENSAGEM CASO O FICHEIRO JA EXISTA*/
+        System.out.println("O file bd.pl ja existe..tem que o eliminar se pretende correr esta script novamente");
         }
 
 
