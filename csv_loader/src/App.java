@@ -7,7 +7,7 @@ public class App {
 /*    NOTAS IMPORTANTES
 
       Nas carateristicas ter em conta que foram trocados "." por "_" em strings com numeros (colocou-se um n atras tambem) - COLUNA 16/17
-      Tem strings em que foram removidos espaços entre elas e em que foram removidos os "&"
+      Tem strings em que foram removidos espaços entre elas e em que foram removidos os "&" (coluna 23 espaços)()
 
 */
 

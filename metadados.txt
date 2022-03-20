@@ -1,13 +1,14 @@
+/*PEDRO*/
 MSSubClass: Identifies the type of dwelling involved in the sale.	
 
-        20	1-STORY 1946 & NEWER ALL STYLES
-        30	1-STORY 1945 & OLDER
-        40	1-STORY W/FINISHED ATTIC ALL AGES
-        45	1-1/2 STORY - UNFINISHED ALL AGES
-        50	1-1/2 STORY FINISHED ALL AGES
-        60	2-STORY 1946 & NEWER
-        70	2-STORY 1945 & OLDER
-        75	2-1/2 STORY ALL AGES
+        20	1- STORY 1946 & NEWER ALL STYLES
+        30	1- STORY 1945 & OLDER
+        40	1- STORY W/FINISHED ATTIC ALL AGES
+        45	1- 1/2 STORY - UNFINISHED ALL AGES
+        50	1- 1/2 STORY FINISHED ALL AGES
+        60	2- STORY 1946 & NEWER
+        70	2- STORY 1945 & OLDER
+        75	2- 1/2 STORY ALL AGES
         80	SPLIT OR MULTI-LEVEL
         85	SPLIT FOYER
         90	DUPLEX - ALL STYLES AND AGES
@@ -174,7 +175,7 @@ OverallCond: Rates the overall condition of the house
        3	Fair
        2	Poor
        1	Very Poor
-		
+/*PEDRO*/		
 YearBuilt: Original construction date
 
 YearRemodAdd: Remodel date (same as construction date if no remodeling or additions)
@@ -349,7 +350,7 @@ CentralAir: Central air conditioning
 
        N	No
        Y	Yes
-		
+/*martins*/		
 Electrical: Electrical system
 
        SBrkr	Standard Circuit Breakers & Romex
@@ -521,3 +522,4 @@ SaleCondition: Condition of sale
        Alloca	Allocation - two linked properties with separate deeds, typically condo with a garage unit	
        Family	Sale between family members
        Partial	Home was not completed when last assessed (associated with New Homes)
+/*Antunes*/
