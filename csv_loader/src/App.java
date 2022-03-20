@@ -46,8 +46,8 @@ public class App {
         
     } else {
 
-    /*deu exception entao nao é um numero portanto vamos colocar lower case*/
-    return data.toLowerCase();
+    /*deu exception entao nao é um numero portanto vamos colocar lower case e remover espacos entre as str e remover os &*/
+    return data.toLowerCase().replaceAll("\\s","").replace("&","");
 
     }
 
