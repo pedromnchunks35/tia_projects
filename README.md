@@ -1,2 +1,2 @@
 # tia_projects
-AI UNIVERSITY OF MINHO PROJECT c:
+AI University of Minho Project 
