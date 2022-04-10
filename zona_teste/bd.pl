@@ -17,6 +17,7 @@ cozinhar(7,cabra,piscina,industrial,290).
 cozinhar(8,porco,sempiscina,industrial,220).
 cozinhar(9,porco,piscina,rural,300).
 cozinhar(10,gato,sempiscina,industrial,301).
+cozinhar(11,cao,piscina,rural,200).
 
 
 

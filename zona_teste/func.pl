@@ -62,17 +62,65 @@ iterar_buscapelopreco([Head|Resto],Dados_ant,R):-
 buscar_dados_compreco(Preco,Lista_dados):-
    %Ir buscar uma lista de todos os dados com um dado preco , com uma dada mascara.
    findall([Id,Car,Preco],cozinhar(Id,Car,_,_,Preco),Lista_dados).
+/*==============================================================================================================================================================*/
 /****************************************************************************************************************************************************************/
 
-
-
-   
-
-
+/*funcao para pegar nos precos filtrados e calcular os pontos*/
+/*CATEGORIA B*/
+/****************************************************************************************************************************************************************/
+/*==============================================================================================================================================================*/
+%B1
+%funcao de paragem em que detemos o resultado final de uma lista de pares (id e os pontos desse id) PRIORIDADE 1
+iter_pontos([],_,Lista_pontos,R):-
+%pegar no resultado depois de chegar ao critério de paragem e somar a uma lista vazia para dar um resultado
+append([],Lista_pontos,R).
+/*==============================================================================================================================================================*/
+%B1.1
+%funcao de primeira iteracao em que nos é dada uma lista vazia alem dos ids e da pergunta PRIORIDADE 2
+iter_pontos([[Id,_]|Resto],Pergunta,[],R):-
+%cut
+!,
+%Ir calcular os pontos
+request_pontos(Id,Pergunta,Pontos),
+%juntar os pontos a uma lista
+append([],[[Id,Pontos]],Lista_pontos),
+%fazer nova iteracao em que a lista vazia passa a ser uma lista com o id e pontos calculados atrás
+iter_pontos(Resto,Pergunta,Lista_pontos,R).
+/*==============================================================================================================================================================*/
+%B1.2
+%funcao de n iteracoes,isto é ,ate o resto ser [], em que vamos fazendo stack na Lista_Antiga e que dará origem á funcao de prioridade 1 sendo esta de PRIORIDADE 3
+iter_pontos([[Id,_]|Resto],Pergunta,Lista_Antiga,R):-
+%calcular os pontos
+request_pontos(Id,Pergunta,Pontos),
+%juntar lista já existente com uma lista criada com id e os pontos calculados
+append(Lista_Antiga,[[Id,Pontos]],Lista_pontos),
+%fazer nova iteracao em que a lista antiga passa a ser uma lista com o id e pontos calculados atrás
+iter_pontos(Resto,Pergunta,Lista_pontos,R).
+/*==============================================================================================================================================================*/
+%B2
+%funcao de request de pontos
+request_pontos(Id,Pergunta,Pontos):-
+   %efetuar backchaining
+   if Q then Pergunta,
+   %fazer um cut
+   !,
+   %fazer nova chamada da funcao
+   request(Id,Q,Pontos).
+%B2.1
+%funcao com o backchaining implementado que vai extrair os pontos
+request_pontos(Id,Q1 and Q2,Pontos):-
+   %extracao de pontos 1 se corresponder ao predicado
+   cozinhar(Id,Q1,_,Q2,_)-> Pontos is 5;
+   %extracao de pontos 2 se corresponder ao predicado
+   cozinhar(Id,Q1,Q2,_,_)-> Pontos is 5;
+   %caso falhe em todos os pontos dao 0
+   Pontos is 0.
+/*==============================================================================================================================================================*/
+/****************************************************************************************************************************************************************/
 
    
 %Regras de conhecimento%
-if cao and campo then quinta.
+if cao and rural then quinta.
 if gato and industrial then fabrica.
 if cao and piscina then turismo.
 if porco and sempiscina then animais.
