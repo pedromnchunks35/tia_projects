@@ -118,7 +118,42 @@ request_pontos(Id,Q1 and Q2,Pontos):-
 /*==============================================================================================================================================================*/
 /****************************************************************************************************************************************************************/
 
-   
+/*funcao para ordenar os top 5 ids pela pontuacao*/
+/*Categoria C*/
+/****************************************************************************************************************************************************************/
+/*==============================================================================================================================================================*/
+%C1.1
+%funcao para adicionar uma identificacao a cada lista, essa identificacao será o valor da pontuacao
+listar_pares([], []).
+listar_pares([E|Es], [B-E|Ps]) :-
+   E = [_,B],
+   listar_pares(Es, Ps).
+/*==============================================================================================================================================================*/
+%C1.2
+%funcao para remover os identificadores que inserimos acime
+remover_pares([], []).
+remover_pares([_-V|Ps], [V|Vs]) :-
+   remover_pares(Ps, Vs).
+/*==============================================================================================================================================================*/
+%C1.3
+%funcao para retirar da lista os 5 primeiros elementos da mesma
+top5(Src,N,L) :- findall(E, (nth1(I,Src,E), I =< N), L).
+/*==============================================================================================================================================================*/
+%C1.4
+list_top_5(Xs, Ys) :-
+   %identificamos cada lista com o seu respetivo valor da pontuacao
+   listar_pares(Xs, Ps),
+   %ordenamos os valores das identifacoes por ordem crescente 
+   keysort(Ps, PsS),
+   %removemos as identificacoes anteriormente adicionadas
+   remover_pares(PsS, Ms),
+   %revertemos a lista
+   reverse(Ms, Os),
+   %retiramos os 5 primeiros elementos da lista
+   top5(Os, 5, Ys).
+
+/****************************************************************************************************************************************************************/
+
 %Regras de conhecimento%
 if cao and rural then quinta.
 if gato and industrial then fabrica.
