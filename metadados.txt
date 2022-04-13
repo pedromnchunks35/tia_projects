@@ -107,8 +107,8 @@ Localizacao
 VALUES 13	
 Neighborhood: Physical locations within Ames city limits
 
-       Blmngtn	Bloomington Heights
-       Blueste	Bluestem
+       Blmngtn	Bloomington Heights 
+       Blueste	Bluestem 
        BrDale	       Briardale
        BrkSide	Brookside
        ClearCr	Clear Creek

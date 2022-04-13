@@ -3,17 +3,6 @@
 :- op( 700, xfx, then). 
 :- op( 300, xfy, or). 
 :- op( 200, xfy, and).
-/*zona de teste operacoes*/
-/* funcao que dado 1 elemento e uma lista devolve a junçao*/
-juntar(Elemento,Lista,New):-
-   append(Elemento,Lista,New).
-   
-/*funcao para adicionar se o numero for maior*/
-juntar_se(Elemento,Numero,Lista,Resultado):-
-   Elemento > Numero -> juntar([Elemento],Lista,Resultado);
-   juntar([Numero],Lista,Resultado).
-
-
 
 /*funcoes para fazer uma lista de todas as solucoes com limite de preco*/
 /*CATEGORIA A*/
@@ -130,7 +119,7 @@ listar_pares([E|Es], [B-E|Ps]) :-
    listar_pares(Es, Ps).
 /*==============================================================================================================================================================*/
 %C1.2
-%funcao para remover os identificadores que inserimos acime
+%funcao para remover os identificadores que inserimos acima
 remover_pares([], []).
 remover_pares([_-V|Ps], [V|Vs]) :-
    remover_pares(Ps, Vs).
@@ -151,7 +140,7 @@ list_top_5(Xs, Ys) :-
    reverse(Ms, Os),
    %retiramos os 5 primeiros elementos da lista
    top5(Os, 5, Ys).
-
+/*==============================================================================================================================================================*/
 /****************************************************************************************************************************************************************/
 
 %Regras de conhecimento%
