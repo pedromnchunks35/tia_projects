@@ -94,7 +94,7 @@ request_pontos(Id,Pergunta,Pontos):-
    %fazer um cut
    !,
    %fazer nova chamada da funcao
-   request(Id,Q,Pontos).
+   request_pontos(Id,Q,Pontos).
 %B2.1
 %funcao com o backchaining implementado que vai extrair os pontos
 request_pontos(Id,Q1 and Q2,Pontos):-

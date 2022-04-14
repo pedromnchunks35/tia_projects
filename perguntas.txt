@@ -21,7 +21,6 @@ VALUE 10 - nosewr OR allpub
 VALUE 18 - OVERALLQUAL > 1
 VALUE 19 - OverallCond > 1
 VALUE 50 - empty OR full bath
-VALUE 52 - empty
 
 2-How do you handle with nature?
 *I love it
