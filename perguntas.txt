@@ -1,21 +1,101 @@
-What does your home represent?
-How do you handle with nature?
-Do you like to fish?
-You love animals?
-How is your relation with your neighbours?
-How much do you prioritize freedom?
-Which music do you prefer most?
-What is more important to you?
-You know how to swim?
-You like public transports?
-Are you attached to social networks?
-You work remote or in person?
-Paper or tech for reading?
-Calm Place or Movement Place?
-Do you walk without dificulties?
-Lets say you like to play bascketball. You prefer shotting from the sides or at the middle?
-Do you enjoy at the fireplace?
-Do you have a family?
-You like to storage things?
-Are a social person?
-You like parties?
+1-What does your home represent?
+*Confort
+carateristicas essenciais:
+VALUE 10 - allPub
+VALUE 18 - OVERALLQUAL > 8
+VALUE 19 - OverallCond > 8
+VALUE 50 - fullbath
+VALUE 52 - bedroom
+VALUE 54 - Kitchen quality Ex
+
+*A place to sleep
+VALUE 10 - allPub
+VALUE 18 - OVERALLQUAL > 5
+VALUE 19 - OverallCond > 5
+VALUE 50 - empty OR full bath
+VALUE 52 - Bedroom
+VALUE 54 - Kitchen quality Gd
+
+*A place to work
+VALUE 10 - nosewr OR allpub
+VALUE 18 - OVERALLQUAL > 1
+VALUE 19 - OverallCond > 1
+VALUE 50 - empty OR full bath
+VALUE 52 - empty
+
+2-How do you handle with nature?
+*I love it
+VALUE 3- a or c or fv
+*Its slightly irritant
+VALUE 3- rm or rh 
+
+3-How is your relation with your neighbours?
+*I like people
+VALUE 3- rm or rh
+VALUE 16- townhouse
+*Neutral
+VALUE 3-  rl or rp 
+VALUE 16- duplx or n2fmcon
+*I dont really like people
+VALUE 3- A or C or FV 
+VALUE 16- 1Fam
+
+4-Which music do you prefer most?
+*Jazz
+VALUE 6 - grvl
+VALUE 8 - reg
+VALUE 22 - mansard
+VALUE 23 - wdshake or wdshngl
+VALUE 24 - wdsdng or wdshing or stone
+
+*Pop
+VALUE 6 - pave
+VALUE 8 - ir3 or reg
+VALUE 22 - shed
+VALUE 23 - metal 
+VALUE 24 - plywood or metalsd
+
+*Rap
+VALUE 6 - grvl or pave
+VALUE 8 - ir3
+value 22 - shed or hip
+value 23 - roll
+value 24 - cemntbd
+
+5-You know how to swim?
+*Yes , a lot
+value 73 - fa , ta , gd
+*I'm a champion
+Value 73 - ex , gd
+*Not rly
+VALUE 73- na
+
+6-Do you have a family?
+*Yes , a big one
+VALUES 2 - 190 or 160 or 85 or 80
+*Yes
+VALUES 2 - 80 or 60 or 90 or 20 or 30
+*No
+VALUES 2 - 120 or 150 or 50
+7-Do you enjoy relaxing at a fireplace?
+*Its my favorite thing to do
+VALUES 57 - >1
+VALUES 58 - ex or gd or ta
+
+*Its okay
+VALUES 57 - >1 and <2
+VALUES 58 - fa or ta
+
+*Not needed at all
+VALUES 58 - na
+
+8-You rely a lot on appearences?
+*yes , a lot
+VALUES 28 - ex or gd
+VALUES 29 - ex or gd
+*just a bit
+VALUES 28 - fa or ta or gd
+VALUES 28 - fa or ta or gd
+*not rly
+values 28 - all (dar simplesmente os pontos)
+values 29 - all 
