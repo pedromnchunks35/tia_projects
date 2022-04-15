@@ -98,3 +98,13 @@ VALUES 28 - fa or ta or gd
 *not rly
 values 28 - all (dar simplesmente os pontos)
 values 29 - all 
+
+9-Do you like the Mountains
+*yes, i love it
+VALUES 13 - clearCr or meadowV or noRidge or stoneBr or timber 
+*not really, i prefer the desert
+VALUES 13 - blueste or edwards or gilbert
+*I prefer beatches
+VALUES 13 - collgCr or nPkVill or oldTown or sawyer
+*I like more of a green zone
+VALUES 13 - blmngtn or brDale or brkSide or crawfor or iDOTRR or names or nridgHt or nWAmes or sWISU or sawyerW or somerst or veenker 
