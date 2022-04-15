@@ -1445,11 +1445,11 @@ if all and all then not_rly_appear.
 
 %9º Pergunta
 %yes i love it
-if clearcr or meadowv or noridge or stonebr or timber then yes_i_love_it
+if clearcr or meadowv or noridge or stonebr or timber then yes_i_love_it.
 %i prefer the desert
-if blueste or edwards or gilbert then i_prefer_desert
+if blueste or edwards or gilbert then i_prefer_desert.
 %i prefer beatches
-if collgcr or npkvill or oldtown or sawyer then i_prefer_beatches
+if collgcr or npkvill or oldtown or sawyer then i_prefer_beatches.
 %i prefer green areas
-if blmngtn or brdale or brkside or crawfor or idotrr or names or nridght or nwames or swisu or sawyerw or somerst or veenker then i_prefer_green_zones
+if blmngtn or brdale or brkside or crawfor or idotrr or names or nridght or nwames or swisu or sawyerw or somerst or veenker then i_prefer_green_zones.
 
