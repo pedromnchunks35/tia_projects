@@ -327,7 +327,7 @@ public class App {
                         button.setText("Submit");
                         break;
     
-                        default:
+                        case 10:
                         //get index
                         index = combo.getSelectedIndex();
                         //Ir buscar resposta e colocar correspondente no array pela index
@@ -344,11 +344,47 @@ public class App {
                             respostas.add("i_like_more_of_green_zone");
                             break;
                         }
+                        //confirmar respostas
                         System.out.println(respostas.get(0)+" "+respostas.get(1)+" "+respostas.get(2)+" "+respostas.get(3)+" "+respostas.get(4)+" "+respostas.get(5)+" "+respostas.get(6)+" "+respostas.get(7)+" "+respostas.get(8));
+                        //mudar a pergunta para as soluções
+                        questions.setText("resposta:");
+                        //laterar o combo box para as opções que permite ordenar as respostas
+                        String myArray10[]={"1", "2", "3"};
+                        DefaultComboBoxModel<String> model10= new DefaultComboBoxModel<>(myArray10);
+                        combo.setModel(model10);
+                        //alterar o texto do botao
+                        button.setText("Finish");
+                        int new_window_width = window_width + 300;
+                        int mew_window_height = window_height + 300;
+                        frame.setSize(new_window_width,mew_window_height);
+                        painel.setSize(new_window_width,mew_window_height);
+                        button.setLocation(200, 500);
+                        combo.setLocation(140, 200);
+                        questions.setLocation(480, 100);
+                        frame.setLocationRelativeTo(null);
+                        break;
+
+                        case 11:
+                        //get index
+                        index = combo.getSelectedIndex();
+                        switch(index){
+                            case 0:
+                            System.out.println("1");
+                            break;
+
+                            case 1:
+                            System.out.println("2");
+                            break;
+
+                            case 2:
+                            System.out.println("3");
+                            break;
+                        }
+                        default:
                         System.exit(200);
                         break;
                     }
-            }  
+                }  
             });  
     
         //adicionar ao painel
@@ -360,6 +396,8 @@ public class App {
         frame.setVisible(true);
     
         }
+
+        
     public static void main(String[] args) throws Exception {
         //Invocar janela
         App app=new App();
@@ -369,7 +407,4 @@ public class App {
         Query q=new Query("consult('bd.pl')");
         q.hasSolution();
     }
-
-  
-
 }
