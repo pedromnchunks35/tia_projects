@@ -1,4 +1,7 @@
 import org.jpl7.Query;
+import org.jpl7.Term;
+import org.jpl7.Variable;
+
 import java.awt.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -399,12 +402,23 @@ public class App {
 
         
     public static void main(String[] args) throws Exception {
+        
+        Query q1= new Query("consult('bd.pl').");
+        System.out.println(q1.hasSolution());
+        Query q2= new Query("consult('ops.pl').");
+        System.out.println(q2.hasSolution());
+        Query q3= new Query("cabeca(160000,confort,i_love_it,i_like_people,rap,champion,big_one,not_rly_fireplace,yes_alot_appear,i_prefer_green_zones,R),nth0("+1+",R,[Id1,_]).");
+        
+        System.out.println(q3.oneSolution().get("Id1"));
+
+
         //Invocar janela
         App app=new App();
         app.view();
         //HELLO
         System.out.println("Hello, World!");
-        Query q=new Query("consult('bd.pl')");
-        q.hasSolution();
+        
+
+
     }
 }
