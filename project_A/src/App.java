@@ -327,7 +327,7 @@ public class App {
                         String myArray9[]={"yes, i love it","I prefer beatches","I like more of a green zone"};
                         DefaultComboBoxModel<String> model9 = new DefaultComboBoxModel<>(myArray9);
                         combo.setModel(model9);
-                        button.setText("Submit");
+                        button.setText("Next");
                         break;
     
                         case 10:
@@ -347,42 +347,53 @@ public class App {
                             respostas.add("i_like_more_of_green_zone");
                             break;
                         }
-                        //confirmar respostas
-                        System.out.println(respostas.get(0)+" "+respostas.get(1)+" "+respostas.get(2)+" "+respostas.get(3)+" "+respostas.get(4)+" "+respostas.get(5)+" "+respostas.get(6)+" "+respostas.get(7)+" "+respostas.get(8));
-                        //mudar a pergunta para as soluções
-                        questions.setText("resposta:");
-                        //laterar o combo box para as opções que permite ordenar as respostas
-                        String myArray10[]={"1", "2", "3"};
-                        DefaultComboBoxModel<String> model10= new DefaultComboBoxModel<>(myArray10);
+                        //mudar perg
+                        questions.setText("What is your price range?");
+                        //mudar resp
+                        String myArray10[]={"<140k","<160k","<180k","<200k", "<220k"};
+                        DefaultComboBoxModel<String> model10 = new DefaultComboBoxModel<>(myArray10);
                         combo.setModel(model10);
-                        //alterar o texto do botao
-                        button.setText("Finish");
-                        int new_window_width = window_width + 300;
-                        int mew_window_height = window_height + 300;
-                        frame.setSize(new_window_width,mew_window_height);
-                        painel.setSize(new_window_width,mew_window_height);
-                        button.setLocation(200, 500);
-                        combo.setLocation(140, 200);
-                        questions.setLocation(480, 100);
-                        frame.setLocationRelativeTo(null);
+                        button.setText("Submit");
                         break;
-
+    
                         case 11:
                         //get index
                         index = combo.getSelectedIndex();
-                        switch(index){
+                        //Ir buscar resposta e colocar correspondente no array pela index
+                        switch (index) {
                             case 0:
-                            System.out.println("1");
+                            respostas.add("140000");
                             break;
-
+                            
                             case 1:
-                            System.out.println("2");
+                            respostas.add("160000");
                             break;
 
                             case 2:
-                            System.out.println("3");
+                            respostas.add("180000");
+                            break;
+
+                            case 3:
+                            respostas.add("200000");
+                            break;
+
+                            case 4:
+                            respostas.add("220000");
                             break;
                         }
+
+                        //confirmar respostas
+                        System.out.println(respostas.get(0)+" "+respostas.get(1)+" "+respostas.get(2)+" "+respostas.get(3)+" "+respostas.get(4)+" "+respostas.get(5)+" "+respostas.get(6)+" "+respostas.get(7)+" "+respostas.get(8)+" "+respostas.get(9));
+                        //get a solução
+                        String nm8 = String.valueOf(respostas.get(8));
+                        Query q3= new Query("cabeca(140000,confort,i_love_it,i_like_people,rap,champion,big_one,not_rly_fireplace,yes_alot_appear,"+nm8+",R),nth0("+1+",R,[Id1,_]).");
+                        //mudar a pergunta para as soluções
+                        questions.setText(String.valueOf(q3.oneSolution()));
+                        //alterar o texto do botao
+                        button.setText("Finish");
+                        combo.setVisible(false);
+                        break;
+
                         default:
                         System.exit(200);
                         break;
@@ -407,9 +418,9 @@ public class App {
         System.out.println(q1.hasSolution());
         Query q2= new Query("consult('ops.pl').");
         System.out.println(q2.hasSolution());
-        Query q3= new Query("cabeca(160000,confort,i_love_it,i_like_people,rap,champion,big_one,not_rly_fireplace,yes_alot_appear,i_prefer_green_zones,R),nth0("+1+",R,[Id1,_]).");
-        
-        System.out.println(q3.oneSolution().get("Id1"));
+        Query q3= new Query("cabeca(140000,confort,i_love_it,i_like_people,rap,champion,big_one,not_rly_fireplace,yes_alot_appear,i_prefer_green_zones,R),nth0("+1+",R,[Id1,_]).");
+
+        System.out.println("aadad" + q3.oneSolution().get("Id1"));
 
 
         //Invocar janela
