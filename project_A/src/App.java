@@ -261,7 +261,7 @@ public class App {
                         //Ir buscar resposta e colocar correspondente no array pela index
                         switch (index) {
                             case 0:
-                            respostas.add("big_one_family");
+                            respostas.add("big_one");
                             break;
                             
                             case 1:
@@ -286,15 +286,15 @@ public class App {
                         //Ir buscar resposta e colocar correspondente no array pela index
                         switch (index) {
                             case 0:
-                            respostas.add("favorite_fireplace");
+                            respostas.add("yes_favorite_fireplace");
                             break;
                             
                             case 1:
-                            respostas.add("its_okay_fireplace");
+                            respostas.add("its_ok_fireplace");
                             break;
 
                             case 2:
-                            respostas.add("no_fireplace");
+                            respostas.add("not_rly_fireplace");
                             break;
                         }
                         //mudar perg
@@ -311,7 +311,7 @@ public class App {
                         //Ir buscar resposta e colocar correspondente no array pela index
                         switch (index) {
                             case 0:
-                            respostas.add("yes_appear");
+                            respostas.add("yes_alot_appear");
                             break;
                             
                             case 1:
@@ -345,7 +345,7 @@ public class App {
                             break;
 
                             case 2:
-                            respostas.add("i_like_more_of_green_zone");
+                            respostas.add("i_prefer_green_zones");
                             break;
                         }
                         //mudar perg
@@ -386,10 +386,14 @@ public class App {
                         //confirmar respostas
                         System.out.println(respostas.get(0)+" "+respostas.get(1)+" "+respostas.get(2)+" "+respostas.get(3)+" "+respostas.get(4)+" "+respostas.get(5)+" "+respostas.get(6)+" "+respostas.get(7)+" "+respostas.get(8)+" "+respostas.get(9));
                         //get a solução
-                        String nm8 = String.valueOf(respostas.get(8));
-                        Query q3= new Query("cabeca(140000,confort,i_love_it,i_like_people,rap,champion,big_one,not_rly_fireplace,yes_alot_appear,"+nm8+",R),nth0("+1+",R,[Id1,_]).");
+                        Query q1= new Query("consult('bd.pl').");
+                        System.out.println(q1.hasSolution());
+                        Query q2= new Query("consult('ops.pl').");
+                        System.out.println(q2.hasSolution());
+                        Query q3= new Query("cabeca("+respostas.get(9)+","+respostas.get(0)+","+respostas.get(1)+","+respostas.get(2)+","+respostas.get(3)+","+respostas.get(4)+","+respostas.get(5)+","+respostas.get(6)+","+respostas.get(7)+","+respostas.get(8)+",R),nth0("+0+",R,[Id1,_]),nth0("+1+",R,[Id2,_]),nth0("+2+",R,[Id3,_]),nth0("+3+",R,[Id4,_]),nth0("+4+",R,[Id5,_]).");
                         //mudar a pergunta para as soluções
-                        questions.setText(String.valueOf(q3.oneSolution()));
+                        Map<String,Term> resposta= q3.oneSolution();
+                        questions.setText("The best houses, are: " + resposta.get("Id1") + " // " + resposta.get("Id2") + " // " + resposta.get("Id3") + " // " + resposta.get("Id4") + " // " + resposta.get("Id5"));
                         //alterar o texto do botao
                         button.setText("Finish");
                         combo.setVisible(false);
@@ -419,8 +423,6 @@ public class App {
         System.out.println(q1.hasSolution());
         Query q2= new Query("consult('ops.pl').");
         System.out.println(q2.hasSolution());
-        Query q3= new Query("cabeca(140000,confort,i_love_it,i_like_people,rap,champion,big_one,not_rly_fireplace,yes_alot_appear,i_prefer_green_zones,R),nth0("+1+",R,[Id1,_]).");
-        System.out.println("aadad" + q3.oneSolution().get("Id1"));
         
         Query q3= new Query("cabeca(160000,confort,i_love_it,i_like_people,rap,champion,big_one,not_rly_fireplace,yes_alot_appear,i_prefer_green_zones,R),nth0("+0+",R,[Id1,_]),nth0("+1+",R,[Id2,_]),nth0("+2+",R,[Id3,_]),nth0("+3+",R,[Id4,_]),nth0("+4+",R,[Id5,_]).");
         //MAP
