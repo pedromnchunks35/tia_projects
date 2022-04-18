@@ -10,6 +10,7 @@ import java.io.*;
 import javax.imageio.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
+import java.util.Map;
 public class App {
     //State
     int state=0;
@@ -407,10 +408,16 @@ public class App {
         System.out.println(q1.hasSolution());
         Query q2= new Query("consult('ops.pl').");
         System.out.println(q2.hasSolution());
-        Query q3= new Query("cabeca(160000,confort,i_love_it,i_like_people,rap,champion,big_one,not_rly_fireplace,yes_alot_appear,i_prefer_green_zones,R),nth0("+1+",R,[Id1,_]).");
-        
-        System.out.println(q3.oneSolution().get("Id1"));
+        Query q3= new Query("cabeca(160000,confort,i_love_it,i_like_people,rap,champion,big_one,not_rly_fireplace,yes_alot_appear,i_prefer_green_zones,R),nth0("+0+",R,[Id1,_]),nth0("+1+",R,[Id2,_]),nth0("+2+",R,[Id3,_]),nth0("+3+",R,[Id4,_]),nth0("+4+",R,[Id5,_]).");
+        //MAP
+        Map<String,Term> resposta= q3.oneSolution();
 
+        System.out.println(resposta.get("Id1"));
+        System.out.println(resposta.get("Id2"));
+        System.out.println(resposta.get("Id3"));
+        System.out.println(resposta.get("Id4"));
+        System.out.println(resposta.get("Id5"));
+        
 
         //Invocar janela
         App app=new App();
