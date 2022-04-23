@@ -5,7 +5,9 @@ import org.jpl7.Variable;
 import java.awt.*;
 import java.util.List;
 import java.util.ArrayList;
-import javax.swing.*; 
+import javax.swing.*;
+import javax.swing.event.MouseInputAdapter;
+
 import java.io.*;
 import javax.imageio.*;
 import java.awt.event.*;
@@ -58,8 +60,6 @@ public class App {
         } catch (IOException e) {
             //TODO: handle exception
         }
-        
-        System.out.println(myPicture);
         //Quadro
         JLabel quadro = new JLabel(new ImageIcon(myPicture)); 
         //Painel
@@ -273,9 +273,9 @@ public class App {
                             break;
                         }
                         //mudar perg
-                        questions.setText("Do you enjoy relaxing at a fireplace?");
+                        questions.setText("Do you like fire?");
                         //mudar resp
-                        String myArray7[]={"Its my favorite thing to do","Its okay","Not needed at all"};
+                        String myArray7[]={"Its beautiful","Its okay","Nop , it scares me"};
                         DefaultComboBoxModel<String> model7 = new DefaultComboBoxModel<>(myArray7);
                         combo.setModel(model7);
                         break;
@@ -382,21 +382,103 @@ public class App {
                             respostas.add("220000");
                             break;
                         }
-
-                        //confirmar respostas
-                        System.out.println(respostas.get(0)+" "+respostas.get(1)+" "+respostas.get(2)+" "+respostas.get(3)+" "+respostas.get(4)+" "+respostas.get(5)+" "+respostas.get(6)+" "+respostas.get(7)+" "+respostas.get(8)+" "+respostas.get(9));
                         //get a solução
                         Query q1= new Query("consult('bd.pl').");
-                        System.out.println(q1.hasSolution());
+                        q1.hasSolution();
                         Query q2= new Query("consult('ops.pl').");
-                        System.out.println(q2.hasSolution());
+                        q2.hasSolution();
                         Query q3= new Query("cabeca("+respostas.get(9)+","+respostas.get(0)+","+respostas.get(1)+","+respostas.get(2)+","+respostas.get(3)+","+respostas.get(4)+","+respostas.get(5)+","+respostas.get(6)+","+respostas.get(7)+","+respostas.get(8)+",R),nth0("+0+",R,[Id1,_]),nth0("+1+",R,[Id2,_]),nth0("+2+",R,[Id3,_]),nth0("+3+",R,[Id4,_]),nth0("+4+",R,[Id5,_]).");
                         //mudar a pergunta para as soluções
                         Map<String,Term> resposta= q3.oneSolution();
-                        questions.setText("The best houses, are: " + resposta.get("Id1") + " // " + resposta.get("Id2") + " // " + resposta.get("Id3") + " // " + resposta.get("Id4") + " // " + resposta.get("Id5"));
+                        //Setting questions to false
+                        questions.setVisible(false);
                         //alterar o texto do botao
                         button.setText("Finish");
+                        //colocar combo invisivel
                         combo.setVisible(false);
+                        //CRIAR LABELS
+                        //labels top normal
+                        JLabel top5_text= new JLabel("Top 5");
+                        JLabel top1=new JLabel("1º - "+resposta.get("Id1").toString());
+                        JLabel top2=new JLabel("2º - "+resposta.get("Id2").toString());
+                        JLabel top3=new JLabel("3º - "+resposta.get("Id3").toString());
+                        JLabel top4=new JLabel("4º - "+resposta.get("Id4").toString());
+                        JLabel top5=new JLabel("5º - "+resposta.get("Id5").toString());
+                        //labels info
+                        JLabel car_text= new JLabel("Caracteristics");
+                        car_text.setFont(new Font("Arial", Font.BOLD | Font.ITALIC,15));
+                        JLabel preco_text=new JLabel("Price-");
+                        //adicionar um evento em que o rato passa por cima 
+                            top1.addMouseListener(
+                            new MouseAdapter(){
+                                public void mouseEntered(MouseEvent e){
+                                preco_text.setText("Price-"+20000);
+                                }
+                            });
+                            
+
+                        //adicionar ao painel
+                        painel.add(car_text);
+                        painel.add(preco_text);
+                        painel.add(top5_text);
+                        painel.add(top1);
+                        painel.add(top2);
+                        painel.add(top3);
+                        painel.add(top4);
+                        painel.add(top5);
+                        //labels segundo top caso o preco seja igual ou inferior a 180000
+                       if (Integer.valueOf(respostas.get(9))<=180000) {
+                        //outra query
+                        Query q4= new Query("cabeca("+(Integer.valueOf(respostas.get(9))+40000)+","+respostas.get(0)+","+respostas.get(1)+","+respostas.get(2)+","+respostas.get(3)+","+respostas.get(4)+","+respostas.get(5)+","+respostas.get(6)+","+respostas.get(7)+","+respostas.get(8)+",R),nth0("+0+",R,[Id1,_]),nth0("+1+",R,[Id2,_]),nth0("+2+",R,[Id3,_]),nth0("+3+",R,[Id4,_]),nth0("+4+",R,[Id5,_]).");
+                        //mudar a pergunta para as soluções
+                        Map<String,Term> resposta_op= q4.oneSolution();
+                        //labels de top opcional
+                        JLabel top5_text_op=new JLabel("Top 5 + 40k");
+                        JLabel top1_op=new JLabel("1º - "+resposta_op.get("Id1").toString());
+                        JLabel top2_op=new JLabel("2º - "+resposta_op.get("Id2").toString());
+                        JLabel top3_op=new JLabel("3º - "+resposta_op.get("Id3").toString());
+                        JLabel top4_op=new JLabel("4º - "+resposta_op.get("Id4").toString());
+                        JLabel top5_op=new JLabel("5º - "+resposta_op.get("Id5").toString());
+                        
+
+                        //add to painel
+                        painel.add(top5_text_op);
+                        painel.add(top1_op);
+                        painel.add(top2_op);
+                        painel.add(top3_op);
+                        painel.add(top4_op);
+                        painel.add(top5_op);
+
+                        //Setar coords do title
+                        car_text.setBounds((int)(window_width*0.43), (int)(window_height*0.15),100,100);
+                        preco_text.setBounds((int)(window_width*0.43), (int)(window_height*0.20),100,100);
+                        //setar cords top5 normal
+                        top5_text_op.setBounds((int)(window_width*0.90), (int)(window_height*0.15),100,100);
+                        top1_op.setBounds((int)(window_width*0.90), (int)(window_height*0.20),100,100);
+                        top2_op.setBounds((int)(window_width*0.90), (int)(window_height*0.25),100,100);
+                        top3_op.setBounds((int)(window_width*0.90), (int)(window_height*0.30),100,100);
+                        top4_op.setBounds((int)(window_width*0.90), (int)(window_height*0.35),100,100);
+                        top5_op.setBounds((int)(window_width*0.90), (int)(window_height*0.40),100,100);
+
+                        //setar cords top5 normal
+                        top5_text.setBounds((int)(window_width*0.05), (int)(window_height*0.15),100,100);
+                        top1.setBounds((int)(window_width*0.05), (int)(window_height*0.20),100,100);
+                        top2.setBounds((int)(window_width*0.05), (int)(window_height*0.25),100,100);
+                        top3.setBounds((int)(window_width*0.05), (int)(window_height*0.30),100,100);
+                        top4.setBounds((int)(window_width*0.05), (int)(window_height*0.35),100,100);
+                        top5.setBounds((int)(window_width*0.05), (int)(window_height*0.40),100,100);
+
+                       }else{
+                       
+                        //setar cords top5 normal
+                        top1.setBounds((int)(window_width*0.20), (int)(window_height*0.20),100,100);
+                        top2.setBounds((int)(window_width*0.20), (int)(window_height*0.25),100,100);
+                        top3.setBounds((int)(window_width*0.20), (int)(window_height*0.30),100,100);
+                        top4.setBounds((int)(window_width*0.20), (int)(window_height*0.35),100,100);
+                        top5.setBounds((int)(window_width*0.20), (int)(window_height*0.40),100,100);
+
+                       }
+
                         break;
 
                         default:
@@ -418,30 +500,8 @@ public class App {
 
         
     public static void main(String[] args) throws Exception {
-        
-        Query q1= new Query("consult('bd.pl').");
-        System.out.println(q1.hasSolution());
-        Query q2= new Query("consult('ops.pl').");
-        System.out.println(q2.hasSolution());
-        
-        Query q3= new Query("cabeca(160000,confort,i_love_it,i_like_people,rap,champion,big_one,not_rly_fireplace,yes_alot_appear,i_prefer_green_zones,R),nth0("+0+",R,[Id1,_]),nth0("+1+",R,[Id2,_]),nth0("+2+",R,[Id3,_]),nth0("+3+",R,[Id4,_]),nth0("+4+",R,[Id5,_]).");
-        //MAP
-        Map<String,Term> resposta= q3.oneSolution();
-
-        System.out.println(resposta.get("Id1"));
-        System.out.println(resposta.get("Id2"));
-        System.out.println(resposta.get("Id3"));
-        System.out.println(resposta.get("Id4"));
-        System.out.println(resposta.get("Id5"));
-        
-
         //Invocar janela
         App app=new App();
         app.view();
-        //HELLO
-        System.out.println("Hello, World!");
-        
-
-
     }
 }

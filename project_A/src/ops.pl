@@ -4,6 +4,12 @@
 :- op( 300, xfy, or). 
 :- op( 200, xfy, and).
 
+
+%Funcao para ir buscar carateristicas
+get_carateristicas(Id,QualidadeGeral,CondicaoGeral,QualidadeCozinha,TipoLocalidade,TipoAlojamento,MaterialExterior,Piscina,TamanhoCasa,TemFogueira,QualidadeMaterialExterior,CondicaoMaterialExterior,Cidade).
+
+
+
 %FUNCAO PRINCIPAL CABECA
 /****************************************************************************************************************************************************************/
 /*==============================================================================================================================================================*/
