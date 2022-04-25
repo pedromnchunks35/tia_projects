@@ -382,6 +382,7 @@ public class App {
                             respostas.add("220000");
                             break;
                         }
+                        
                         //get a solução
                         Query q1= new Query("consult('bd.pl').");
                         q1.hasSolution();
@@ -408,16 +409,285 @@ public class App {
                         JLabel car_text= new JLabel("Caracteristics");
                         car_text.setFont(new Font("Arial", Font.BOLD | Font.ITALIC,15));
                         JLabel preco_text=new JLabel("Price-");
+                        JLabel Qualidadegeral_text=new JLabel("Overall Quality-");
+                        JLabel Condicaogeral_text=new JLabel("Overall Condition-");
+                        JLabel Qualidadecozinha_text=new JLabel("Kitchen Quality-");
+                        JLabel Tipolocalidade_text=new JLabel("Local type-");
+                        JLabel TipoAlojamento_text=new JLabel("Property type-");
+                        JLabel MaterialTelhado_text=new JLabel("Roof Material-");
+                        JLabel MaterialExterior_text=new JLabel("Exterior Material-");
+                        JLabel Piscina_text=new JLabel("Pool-");
+                        JLabel TamanhoCasa_text=new JLabel("Home type-");
+                        JLabel Fogueira=new JLabel("Fireplace-");
+                        JLabel QualidadeMaterialExterior=new JLabel("Exterior Quality-");
+                        JLabel CondicaoMaterialExterior=new JLabel("Exterior Condition-");
+                        JLabel Cidade=new JLabel("City-");
+
+                        //Setar tamanho
+                        frame.setSize(window_width,window_height+100);
+                        //SETAR POSI DO BOTAO
+                        button.setLocation((int)(window_width*0.432),(int)(window_height*0.90));
+                    
+                        
                         //adicionar um evento em que o rato passa por cima 
                             top1.addMouseListener(
                             new MouseAdapter(){
                                 public void mouseEntered(MouseEvent e){
-                                preco_text.setText("Price-"+20000);
+                                    //Query para ir buscar dados do Id1
+                                Query query_update=new Query("get_descri("+resposta.get("Id1").toString()+",Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14).");
+                                Map<String,Term> sequenciarespostas= query_update.oneSolution();
+                                //mudar preco
+                                preco_text.setText("Price-"+sequenciarespostas.get("Q14")+"$");
+                                //mudar Qualidade
+                                Qualidadegeral_text.setText("Overall Quality-"+sequenciarespostas.get("Q1"));
+                                //setar condicao
+                                Condicaogeral_text.setText("Overall Condition-"+sequenciarespostas.get("Q2"));
+                                //setar qualidade da cozinha
+                                Qualidadecozinha_text.setText("Kitchen Quality-"+sequenciarespostas.get("Q3"));
+                                //setar tipo localidade
+                                Tipolocalidade_text.setText("Local type-"+sequenciarespostas.get("Q4"));
+                                //setar tipo alojamento
+                                TipoAlojamento_text.setText("Property type-"+sequenciarespostas.get("Q5"));
+                                //setar material telhado
+                                MaterialTelhado_text.setText("Roof Material-"+sequenciarespostas.get("Q6"));
+                                //setar material telghado
+                                MaterialExterior_text.setText("Exterior Material-"+sequenciarespostas.get("Q7"));
+                                if (sequenciarespostas.get("Q8").toString().equals("na")) {
+                                    Piscina_text.setText("Pool- No");
+                                }else{
+                                    Piscina_text.setText("Pool- Yes");
+                                }
+                                //setar tamanho casa
+                                TamanhoCasa_text.setText("Home type-"+sequenciarespostas.get("Q9"));
+
+                                //setar fogueira
+                                if (Integer.valueOf(sequenciarespostas.get("Q10").toString())>0) {
+                                    Fogueira.setText("Fireplace-Yes");
+                                }else{
+                                    Fogueira.setText("Fireplace-No");  
+                                }
+
+                                //setar qualidade material exterior
+                                QualidadeMaterialExterior.setText("Exterior Quality-"+sequenciarespostas.get("Q11"));
+
+                                //setar condicao do material exterior
+                                CondicaoMaterialExterior.setText("Exterior Condition-"+sequenciarespostas.get("Q12"));
+                                
+                                //setar cidade
+                                Cidade.setText("City-"+sequenciarespostas.get("Q13"));
                                 }
                             });
                             
+                            //adicionar um evento em que o rato passa por cima 
+                            top2.addMouseListener(
+                            new MouseAdapter(){
+                                public void mouseEntered(MouseEvent e){
+                                    //Query para ir buscar dados do Id1
+                                Query query_update=new Query("get_descri("+resposta.get("Id2").toString()+",Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14).");
+                                Map<String,Term> sequenciarespostas= query_update.oneSolution();
+                                //mudar preco
+                                preco_text.setText("Price-"+sequenciarespostas.get("Q14")+"$");
+                                //mudar Qualidade
+                                Qualidadegeral_text.setText("Overall Quality-"+sequenciarespostas.get("Q1"));
+                                //setar condicao
+                                Condicaogeral_text.setText("Overall Condition-"+sequenciarespostas.get("Q2"));
+                                //setar qualidade da cozinha
+                                Qualidadecozinha_text.setText("Kitchen Quality-"+sequenciarespostas.get("Q3"));
+                                //setar tipo localidade
+                                Tipolocalidade_text.setText("Local type-"+sequenciarespostas.get("Q4"));
+                                //setar tipo alojamento
+                                TipoAlojamento_text.setText("Property type-"+sequenciarespostas.get("Q5"));
+                                //setar material telhado
+                                MaterialTelhado_text.setText("Roof Material-"+sequenciarespostas.get("Q6"));
+                                //setar material telghado
+                                MaterialExterior_text.setText("Exterior Material-"+sequenciarespostas.get("Q7"));
+                                if (sequenciarespostas.get("Q8").toString().equals("na")) {
+                                    Piscina_text.setText("Pool- No");
+                                }else{
+                                    Piscina_text.setText("Pool- Yes");
+                                }
+                                //setar tamanho casa
+                                TamanhoCasa_text.setText("Home type-"+sequenciarespostas.get("Q9"));
+
+                                //setar fogueira
+                                if (Integer.valueOf(sequenciarespostas.get("Q10").toString())>0) {
+                                    Fogueira.setText("Fireplace-Yes");
+                                }else{
+                                    Fogueira.setText("Fireplace-No");  
+                                }
+
+                                //setar qualidade material exterior
+                                QualidadeMaterialExterior.setText("Exterior Quality-"+sequenciarespostas.get("Q11"));
+
+                                //setar condicao do material exterior
+                                CondicaoMaterialExterior.setText("Exterior Condition-"+sequenciarespostas.get("Q12"));
+                                
+                                //setar cidade
+                                Cidade.setText("City-"+sequenciarespostas.get("Q13"));
+                                }
+                            });
+
+                            //adicionar um evento em que o rato passa por cima 
+                            top3.addMouseListener(
+                            new MouseAdapter(){
+                                public void mouseEntered(MouseEvent e){
+                                    //Query para ir buscar dados do Id1
+                                Query query_update=new Query("get_descri("+resposta.get("Id3").toString()+",Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14).");
+                                Map<String,Term> sequenciarespostas= query_update.oneSolution();
+                                //mudar preco
+                                preco_text.setText("Price-"+sequenciarespostas.get("Q14")+"$");
+                                //mudar Qualidade
+                                Qualidadegeral_text.setText("Overall Quality-"+sequenciarespostas.get("Q1"));
+                                //setar condicao
+                                Condicaogeral_text.setText("Overall Condition-"+sequenciarespostas.get("Q2"));
+                                //setar qualidade da cozinha
+                                Qualidadecozinha_text.setText("Kitchen Quality-"+sequenciarespostas.get("Q3"));
+                                //setar tipo localidade
+                                Tipolocalidade_text.setText("Local type-"+sequenciarespostas.get("Q4"));
+                                //setar tipo alojamento
+                                TipoAlojamento_text.setText("Property type-"+sequenciarespostas.get("Q5"));
+                                //setar material telhado
+                                MaterialTelhado_text.setText("Roof Material-"+sequenciarespostas.get("Q6"));
+                                //setar material telghado
+                                MaterialExterior_text.setText("Exterior Material-"+sequenciarespostas.get("Q7"));
+                                if (sequenciarespostas.get("Q8").toString().equals("na")) {
+                                    Piscina_text.setText("Pool- No");
+                                }else{
+                                    Piscina_text.setText("Pool- Yes");
+                                }
+                                //setar tamanho casa
+                                TamanhoCasa_text.setText("Home type-"+sequenciarespostas.get("Q9"));
+
+                                //setar fogueira
+                                if (Integer.valueOf(sequenciarespostas.get("Q10").toString())>0) {
+                                    Fogueira.setText("Fireplace-Yes");
+                                }else{
+                                    Fogueira.setText("Fireplace-No");  
+                                }
+
+                                //setar qualidade material exterior
+                                QualidadeMaterialExterior.setText("Exterior Quality-"+sequenciarespostas.get("Q11"));
+
+                                //setar condicao do material exterior
+                                CondicaoMaterialExterior.setText("Exterior Condition-"+sequenciarespostas.get("Q12"));
+                                
+                                //setar cidade
+                                Cidade.setText("City-"+sequenciarespostas.get("Q13"));
+                                }
+                            });
+
+                            //adicionar um evento em que o rato passa por cima 
+                            top4.addMouseListener(
+                            new MouseAdapter(){
+                                public void mouseEntered(MouseEvent e){
+                                    //Query para ir buscar dados do Id1
+                                Query query_update=new Query("get_descri("+resposta.get("Id4").toString()+",Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14).");
+                                Map<String,Term> sequenciarespostas= query_update.oneSolution();
+                                //mudar preco
+                                preco_text.setText("Price-"+sequenciarespostas.get("Q14")+"$");
+                                //mudar Qualidade
+                                Qualidadegeral_text.setText("Overall Quality-"+sequenciarespostas.get("Q1"));
+                                //setar condicao
+                                Condicaogeral_text.setText("Overall Condition-"+sequenciarespostas.get("Q2"));
+                                //setar qualidade da cozinha
+                                Qualidadecozinha_text.setText("Kitchen Quality-"+sequenciarespostas.get("Q3"));
+                                //setar tipo localidade
+                                Tipolocalidade_text.setText("Local type-"+sequenciarespostas.get("Q4"));
+                                //setar tipo alojamento
+                                TipoAlojamento_text.setText("Property type-"+sequenciarespostas.get("Q5"));
+                                //setar material telhado
+                                MaterialTelhado_text.setText("Roof Material-"+sequenciarespostas.get("Q6"));
+                                //setar material telghado
+                                MaterialExterior_text.setText("Exterior Material-"+sequenciarespostas.get("Q7"));
+                                if (sequenciarespostas.get("Q8").toString().equals("na")) {
+                                    Piscina_text.setText("Pool- No");
+                                }else{
+                                    Piscina_text.setText("Pool- Yes");
+                                }
+                                //setar tamanho casa
+                                TamanhoCasa_text.setText("Home type-"+sequenciarespostas.get("Q9"));
+
+                                //setar fogueira
+                                if (Integer.valueOf(sequenciarespostas.get("Q10").toString())>0) {
+                                    Fogueira.setText("Fireplace-Yes");
+                                }else{
+                                    Fogueira.setText("Fireplace-No");  
+                                }
+
+                                //setar qualidade material exterior
+                                QualidadeMaterialExterior.setText("Exterior Quality-"+sequenciarespostas.get("Q11"));
+
+                                //setar condicao do material exterior
+                                CondicaoMaterialExterior.setText("Exterior Condition-"+sequenciarespostas.get("Q12"));
+                                
+                                //setar cidade
+                                Cidade.setText("City-"+sequenciarespostas.get("Q13"));
+                                }
+                            });
+
+                            //adicionar um evento em que o rato passa por cima 
+                            top5.addMouseListener(
+                            new MouseAdapter(){
+                                public void mouseEntered(MouseEvent e){
+                                    //Query para ir buscar dados do Id1
+                                Query query_update=new Query("get_descri("+resposta.get("Id5").toString()+",Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14).");
+                                Map<String,Term> sequenciarespostas= query_update.oneSolution();
+                                //mudar preco
+                                preco_text.setText("Price-"+sequenciarespostas.get("Q14")+"$");
+                                //mudar Qualidade
+                                Qualidadegeral_text.setText("Overall Quality-"+sequenciarespostas.get("Q1"));
+                                //setar condicao
+                                Condicaogeral_text.setText("Overall Condition-"+sequenciarespostas.get("Q2"));
+                                //setar qualidade da cozinha
+                                Qualidadecozinha_text.setText("Kitchen Quality-"+sequenciarespostas.get("Q3"));
+                                //setar tipo localidade
+                                Tipolocalidade_text.setText("Local type-"+sequenciarespostas.get("Q4"));
+                                //setar tipo alojamento
+                                TipoAlojamento_text.setText("Property type-"+sequenciarespostas.get("Q5"));
+                                //setar material telhado
+                                MaterialTelhado_text.setText("Roof Material-"+sequenciarespostas.get("Q6"));
+                                //setar material telghado
+                                MaterialExterior_text.setText("Exterior Material-"+sequenciarespostas.get("Q7"));
+                                if (sequenciarespostas.get("Q8").toString().equals("na")) {
+                                    Piscina_text.setText("Pool- No");
+                                }else{
+                                    Piscina_text.setText("Pool- Yes");
+                                }
+                                //setar tamanho casa
+                                TamanhoCasa_text.setText("Home type-"+sequenciarespostas.get("Q9"));
+
+                                //setar fogueira
+                                if (Integer.valueOf(sequenciarespostas.get("Q10").toString())>0) {
+                                    Fogueira.setText("Fireplace-Yes");
+                                }else{
+                                    Fogueira.setText("Fireplace-No");  
+                                }
+
+                                //setar qualidade material exterior
+                                QualidadeMaterialExterior.setText("Exterior Quality-"+sequenciarespostas.get("Q11"));
+
+                                //setar condicao do material exterior
+                                CondicaoMaterialExterior.setText("Exterior Condition-"+sequenciarespostas.get("Q12"));
+                                
+                                //setar cidade
+                                Cidade.setText("City-"+sequenciarespostas.get("Q13"));
+                                }
+                            });
 
                         //adicionar ao painel
+                        painel.add(Qualidadegeral_text);
+                        painel.add(Condicaogeral_text);
+                        painel.add(Qualidadecozinha_text);
+                        painel.add(Tipolocalidade_text);
+                        painel.add(TipoAlojamento_text);
+                        painel.add(MaterialTelhado_text);
+                        painel.add(MaterialExterior_text);
+                        painel.add(Piscina_text);
+                        painel.add(TamanhoCasa_text);
+                        painel.add(Fogueira);
+                        painel.add(QualidadeMaterialExterior);
+                        painel.add(CondicaoMaterialExterior);
+                        painel.add(Cidade);
                         painel.add(car_text);
                         painel.add(preco_text);
                         painel.add(top5_text);
@@ -440,6 +710,250 @@ public class App {
                         JLabel top4_op=new JLabel("4º - "+resposta_op.get("Id4").toString());
                         JLabel top5_op=new JLabel("5º - "+resposta_op.get("Id5").toString());
                         
+                        //adicionar um evento em que o rato passa por cima 
+                        top1_op.addMouseListener(
+                            new MouseAdapter(){
+                                public void mouseEntered(MouseEvent e){
+                                    //Query para ir buscar dados do Id1
+                                Query query_update=new Query("get_descri("+resposta_op.get("Id1").toString()+",Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14).");
+                                Map<String,Term> sequenciarespostas= query_update.oneSolution();
+                                //mudar preco
+                                preco_text.setText("Price-"+sequenciarespostas.get("Q14")+"$");
+                                //mudar Qualidade
+                                Qualidadegeral_text.setText("Overall Quality-"+sequenciarespostas.get("Q1"));
+                                //setar condicao
+                                Condicaogeral_text.setText("Overall Condition-"+sequenciarespostas.get("Q2"));
+                                //setar qualidade da cozinha
+                                Qualidadecozinha_text.setText("Kitchen Quality-"+sequenciarespostas.get("Q3"));
+                                //setar tipo localidade
+                                Tipolocalidade_text.setText("Local type-"+sequenciarespostas.get("Q4"));
+                                //setar tipo alojamento
+                                TipoAlojamento_text.setText("Property type-"+sequenciarespostas.get("Q5"));
+                                //setar material telhado
+                                MaterialTelhado_text.setText("Roof Material-"+sequenciarespostas.get("Q6"));
+                                //setar material telghado
+                                MaterialExterior_text.setText("Exterior Material-"+sequenciarespostas.get("Q7"));
+                                if (sequenciarespostas.get("Q8").toString().equals("na")) {
+                                    Piscina_text.setText("Pool- No");
+                                }else{
+                                    Piscina_text.setText("Pool- Yes");
+                                }
+                                //setar tamanho casa
+                                TamanhoCasa_text.setText("Home type-"+sequenciarespostas.get("Q9"));
+
+                                //setar fogueira
+                                if (Integer.valueOf(sequenciarespostas.get("Q10").toString())>0) {
+                                    Fogueira.setText("Fireplace-Yes");
+                                }else{
+                                    Fogueira.setText("Fireplace-No");  
+                                }
+
+                                //setar qualidade material exterior
+                                QualidadeMaterialExterior.setText("Exterior Quality-"+sequenciarespostas.get("Q11"));
+
+                                //setar condicao do material exterior
+                                CondicaoMaterialExterior.setText("Exterior Condition-"+sequenciarespostas.get("Q12"));
+                                
+                                //setar cidade
+                                Cidade.setText("City-"+sequenciarespostas.get("Q13"));
+                                }
+                            });
+
+                            //adicionar um evento em que o rato passa por cima 
+                        top2_op.addMouseListener(
+                            new MouseAdapter(){
+                                public void mouseEntered(MouseEvent e){
+                                    //Query para ir buscar dados do Id1
+                                Query query_update=new Query("get_descri("+resposta_op.get("Id2").toString()+",Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14).");
+                                Map<String,Term> sequenciarespostas= query_update.oneSolution();
+                                //mudar preco
+                                preco_text.setText("Price-"+sequenciarespostas.get("Q14")+"$");
+                                //mudar Qualidade
+                                Qualidadegeral_text.setText("Overall Quality-"+sequenciarespostas.get("Q1"));
+                                //setar condicao
+                                Condicaogeral_text.setText("Overall Condition-"+sequenciarespostas.get("Q2"));
+                                //setar qualidade da cozinha
+                                Qualidadecozinha_text.setText("Kitchen Quality-"+sequenciarespostas.get("Q3"));
+                                //setar tipo localidade
+                                Tipolocalidade_text.setText("Local type-"+sequenciarespostas.get("Q4"));
+                                //setar tipo alojamento
+                                TipoAlojamento_text.setText("Property type-"+sequenciarespostas.get("Q5"));
+                                //setar material telhado
+                                MaterialTelhado_text.setText("Roof Material-"+sequenciarespostas.get("Q6"));
+                                //setar material telghado
+                                MaterialExterior_text.setText("Exterior Material-"+sequenciarespostas.get("Q7"));
+                                if (sequenciarespostas.get("Q8").toString().equals("na")) {
+                                    Piscina_text.setText("Pool- No");
+                                }else{
+                                    Piscina_text.setText("Pool- Yes");
+                                }
+                                //setar tamanho casa
+                                TamanhoCasa_text.setText("Home type-"+sequenciarespostas.get("Q9"));
+
+                                //setar fogueira
+                                if (Integer.valueOf(sequenciarespostas.get("Q10").toString())>0) {
+                                    Fogueira.setText("Fireplace-Yes");
+                                }else{
+                                    Fogueira.setText("Fireplace-No");  
+                                }
+
+                                //setar qualidade material exterior
+                                QualidadeMaterialExterior.setText("Exterior Quality-"+sequenciarespostas.get("Q11"));
+
+                                //setar condicao do material exterior
+                                CondicaoMaterialExterior.setText("Exterior Condition-"+sequenciarespostas.get("Q12"));
+                                
+                                //setar cidade
+                                Cidade.setText("City-"+sequenciarespostas.get("Q13"));
+                                }
+                            });
+
+                            //adicionar um evento em que o rato passa por cima 
+                        top3_op.addMouseListener(
+                            new MouseAdapter(){
+                                public void mouseEntered(MouseEvent e){
+                                    //Query para ir buscar dados do Id1
+                                Query query_update=new Query("get_descri("+resposta_op.get("Id3").toString()+",Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14).");
+                                Map<String,Term> sequenciarespostas= query_update.oneSolution();
+                                //mudar preco
+                                preco_text.setText("Price-"+sequenciarespostas.get("Q14")+"$");
+                                //mudar Qualidade
+                                Qualidadegeral_text.setText("Overall Quality-"+sequenciarespostas.get("Q1"));
+                                //setar condicao
+                                Condicaogeral_text.setText("Overall Condition-"+sequenciarespostas.get("Q2"));
+                                //setar qualidade da cozinha
+                                Qualidadecozinha_text.setText("Kitchen Quality-"+sequenciarespostas.get("Q3"));
+                                //setar tipo localidade
+                                Tipolocalidade_text.setText("Local type-"+sequenciarespostas.get("Q4"));
+                                //setar tipo alojamento
+                                TipoAlojamento_text.setText("Property type-"+sequenciarespostas.get("Q5"));
+                                //setar material telhado
+                                MaterialTelhado_text.setText("Roof Material-"+sequenciarespostas.get("Q6"));
+                                //setar material telghado
+                                MaterialExterior_text.setText("Exterior Material-"+sequenciarespostas.get("Q7"));
+                                if (sequenciarespostas.get("Q8").toString().equals("na")) {
+                                    Piscina_text.setText("Pool- No");
+                                }else{
+                                    Piscina_text.setText("Pool- Yes");
+                                }
+                                //setar tamanho casa
+                                TamanhoCasa_text.setText("Home type-"+sequenciarespostas.get("Q9"));
+
+                                //setar fogueira
+                                if (Integer.valueOf(sequenciarespostas.get("Q10").toString())>0) {
+                                    Fogueira.setText("Fireplace-Yes");
+                                }else{
+                                    Fogueira.setText("Fireplace-No");  
+                                }
+
+                                //setar qualidade material exterior
+                                QualidadeMaterialExterior.setText("Exterior Quality-"+sequenciarespostas.get("Q11"));
+
+                                //setar condicao do material exterior
+                                CondicaoMaterialExterior.setText("Exterior Condition-"+sequenciarespostas.get("Q12"));
+                                
+                                //setar cidade
+                                Cidade.setText("City-"+sequenciarespostas.get("Q13"));
+                                }
+                            });
+
+                            //adicionar um evento em que o rato passa por cima 
+                        top4_op.addMouseListener(
+                            new MouseAdapter(){
+                                public void mouseEntered(MouseEvent e){
+                                    //Query para ir buscar dados do Id1
+                                Query query_update=new Query("get_descri("+resposta_op.get("Id4").toString()+",Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14).");
+                                Map<String,Term> sequenciarespostas= query_update.oneSolution();
+                                //mudar preco
+                                preco_text.setText("Price-"+sequenciarespostas.get("Q14")+"$");
+                                //mudar Qualidade
+                                Qualidadegeral_text.setText("Overall Quality-"+sequenciarespostas.get("Q1"));
+                                //setar condicao
+                                Condicaogeral_text.setText("Overall Condition-"+sequenciarespostas.get("Q2"));
+                                //setar qualidade da cozinha
+                                Qualidadecozinha_text.setText("Kitchen Quality-"+sequenciarespostas.get("Q3"));
+                                //setar tipo localidade
+                                Tipolocalidade_text.setText("Local type-"+sequenciarespostas.get("Q4"));
+                                //setar tipo alojamento
+                                TipoAlojamento_text.setText("Property type-"+sequenciarespostas.get("Q5"));
+                                //setar material telhado
+                                MaterialTelhado_text.setText("Roof Material-"+sequenciarespostas.get("Q6"));
+                                //setar material telghado
+                                MaterialExterior_text.setText("Exterior Material-"+sequenciarespostas.get("Q7"));
+                                if (sequenciarespostas.get("Q8").toString().equals("na")) {
+                                    Piscina_text.setText("Pool- No");
+                                }else{
+                                    Piscina_text.setText("Pool- Yes");
+                                }
+                                //setar tamanho casa
+                                TamanhoCasa_text.setText("Home type-"+sequenciarespostas.get("Q9"));
+
+                                //setar fogueira
+                                if (Integer.valueOf(sequenciarespostas.get("Q10").toString())>0) {
+                                    Fogueira.setText("Fireplace-Yes");
+                                }else{
+                                    Fogueira.setText("Fireplace-No");  
+                                }
+
+                                //setar qualidade material exterior
+                                QualidadeMaterialExterior.setText("Exterior Quality-"+sequenciarespostas.get("Q11"));
+
+                                //setar condicao do material exterior
+                                CondicaoMaterialExterior.setText("Exterior Condition-"+sequenciarespostas.get("Q12"));
+                                
+                                //setar cidade
+                                Cidade.setText("City-"+sequenciarespostas.get("Q13"));
+                                }
+                            });
+
+                            //adicionar um evento em que o rato passa por cima 
+                        top5_op.addMouseListener(
+                            new MouseAdapter(){
+                                public void mouseEntered(MouseEvent e){
+                                    //Query para ir buscar dados do Id1
+                                Query query_update=new Query("get_descri("+resposta_op.get("Id5").toString()+",Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14).");
+                                Map<String,Term> sequenciarespostas= query_update.oneSolution();
+                                //mudar preco
+                                preco_text.setText("Price-"+sequenciarespostas.get("Q14")+"$");
+                                //mudar Qualidade
+                                Qualidadegeral_text.setText("Overall Quality-"+sequenciarespostas.get("Q1"));
+                                //setar condicao
+                                Condicaogeral_text.setText("Overall Condition-"+sequenciarespostas.get("Q2"));
+                                //setar qualidade da cozinha
+                                Qualidadecozinha_text.setText("Kitchen Quality-"+sequenciarespostas.get("Q3"));
+                                //setar tipo localidade
+                                Tipolocalidade_text.setText("Local type-"+sequenciarespostas.get("Q4"));
+                                //setar tipo alojamento
+                                TipoAlojamento_text.setText("Property type-"+sequenciarespostas.get("Q5"));
+                                //setar material telhado
+                                MaterialTelhado_text.setText("Roof Material-"+sequenciarespostas.get("Q6"));
+                                //setar material telghado
+                                MaterialExterior_text.setText("Exterior Material-"+sequenciarespostas.get("Q7"));
+                                if (sequenciarespostas.get("Q8").toString().equals("na")) {
+                                    Piscina_text.setText("Pool- No");
+                                }else{
+                                    Piscina_text.setText("Pool- Yes");
+                                }
+                                //setar tamanho casa
+                                TamanhoCasa_text.setText("Home type-"+sequenciarespostas.get("Q9"));
+
+                                //setar fogueira
+                                if (Integer.valueOf(sequenciarespostas.get("Q10").toString())>0) {
+                                    Fogueira.setText("Fireplace-Yes");
+                                }else{
+                                    Fogueira.setText("Fireplace-No");  
+                                }
+
+                                //setar qualidade material exterior
+                                QualidadeMaterialExterior.setText("Exterior Quality-"+sequenciarespostas.get("Q11"));
+
+                                //setar condicao do material exterior
+                                CondicaoMaterialExterior.setText("Exterior Condition-"+sequenciarespostas.get("Q12"));
+                                
+                                //setar cidade
+                                Cidade.setText("City-"+sequenciarespostas.get("Q13"));
+                                }
+                            });
 
                         //add to painel
                         painel.add(top5_text_op);
@@ -450,32 +964,61 @@ public class App {
                         painel.add(top5_op);
 
                         //Setar coords do title
-                        car_text.setBounds((int)(window_width*0.43), (int)(window_height*0.15),100,100);
-                        preco_text.setBounds((int)(window_width*0.43), (int)(window_height*0.20),100,100);
-                        //setar cords top5 normal
-                        top5_text_op.setBounds((int)(window_width*0.90), (int)(window_height*0.15),100,100);
-                        top1_op.setBounds((int)(window_width*0.90), (int)(window_height*0.20),100,100);
-                        top2_op.setBounds((int)(window_width*0.90), (int)(window_height*0.25),100,100);
-                        top3_op.setBounds((int)(window_width*0.90), (int)(window_height*0.30),100,100);
-                        top4_op.setBounds((int)(window_width*0.90), (int)(window_height*0.35),100,100);
-                        top5_op.setBounds((int)(window_width*0.90), (int)(window_height*0.40),100,100);
+                        car_text.setBounds((int)(window_width*0.43), (int)(window_height*0.05),200,100);
+                        preco_text.setBounds((int)(window_width*0.43), (int)(window_height*0.10),200,100);
+                        Qualidadegeral_text.setBounds((int)(window_width*0.43), (int)(window_height*0.15),200,100);
+                        Condicaogeral_text.setBounds((int)(window_width*0.43), (int)(window_height*0.20),200,100);
+                        Qualidadecozinha_text.setBounds((int)(window_width*0.43), (int)(window_height*0.25),200,100);
+                        Tipolocalidade_text.setBounds((int)(window_width*0.43), (int)(window_height*0.30),200,100);
+                        TipoAlojamento_text.setBounds((int)(window_width*0.43), (int)(window_height*0.35),200,100);
+                        MaterialTelhado_text.setBounds((int)(window_width*0.43), (int)(window_height*0.40),200,100);
+                        Piscina_text.setBounds((int)(window_width*0.43), (int)(window_height*0.45),200,100);
+                        TamanhoCasa_text.setBounds((int)(window_width*0.43), (int)(window_height*0.50),200,100);
+                        Fogueira.setBounds((int)(window_width*0.43), (int)(window_height*0.55),200,100);
+                        QualidadeMaterialExterior.setBounds((int)(window_width*0.43), (int)(window_height*0.60),200,100);
+                        CondicaoMaterialExterior.setBounds((int)(window_width*0.43), (int)(window_height*0.65),200,100);
+                        Cidade.setBounds((int)(window_width*0.43), (int)(window_height*0.70),200,100);
 
                         //setar cords top5 normal
-                        top5_text.setBounds((int)(window_width*0.05), (int)(window_height*0.15),100,100);
-                        top1.setBounds((int)(window_width*0.05), (int)(window_height*0.20),100,100);
-                        top2.setBounds((int)(window_width*0.05), (int)(window_height*0.25),100,100);
-                        top3.setBounds((int)(window_width*0.05), (int)(window_height*0.30),100,100);
-                        top4.setBounds((int)(window_width*0.05), (int)(window_height*0.35),100,100);
-                        top5.setBounds((int)(window_width*0.05), (int)(window_height*0.40),100,100);
+                        top5_text_op.setBounds((int)(window_width*0.85), (int)(window_height*0.15),100,15);
+                        top1_op.setBounds((int)(window_width*0.85), (int)(window_height*0.20),70,10);
+                        top2_op.setBounds((int)(window_width*0.85), (int)(window_height*0.30),70,10);
+                        top3_op.setBounds((int)(window_width*0.85), (int)(window_height*0.40),70,10);
+                        top4_op.setBounds((int)(window_width*0.85), (int)(window_height*0.50),70,10);
+                        top5_op.setBounds((int)(window_width*0.85), (int)(window_height*0.60),70,10);
+
+                        //setar cords top5 normal
+                        top5_text.setBounds((int)(window_width*0.05), (int)(window_height*0.15),100,15);
+                        top1.setBounds((int)(window_width*0.05), (int)(window_height*0.20),70,10);
+                        top2.setBounds((int)(window_width*0.05), (int)(window_height*0.30),70,10);
+                        top3.setBounds((int)(window_width*0.05), (int)(window_height*0.40),70,10);
+                        top4.setBounds((int)(window_width*0.05), (int)(window_height*0.50),70,10);
+                        top5.setBounds((int)(window_width*0.05), (int)(window_height*0.60),70,10);
 
                        }else{
                        
                         //setar cords top5 normal
-                        top1.setBounds((int)(window_width*0.20), (int)(window_height*0.20),100,100);
-                        top2.setBounds((int)(window_width*0.20), (int)(window_height*0.25),100,100);
-                        top3.setBounds((int)(window_width*0.20), (int)(window_height*0.30),100,100);
-                        top4.setBounds((int)(window_width*0.20), (int)(window_height*0.35),100,100);
-                        top5.setBounds((int)(window_width*0.20), (int)(window_height*0.40),100,100);
+                        top5_text.setBounds((int)(window_width*0.20), (int)(window_height*0.15),100,15);
+                        top1.setBounds((int)(window_width*0.20), (int)(window_height*0.25),70,10);
+                        top2.setBounds((int)(window_width*0.20), (int)(window_height*0.35),70,10);
+                        top3.setBounds((int)(window_width*0.20), (int)(window_height*0.45),70,10);
+                        top4.setBounds((int)(window_width*0.20), (int)(window_height*0.55),70,10);
+                        top5.setBounds((int)(window_width*0.20), (int)(window_height*0.65),70,10);
+                        //Setar coords do title
+                        car_text.setBounds((int)(window_width*0.70), (int)(window_height*0.05),200,100);
+                        preco_text.setBounds((int)(window_width*0.70), (int)(window_height*0.10),200,100);
+                        Qualidadegeral_text.setBounds((int)(window_width*0.70), (int)(window_height*0.15),200,100);
+                        Condicaogeral_text.setBounds((int)(window_width*0.70), (int)(window_height*0.20),200,100);
+                        Qualidadecozinha_text.setBounds((int)(window_width*0.70), (int)(window_height*0.25),200,100);
+                        Tipolocalidade_text.setBounds((int)(window_width*0.70), (int)(window_height*0.30),200,100);
+                        TipoAlojamento_text.setBounds((int)(window_width*0.70), (int)(window_height*0.35),200,100);
+                        MaterialTelhado_text.setBounds((int)(window_width*0.70), (int)(window_height*0.40),200,100);
+                        Piscina_text.setBounds((int)(window_width*0.70), (int)(window_height*0.45),200,100);
+                        TamanhoCasa_text.setBounds((int)(window_width*0.70), (int)(window_height*0.50),200,100);
+                        Fogueira.setBounds((int)(window_width*0.70), (int)(window_height*0.55),200,100);
+                        QualidadeMaterialExterior.setBounds((int)(window_width*0.70), (int)(window_height*0.60),200,100);
+                        CondicaoMaterialExterior.setBounds((int)(window_width*0.70), (int)(window_height*0.65),200,100);
+                        Cidade.setBounds((int)(window_width*0.70), (int)(window_height*0.70),200,100);
 
                        }
 

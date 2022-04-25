@@ -6,8 +6,30 @@
 
 
 %Funcao para ir buscar carateristicas
-get_carateristicas(Id,QualidadeGeral,CondicaoGeral,QualidadeCozinha,TipoLocalidade,TipoAlojamento,MaterialExterior,Piscina,TamanhoCasa,TemFogueira,QualidadeMaterialExterior,CondicaoMaterialExterior,Cidade).
+/****************************************************************************************************************************************************************/
+/*==============================================================================================================================================================*/
+/*
+Q1- Qualidade_geral
+Q2- Condicao_geral
+Q3- Qualidade_cozinha
+Q4- Tipo_localidade
+Q5- Tipo_alojamento
+Q6- Material_telhado
+Q7- Material exterior
+Q8- Piscina
+Q9- Tamanho_casa
+Q10- Fogueira
+Q11- Qualidade material exterior
+Q12- Condicao material exterior
+Q13- Cidade
+Q14- Preco
+*/
+get_descri(Id,Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14):-
+rentops(Id,Q9,Q4,_,_,_,_,_,_,_,_,_,Q13,_,_,Q5,_,Q1,Q2,_,_,Q6,Q7,_,_,_,Q11,Q12,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Q3,_,_,Q10,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Q8,_,_,_,_,_,_,_,Q14).
+  
 
+/*==============================================================================================================================================================*/
+/****************************************************************************************************************************************************************/
 
 
 %FUNCAO PRINCIPAL CABECA

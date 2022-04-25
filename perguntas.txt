@@ -76,6 +76,8 @@ VALUES 2 - 190 or 160 or 85 or 80
 VALUES 2 - 80 or 60 or 90 or 20 or 30
 *No
 VALUES 2 - 120 or 150 or 50
+
+
 7-Do you enjoy relaxing at a fireplace?
 *Its my favorite thing to do
 VALUES 57 - >1
@@ -94,7 +96,7 @@ VALUES 28 - ex or gd
 VALUES 29 - ex or gd
 *just a bit
 VALUES 28 - fa or ta or gd
-VALUES 28 - fa or ta or gd
+VALUES 29 - fa or ta or gd
 *not rly
 values 28 - all (dar simplesmente os pontos)
 values 29 - all 
