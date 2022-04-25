@@ -1405,7 +1405,7 @@ if allpub and 8 and 8 and 0 and 0 and ex then confort.
 %um sitio apenas para dormir
 if allpub and 5 and 5 and 0 or 0 and 0 and gd then place_to_sleep.
 %place to work
-if nosewr or allpub and 1 and 1 and 0 or 0 then place_to_work.
+if ewq    or allpub and 1 and 1 and 0 or 0 then place_to_work.
 
 %2º Pergunta
 %amo natureza
