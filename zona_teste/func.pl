@@ -1453,3 +1453,5 @@ if collgcr or npkvill or oldtown or sawyer then i_prefer_beatches.
 %i prefer green areas
 if blmngtn or brdale or brkside or crawfor or idotrr or names or nridght or nwames or swisu or sawyerw or somerst or veenker then i_prefer_green_zones.
 
+
+
