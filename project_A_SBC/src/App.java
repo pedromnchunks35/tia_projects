@@ -448,22 +448,22 @@ public class App {
 
                                 //setar qualidade da cozinha
                                 switch (sequenciarespostas.get("Q3").toString()) {
-                                    case "ex":
+                                    case "kitchenex":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Excellent");
                                         break;
-                                    case "gd":
+                                    case "kitchengd":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Good");
                                     break;
 
-                                    case "ta":
+                                    case "kitchenta":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "kitchenfa":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Fair");
                                     break;
 
-                                    case "po":
+                                    case "kitchenpo":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Poor"); 
                                     break;
                                 
@@ -731,22 +731,22 @@ public class App {
 
                                 //setar qualidade material exterior
                                 switch (sequenciarespostas.get("Q11").toString()) {
-                                    case "ex":
+                                    case "extqualex":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Excellent");
                                         break;
-                                    case "gd":
+                                    case "extqualgd":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Good");
                                     break;
 
-                                    case "ta":
+                                    case "extqualta":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "extqualfa":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Fair");
                                     break;
 
-                                    case "po":
+                                    case "extqualpo":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Poor"); 
                                     break;
                                 
@@ -757,22 +757,22 @@ public class App {
 
                                 //setar condicao do material exterior
                                 switch (sequenciarespostas.get("Q12").toString()) {
-                                    case "ex":
+                                    case "extcondex":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Excellent");
                                         break;
-                                    case "gd":
+                                    case "extcondgd":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Good");
                                     break;
 
-                                    case "ta":
+                                    case "extcondta":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "extcondfa":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Fair");
                                     break;
 
-                                    case "po":
+                                    case "extcondpo":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Poor"); 
                                     break;
                                 
@@ -906,22 +906,22 @@ public class App {
 
                                 //setar qualidade da cozinha
                                 switch (sequenciarespostas.get("Q3").toString()) {
-                                    case "ex":
+                                    case "kitchenex":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Excellent");
                                         break;
-                                    case "gd":
+                                    case "kitchengd":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Good");
                                     break;
 
-                                    case "ta":
+                                    case "kitchenta":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "kitchenfa":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Fair");
                                     break;
 
-                                    case "po":
+                                    case "kitchenpo":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Poor"); 
                                     break;
                                 
@@ -1189,22 +1189,22 @@ public class App {
 
                                 //setar qualidade material exterior
                                 switch (sequenciarespostas.get("Q11").toString()) {
-                                    case "ex":
+                                    case "extqualex":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Excellent");
                                         break;
-                                    case "gd":
+                                    case "extqualgd":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Good");
                                     break;
 
-                                    case "ta":
+                                    case "extqualta":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "extqualfa":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Fair");
                                     break;
 
-                                    case "po":
+                                    case "extqualpo":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Poor"); 
                                     break;
                                 
@@ -1215,22 +1215,22 @@ public class App {
 
                                 //setar condicao do material exterior
                                 switch (sequenciarespostas.get("Q12").toString()) {
-                                    case "ex":
+                                    case "extcondex":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Excellent");
                                         break;
-                                    case "gd":
+                                    case "extcondgd":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Good");
                                     break;
 
-                                    case "ta":
+                                    case "extcondta":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "extcondfa":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Fair");
                                     break;
 
-                                    case "po":
+                                    case "extcondpo":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Poor"); 
                                     break;
                                 
@@ -1364,22 +1364,22 @@ public class App {
 
                                 //setar qualidade da cozinha
                                 switch (sequenciarespostas.get("Q3").toString()) {
-                                    case "ex":
+                                    case "kitchenex":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Excellent");
                                         break;
-                                    case "gd":
+                                    case "kitchengd":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Good");
                                     break;
 
-                                    case "ta":
+                                    case "kitchenta":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "kitchenfa":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Fair");
                                     break;
 
-                                    case "po":
+                                    case "kitchenpo":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Poor"); 
                                     break;
                                 
@@ -1647,22 +1647,22 @@ public class App {
 
                                 //setar qualidade material exterior
                                 switch (sequenciarespostas.get("Q11").toString()) {
-                                    case "ex":
+                                    case "extqualex":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Excellent");
                                         break;
-                                    case "gd":
+                                    case "extqualgd":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Good");
                                     break;
 
-                                    case "ta":
+                                    case "extqualta":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "extqualfa":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Fair");
                                     break;
 
-                                    case "po":
+                                    case "extqualpo":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Poor"); 
                                     break;
                                 
@@ -1673,22 +1673,22 @@ public class App {
                                  
                                 //setar condicao do material exterior
                                 switch (sequenciarespostas.get("Q12").toString()) {
-                                    case "ex":
+                                    case "extcondex":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Excellent");
                                         break;
-                                    case "gd":
+                                    case "extcondgd":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Good");
                                     break;
 
-                                    case "ta":
+                                    case "extcondta":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "extcondfa":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Fair");
                                     break;
 
-                                    case "po":
+                                    case "extcondpo":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Poor"); 
                                     break;
                                 
@@ -1822,22 +1822,22 @@ public class App {
 
                                 //setar qualidade da cozinha
                                 switch (sequenciarespostas.get("Q3").toString()) {
-                                    case "ex":
+                                    case "kitchenex":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Excellent");
                                         break;
-                                    case "gd":
+                                    case "kitchengd":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Good");
                                     break;
 
-                                    case "ta":
+                                    case "kitchenta":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "kitchenfa":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Fair");
                                     break;
 
-                                    case "po":
+                                    case "kitchenpo":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Poor"); 
                                     break;
                                 
@@ -2105,22 +2105,22 @@ public class App {
 
                                 //setar qualidade material exterior
                                 switch (sequenciarespostas.get("Q11").toString()) {
-                                    case "ex":
+                                    case "extqualex":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Excellent");
                                         break;
-                                    case "gd":
+                                    case "extqualgd":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Good");
                                     break;
 
-                                    case "ta":
+                                    case "extqualta":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "extqualfa":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Fair");
                                     break;
 
-                                    case "po":
+                                    case "extqualpo":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Poor"); 
                                     break;
                                 
@@ -2131,22 +2131,22 @@ public class App {
 
                                 //setar condicao do material exterior
                                 switch (sequenciarespostas.get("Q12").toString()) {
-                                    case "ex":
+                                    case "extcondex":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Excellent");
                                         break;
-                                    case "gd":
+                                    case "extcondgd":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Good");
                                     break;
 
-                                    case "ta":
+                                    case "extcondta":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "extcondfa":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Fair");
                                     break;
 
-                                    case "po":
+                                    case "extcondpo":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Poor"); 
                                     break;
                                 
@@ -2280,22 +2280,22 @@ public class App {
 
                                 //setar qualidade da cozinha
                                 switch (sequenciarespostas.get("Q3").toString()) {
-                                    case "ex":
+                                    case "kitchenex":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Excellent");
                                         break;
-                                    case "gd":
+                                    case "kitchengd":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Good");
                                     break;
 
-                                    case "ta":
+                                    case "kitchenta":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "kitchenfa":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Fair");
                                     break;
 
-                                    case "po":
+                                    case "kitchenpo":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Poor"); 
                                     break;
                                 
@@ -2563,22 +2563,22 @@ public class App {
 
                                 //setar qualidade material exterior
                                 switch (sequenciarespostas.get("Q11").toString()) {
-                                    case "ex":
+                                    case "extqualex":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Excellent");
                                         break;
-                                    case "gd":
+                                    case "extqualgd":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Good");
                                     break;
 
-                                    case "ta":
+                                    case "extqualta":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "extqualfa":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Fair");
                                     break;
 
-                                    case "po":
+                                    case "extqualpo":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Poor"); 
                                     break;
                                 
@@ -2589,22 +2589,22 @@ public class App {
 
                                 //setar condicao do material exterior
                                 switch (sequenciarespostas.get("Q12").toString()) {
-                                    case "ex":
+                                    case "extcondex":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Excellent");
                                         break;
-                                    case "gd":
+                                    case "extcondgd":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Good");
                                     break;
 
-                                    case "ta":
+                                    case "extcondta":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "extcondfa":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Fair");
                                     break;
 
-                                    case "po":
+                                    case "extcondpo":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Poor"); 
                                     break;
                                 
@@ -2776,22 +2776,22 @@ public class App {
 
                                 //setar qualidade da cozinha
                                 switch (sequenciarespostas.get("Q3").toString()) {
-                                    case "ex":
+                                    case "kitchenex":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Excellent");
                                         break;
-                                    case "gd":
+                                    case "kitchengd":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Good");
                                     break;
 
-                                    case "ta":
+                                    case "kitchenta":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "kitchenfa":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Fair");
                                     break;
 
-                                    case "po":
+                                    case "kitchenpo":
                                     Qualidadecozinha_text.setText("Kitchen Quality: Poor"); 
                                     break;
                                 
@@ -3059,22 +3059,22 @@ public class App {
 
                                 //setar qualidade material exterior
                                 switch (sequenciarespostas.get("Q11").toString()) {
-                                    case "ex":
+                                    case "extqualex":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Excellent");
                                         break;
-                                    case "gd":
+                                    case "extqualgd":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Good");
                                     break;
 
-                                    case "ta":
+                                    case "extqualta":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "extqualfa":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Fair");
                                     break;
 
-                                    case "po":
+                                    case "extqualpo":
                                     QualidadeMaterialExterior.setText("Exterior Quality: Poor"); 
                                     break;
                                 
@@ -3085,22 +3085,22 @@ public class App {
 
                                 //setar condicao do material exterior
                                 switch (sequenciarespostas.get("Q12").toString()) {
-                                    case "ex":
+                                    case "extcondex":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Excellent");
                                         break;
-                                    case "gd":
+                                    case "extcondgd":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Good");
                                     break;
 
-                                    case "ta":
+                                    case "extcondta":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Typical/Average");  
                                     break;
 
-                                    case "fa":
+                                    case "extcondfa":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Fair");
                                     break;
 
-                                    case "po":
+                                    case "extcondpo":
                                     CondicaoMaterialExterior.setText("Exterior Condition: Poor"); 
                                     break;
                                 
@@ -3233,22 +3233,22 @@ public class App {
     
                                     //setar qualidade da cozinha
                                     switch (sequenciarespostas.get("Q3").toString()) {
-                                        case "ex":
+                                        case "kitchenex":
                                         Qualidadecozinha_text.setText("Kitchen Quality: Excellent");
                                             break;
-                                        case "gd":
+                                        case "kitchengd":
                                         Qualidadecozinha_text.setText("Kitchen Quality: Good");
                                         break;
     
-                                        case "ta":
+                                        case "kitchenta":
                                         Qualidadecozinha_text.setText("Kitchen Quality: Typical/Average");  
                                         break;
     
-                                        case "fa":
+                                        case "kitchenfa":
                                         Qualidadecozinha_text.setText("Kitchen Quality: Fair");
                                         break;
     
-                                        case "po":
+                                        case "kitchenpo":
                                         Qualidadecozinha_text.setText("Kitchen Quality: Poor"); 
                                         break;
                                     
@@ -3516,22 +3516,22 @@ public class App {
     
                                     //setar qualidade material exterior
                                     switch (sequenciarespostas.get("Q11").toString()) {
-                                        case "ex":
+                                        case "extqualex":
                                         QualidadeMaterialExterior.setText("Exterior Quality: Excellent");
                                             break;
-                                        case "gd":
+                                        case "extqualgd":
                                         QualidadeMaterialExterior.setText("Exterior Quality: Good");
                                         break;
     
-                                        case "ta":
+                                        case "extqualta":
                                         QualidadeMaterialExterior.setText("Exterior Quality: Typical/Average");  
                                         break;
     
-                                        case "fa":
+                                        case "extqualfa":
                                         QualidadeMaterialExterior.setText("Exterior Quality: Fair");
                                         break;
     
-                                        case "po":
+                                        case "extqualpo":
                                         QualidadeMaterialExterior.setText("Exterior Quality: Poor"); 
                                         break;
                                     
@@ -3542,22 +3542,22 @@ public class App {
     
                                     //setar condicao do material exterior
                                     switch (sequenciarespostas.get("Q12").toString()) {
-                                        case "ex":
+                                        case "extcondex":
                                         CondicaoMaterialExterior.setText("Exterior Condition: Excellent");
                                             break;
-                                        case "gd":
+                                        case "extcondgd":
                                         CondicaoMaterialExterior.setText("Exterior Condition: Good");
                                         break;
     
-                                        case "ta":
+                                        case "extcondta":
                                         CondicaoMaterialExterior.setText("Exterior Condition: Typical/Average");  
                                         break;
     
-                                        case "fa":
+                                        case "extcondfa":
                                         CondicaoMaterialExterior.setText("Exterior Condition: Fair");
                                         break;
     
-                                        case "po":
+                                        case "extcondpo":
                                         CondicaoMaterialExterior.setText("Exterior Condition: Poor"); 
                                         break;
                                     
@@ -3691,22 +3691,22 @@ public class App {
     
                                     //setar qualidade da cozinha
                                     switch (sequenciarespostas.get("Q3").toString()) {
-                                        case "ex":
+                                        case "kitchenex":
                                         Qualidadecozinha_text.setText("Kitchen Quality: Excellent");
                                             break;
-                                        case "gd":
+                                        case "kitchengd":
                                         Qualidadecozinha_text.setText("Kitchen Quality: Good");
                                         break;
     
-                                        case "ta":
+                                        case "kitchenta":
                                         Qualidadecozinha_text.setText("Kitchen Quality: Typical/Average");  
                                         break;
     
-                                        case "fa":
+                                        case "kitchenfa":
                                         Qualidadecozinha_text.setText("Kitchen Quality: Fair");
                                         break;
     
-                                        case "po":
+                                        case "kitchenpo":
                                         Qualidadecozinha_text.setText("Kitchen Quality: Poor"); 
                                         break;
                                     
@@ -3974,22 +3974,22 @@ public class App {
     
                                     //setar qualidade material exterior
                                     switch (sequenciarespostas.get("Q11").toString()) {
-                                        case "ex":
+                                        case "extqualex":
                                         QualidadeMaterialExterior.setText("Exterior Quality: Excellent");
                                             break;
-                                        case "gd":
+                                        case "extqualgd":
                                         QualidadeMaterialExterior.setText("Exterior Quality: Good");
                                         break;
     
-                                        case "ta":
+                                        case "extqualta":
                                         QualidadeMaterialExterior.setText("Exterior Quality: Typical/Average");  
                                         break;
     
-                                        case "fa":
+                                        case "extqualfa":
                                         QualidadeMaterialExterior.setText("Exterior Quality: Fair");
                                         break;
     
-                                        case "po":
+                                        case "extqualpo":
                                         QualidadeMaterialExterior.setText("Exterior Quality: Poor"); 
                                         break;
                                     
@@ -4000,22 +4000,22 @@ public class App {
     
                                     //setar condicao do material exterior
                                     switch (sequenciarespostas.get("Q12").toString()) {
-                                        case "ex":
+                                        case "extcondex":
                                         CondicaoMaterialExterior.setText("Exterior Condition: Excellent");
                                             break;
-                                        case "gd":
+                                        case "extcondgd":
                                         CondicaoMaterialExterior.setText("Exterior Condition: Good");
                                         break;
     
-                                        case "ta":
+                                        case "extcondta":
                                         CondicaoMaterialExterior.setText("Exterior Condition: Typical/Average");  
                                         break;
     
-                                        case "fa":
+                                        case "extcondfa":
                                         CondicaoMaterialExterior.setText("Exterior Condition: Fair");
                                         break;
     
-                                        case "po":
+                                        case "extcondpo":
                                         CondicaoMaterialExterior.setText("Exterior Condition: Poor"); 
                                         break;
                                     
@@ -4148,22 +4148,22 @@ public class App {
         
                                         //setar qualidade da cozinha
                                         switch (sequenciarespostas.get("Q3").toString()) {
-                                            case "ex":
+                                            case "kitchenex":
                                             Qualidadecozinha_text.setText("Kitchen Quality: Excellent");
                                                 break;
-                                            case "gd":
+                                            case "kitchengd":
                                             Qualidadecozinha_text.setText("Kitchen Quality: Good");
                                             break;
         
-                                            case "ta":
+                                            case "kitchenta":
                                             Qualidadecozinha_text.setText("Kitchen Quality: Typical/Average");  
                                             break;
         
-                                            case "fa":
+                                            case "kitchenfa":
                                             Qualidadecozinha_text.setText("Kitchen Quality: Fair");
                                             break;
         
-                                            case "po":
+                                            case "kitchenpo":
                                             Qualidadecozinha_text.setText("Kitchen Quality: Poor"); 
                                             break;
                                         
@@ -4431,22 +4431,22 @@ public class App {
         
                                         //setar qualidade material exterior
                                         switch (sequenciarespostas.get("Q11").toString()) {
-                                            case "ex":
+                                            case "extqualex":
                                             QualidadeMaterialExterior.setText("Exterior Quality: Excellent");
                                                 break;
-                                            case "gd":
+                                            case "extqualgd":
                                             QualidadeMaterialExterior.setText("Exterior Quality: Good");
                                             break;
         
-                                            case "ta":
+                                            case "extqualta":
                                             QualidadeMaterialExterior.setText("Exterior Quality: Typical/Average");  
                                             break;
         
-                                            case "fa":
+                                            case "extqualfa":
                                             QualidadeMaterialExterior.setText("Exterior Quality: Fair");
                                             break;
         
-                                            case "po":
+                                            case "extqualpo":
                                             QualidadeMaterialExterior.setText("Exterior Quality: Poor"); 
                                             break;
                                         
@@ -4457,22 +4457,22 @@ public class App {
         
                                         //setar condicao do material exterior
                                         switch (sequenciarespostas.get("Q12").toString()) {
-                                            case "ex":
+                                            case "extcondex":
                                             CondicaoMaterialExterior.setText("Exterior Condition: Excellent");
                                                 break;
-                                            case "gd":
+                                            case "extcondgd":
                                             CondicaoMaterialExterior.setText("Exterior Condition: Good");
                                             break;
         
-                                            case "ta":
+                                            case "extcondta":
                                             CondicaoMaterialExterior.setText("Exterior Condition: Typical/Average");  
                                             break;
         
-                                            case "fa":
+                                            case "extcondfa":
                                             CondicaoMaterialExterior.setText("Exterior Condition: Fair");
                                             break;
         
-                                            case "po":
+                                            case "extcondpo":
                                             CondicaoMaterialExterior.setText("Exterior Condition: Poor"); 
                                             break;
                                         
@@ -4605,22 +4605,22 @@ public class App {
             
                                             //setar qualidade da cozinha
                                             switch (sequenciarespostas.get("Q3").toString()) {
-                                                case "ex":
+                                                case "kitchenex":
                                                 Qualidadecozinha_text.setText("Kitchen Quality: Excellent");
                                                     break;
-                                                case "gd":
+                                                case "kitchengd":
                                                 Qualidadecozinha_text.setText("Kitchen Quality: Good");
                                                 break;
             
-                                                case "ta":
+                                                case "kitchenta":
                                                 Qualidadecozinha_text.setText("Kitchen Quality: Typical/Average");  
                                                 break;
             
-                                                case "fa":
+                                                case "kitchenfa":
                                                 Qualidadecozinha_text.setText("Kitchen Quality: Fair");
                                                 break;
             
-                                                case "po":
+                                                case "kitchenpo":
                                                 Qualidadecozinha_text.setText("Kitchen Quality: Poor"); 
                                                 break;
                                             
@@ -4888,22 +4888,22 @@ public class App {
             
                                             //setar qualidade material exterior
                                             switch (sequenciarespostas.get("Q11").toString()) {
-                                                case "ex":
+                                                case "extqualex":
                                                 QualidadeMaterialExterior.setText("Exterior Quality: Excellent");
                                                     break;
-                                                case "gd":
+                                                case "extqualgd":
                                                 QualidadeMaterialExterior.setText("Exterior Quality: Good");
                                                 break;
             
-                                                case "ta":
+                                                case "extqualta":
                                                 QualidadeMaterialExterior.setText("Exterior Quality: Typical/Average");  
                                                 break;
             
-                                                case "fa":
+                                                case "extqualfa":
                                                 QualidadeMaterialExterior.setText("Exterior Quality: Fair");
                                                 break;
             
-                                                case "po":
+                                                case "extqualpo":
                                                 QualidadeMaterialExterior.setText("Exterior Quality: Poor"); 
                                                 break;
                                             
@@ -4914,22 +4914,22 @@ public class App {
             
                                             //setar condicao do material exterior
                                             switch (sequenciarespostas.get("Q12").toString()) {
-                                                case "ex":
+                                                case "extcondex":
                                                 CondicaoMaterialExterior.setText("Exterior Condition: Excellent");
                                                     break;
-                                                case "gd":
+                                                case "extcondgd":
                                                 CondicaoMaterialExterior.setText("Exterior Condition: Good");
                                                 break;
             
-                                                case "ta":
+                                                case "extcondta":
                                                 CondicaoMaterialExterior.setText("Exterior Condition: Typical/Average");  
                                                 break;
             
-                                                case "fa":
+                                                case "extcondfa":
                                                 CondicaoMaterialExterior.setText("Exterior Condition: Fair");
                                                 break;
             
-                                                case "po":
+                                                case "extcondpo":
                                                 CondicaoMaterialExterior.setText("Exterior Condition: Poor"); 
                                                 break;
                                             
