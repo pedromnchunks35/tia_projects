@@ -198,21 +198,119 @@ if rm or rh then i_like_people:5.
 
 if townhouse then i_like_people:3.
 
-%neutral
+%resposta neutral
 if rl or rp then neutral:10.
 
 if duplx or n2FmCon then neutral:12.
 
-%i dont rly like people
+%resposta i dont rly like people
 if a or c or fv then i_dont_like_people:10.
 
 if n1Fam then i_dont_like_people:15.
 
 /*Pergunta 4*/
 
+%resposta jazz
+if grvl then jazz:3.
 
+if reg then jazz:1.
 
+if mansard then jazz:1.
 
+if wdshake or wdshngl then jazz:1.
 
+if wdsdng or wdshing or stone then jazz:1.
+
+%resposta pop
+if pave then pop:3.
+
+if ir3 or reg then pop:1.
+
+if shed then pop:1.
+
+if metal then pop:1.
+
+if plywood or metalsd then pop:1.
+
+%resposta rap
+if grvl or pave then rap:3.
+
+if ir3 then rap:1.
+
+if shed or hip then rap:1.
+
+if roll then rap:1.
+
+if cemntbd then rap:1.
+
+/*Pergunta 5*/
+
+%resposta yes, a lot
+if fa or ta or gd then yes_a_lot:15.
+
+%resposta sou um campeao
+if ex or gd then champion:10.
+
+%resposta nop
+if na then not_rly:5.
+
+/*Pergunta 6*/
+
+%resposta sim , grande
+if 190 or 160 or 85 or 80 then big_one:15.
+
+%resposta sim
+if 80 or 60 or 90 or 20 or 30 then yes_family:12.
+
+%resposta no
+if 120 or 150 or 50 then no_family:10.
+
+/*7º Pergunta*/
+
+%resposta sim , favorita
+if 1 then yes_favorite_fireplace:5.
+
+if ex or gd or ta then yes_favorite_fireplace:3.
+
+%resposta okay
+if 1 then its_ok_fireplace:7.
+
+if 2 then its_ok_fireplace:5.
+
+if fa or ta then its_ok_fireplace:2.
+
+%resposta nop
+if na then not_rly_fireplace:5.
+
+/*8º Pergunta*/
+
+%resposta sim , bastante
+if ex or gd then yes_alot_appear:4.
+
+if ex or gd then yes_alot_appear:3.
+
+%resposta um bocado
+if fa or ta or gd then just_a_bit_appear:5.
+
+if fa or ta or gd then just_a_bit_appear:2.
+
+%resposta nop
+if all then not_rly_appear:6.
+
+if all then not_rly_appear:2.
+
+/*9º Pergunta*/
+
+%resposta yes i love it
+if clearcr or meadowv or noridge or stonebr or timber then yes_i_love_it:10.
+
+%resposta i prefer the desert
+if blueste or edwards or gilbert then i_prefer_desert:12.
+
+%resposta i prefer beatches
+if collgcr or npkvill or oldtown or sawyer then i_prefer_beatches:10.
+
+%resposta i prefer green areas
+if blmngtn or brdale or brkside or crawfor or idotrr or names or nridght or nwames or swisu or sawyerw or somerst or veenker then i_prefer_green_zones:15.
 
 
