@@ -665,7 +665,7 @@ if ano_construido_maior:1971 and yes_i_love_it2 then yes_i_love_it3:3:0.
 if rm and yes_i_love_it3 then yes_i_love_it4:4:0.
 /* id: 5 pontos: 1*/
 if qualidade_geral_menor_igual:5 and yes_i_love_it4 then yes_i_love_it:5:1.
-
+%adad
 %resposta i prefer the desert
 /* id: 1 */
 if lot_area_maior:2081 then i_prefer_desert1:1:0.
