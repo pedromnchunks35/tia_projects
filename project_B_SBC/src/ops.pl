@@ -527,7 +527,8 @@ if 663 then confort:2:5.
 /* id: 1 pontos: 13*/
 if gd then place_to_sleep:1:13.
 /* id: 2 pontos: 3*/
-if 1970 then place_to_sleep:2:3.
+if 1970 then place_to_sleep_datac:1:0.
+if gd and place_to_sleep_datac then place_to_sleep:2:20.
 /* id: 3 pontos: 2*/
 if 669 then place_to_sleep:3:2.
 /* id: 4 pontos: 2*/
