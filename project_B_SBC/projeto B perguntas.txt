@@ -1,0 +1,103 @@
+Pergunta 1    OveralQual Value 18
+
+1ªResposta (8): ExterQual-28 = Ex and GarageArea-63 <= 663
+
+2ªResposta (6): ExterQual-28 = Gd and YearBuilt-20 > 1970 and GarageArea-63 <= 669 and 1stFlrSF-44 <= 1493 GarageArea-63 <= 444.5
+
+3ªResposta (4): ExterQual-28 = TA and GrLivArea-47 <= 1973.5
+
+
+
+Pergunta 2    MSZoning Value 3
+
+1ªResposta (fv): LotArea-5 > 2081 and Street-6 = pave and Alley-7 = Pave and YearBuilt-20 > 1982
+
+2ªResposta (rl): LotArea-5 > 2081 and Street-6 = pave and Alley-7 = empty and OverallCond-19 > 1.500 and SalePrice-81 > 140494.016 and GrLivArea-47 > 569.500.
+
+
+
+Pergunta 3    BldgType Value 16
+
+1ªResposta (twnhse): MSSubClass-2 > 87.5 and MSSubClass-2 > 105 and MSSubClass-2 <= 185 and GrLivArea-47 <= 2604.5 and LotArea-5 > 2655 and GarageArea-63 <= 611.
+
+2ªResposta (duplex): MSSubClass-2 > 87.5 and MSSubClass-2 <= 105
+
+3ªResposta (1fam): MSSubClass-2 <= 87.500
+
+
+
+Pergunta 4     Exterior1st Value 24
+
+1ªResposta (vinylsd): OverallQuall-18 > 1.500 and LotArea-5 > 1604 and YearBuilt-20 > 1993.5 and Exterior2nd-25 = vinylsd
+
+2ªResposta (metalsd): OverallQuall-18 > 1.500 and LotArea-5 > 1604 and YearBuilt-20 > 1993.5 and Exterior2nd-25 = metalsd
+
+3ªResposta (cemntbd): OverallQuall-18 > 1.500 and LotArea-5 > 1604 and YearBuilt-20 > 1993.5 and Exterior2nd-25 = cmentbd
+
+
+
+Pergunta 5 PoolQC     Value 73
+ 
+1ªResposta (ex): PoolQC-73 = ex
+
+2ªResposta (gd): PoolQC-73 = gd
+
+3ªResposta (empty): PoolQC-73 = empty
+
+
+
+Pergunta 6 MSSubClass     Value 3
+
+1ªResposta (80): BldgType-16 = 1Fam and HouseStyle-17 = SLvl
+
+2ªResposta (60): BldgType-16 = 1Fam and HouseStyle-17 = 2Story
+
+3ªResposta (120): BldgType-16 = TwnhsE and HouseStyle-17 = 1Story 
+
+
+
+Pergunta 7 FireplaceQu     Value 58
+
+1ªResposta (gd): 2ndFirSF-45 <= 1849 and 1stFirSF-44 > 509 and EnclosedPorch-69 <= 798 and 3SsnPorch-70 <= 307.5 and GrLivArea-47 > 792 and BedroomAbvGr-52 > 2001.5 and LotArea-5 > 3079.5 and Foundation-30 = PConc
+
+2ªResposta (ta): 2ndFirSF-45 <= 1849 and 1stFirSF-44 > 509 and EnclosedPorch-69 <= 798 and 3SsnPorch-70 <= 307.5 and GrLivArea-47 > 792 and BedroomAbvGr-52 <= 2001.5 and ScreenPorch-71 <= 345 and YearBuilt-20 > 1959.5
+
+3ªResposta (fireempty): FireplaceQu-58 = fireempty
+
+
+
+
+Pergunta 8 ExterQual     Value 28
+
+1ªResposta (ex): OverallQual-18 <= 9.500 and OverallQual-18 > 8.500 and YearRemodAdd-21 > 2003.5 and TotalBsmtSF-39 > 1432.5 and MasVnrArea-27 > 142
+
+2ªResposta (gd): OverallQual-18 <= 9.500 and OverallQual-18 <= 8.500 and YearBuilt-20 > 1985.5 and 3SsnPorch-70 <= 76.5 and KitchenQual-54 = Gd and GarageCars-62 > 0.5
+
+3ªResposta (to): OverallQual-18 <= 9.500 and OverallQual-18 <= 8.500 and YearBuilt-20 <= 1985.5 and OverallQual-18 <=7.5 and YearRemodAdd-21 <= 2008.5
+
+
+
+
+
+Pergunta 9 Neighborhood     Value 13
+
+1ªResposta (meadowv): LotArea-5 > 2081 and LotArea-5 > 2379 and YearBuilt-20 > 1971.5 and MSZoning-3 = RM and OverallQual-18 <= 5.5
+ 
+2ªResposta (edwards): LotArea-5 > 2081 and LotArea-5 > 2379 and YearBuilt-20 > 1971.5 and MSZoning-3 = RM and OverallQual-18 > 5.5 and LandSlope-12 = Gtl and GarageYrBlt-60 > 1997.5
+ 
+3ªResposta (oldtown):LotArea-5 > 2081 and LotArea-5 > 2379 and YearBuilt-20 <= 1971.5 and MSZoning-3 = RM 
+
+4ªResposta (somerst): LotArea-5 > 2081 and LotArea-5 > 2379 and YearBuilt-20 > 1971.5 and MSZoning-3 = FV
+
+
+
+
+
+
+
+
+
+
+
+
+
