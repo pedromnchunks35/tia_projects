@@ -41,17 +41,17 @@ rentops(Id,Q9,Q4,_,_,_,_,_,_,_,_,_,Q13,_,_,Q5,_,Q1,Q2,_,_,Q6,_,Q7,_,_,_,Q11,Q12,
 %cabeca
 cabeca(Preco,R1,R2,R3,R4,R5,R6,R7,R8,R9,R):-
    %comprovar predicados em que existe filtro de precos
-   findall(_,demo(R1,Preco),_),
-   findall(_,demo(R2,Preco),_),
-   findall(_,demo(R3,Preco),_),
-   findall(_,demo(R4,Preco),_),
-   findall(_,demo(R5,Preco),_),
-   findall(_,demo(R6,Preco),_),
-   findall(_,demo(R7,Preco),_),
-   findall(_,demo(R8,Preco),_),
-   findall(_,demo(R9,Preco),_),
+   findall(_,demo(R1),_),
+   findall(_,demo(R2),_),
+   findall(_,demo(R3),_),
+   findall(_,demo(R4),_),
+   findall(_,demo(R5),_),
+   findall(_,demo(R6),_),
+   findall(_,demo(R7),_),
+   findall(_,demo(R8),_),
+   findall(_,demo(R9),_),
    %ir buscar todos os ids que tem pontos
-   findall(Id,verdadeiro(Id,_),Lista_ids),
+   findall(Id,corresponde_preco(Id,Preco),Lista_ids),
    %remover duplicados
    sort(Lista_ids,Newlista),
    %calcular pontos
@@ -67,13 +67,13 @@ cabeca(Preco,R1,R2,R3,R4,R5,R6,R7,R8,R9,R):-
 /*==============================================================================================================================================================*/
 %A.1
 %funcao de comeco que verifica se o Resultado do predicado ja foi comprovado e se nao estiver procura comprova-lo
-demo(P,Preco):- provavelfacto(Id,P:Id_p:Points,Preco),
+demo(P):- provavelfacto(Id,P:Id_p:Points),
 %descritor
 write('Derivou do id ->') , write(Id) , write(" com a regra ->"), write(P),write(" e com os pontos ->"),write(Points),nl,
 %tornar o facto verdadeiro
 assert(verdadeiro(Id,P:Id_p:Points)),
 %acabar com a iteracao
-demo(P,Preco).
+demo(P).
 /*==============================================================================================================================================================*/
 %A.2
 %paragem
@@ -83,17 +83,17 @@ demo(_,_):-
 /*==============================================================================================================================================================*/
 %A.3
 %funcao de verificacao de facto e por sua vez aprovacao do mesmo caso nao seja facto
-provavelfacto(Id,P:Id_p:Points,Preco):-
+provavelfacto(Id,P:Id_p:Points):-
    %ir buscar a regra
    if Cond then P:Id_p:Points,
    %se a regra nao estiver comprovada verificar se é possivel comprovar
    \+ verdadeiro(Id,P:Id_p:Points),
    %comprovar
-   verificarfacto(Id,Cond,Preco).
+   verificarfacto(Id,Cond).
 /*==============================================================================================================================================================*/
 %A.4
-verificarfacto(Id,B1 and B2,Preco):-
-   verificarfacto(Id,B1,Preco),
+verificarfacto(Id,B1 and B2):-
+   verificarfacto(Id,B1),
    verificarfacto(Id,B2,Preco).
 /****************************************************************************************************************************************************************/
 %A.5 value ExterQual 28
@@ -280,6 +280,12 @@ verificarfacto(Id,ano_garagem_construido_maior:B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /*==============================================================================================================================================================*/
+%A.43 corresponde preco
+corresponde_preco(Id,Preco):-
+      verdadeiro(Id,_),
+      rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Preco_facto),
+      Preco_facto<Preco. 
+/*==============================================================================================================================================================*/                 
 
 /*funcao para pegar nos precos filtrados e calcular os pontos*/
 /*CATEGORIA B*/
