@@ -14,8 +14,8 @@ gosta(4,louis,candace,5,koalas,2400).
 
 
 cabeca(P,Preco,R):-
-    findall(_,demo(P,Preco),_),
-    findall(Y,verdadeiro(Y,_),Bag),
+    findall(_,demo(P),_),
+    findall(Id,corresponde_preco(Id,Preco),Bag),
     sort(Bag,New),
     counter_points(New,[],R).
 
@@ -29,72 +29,57 @@ counter_points([Id|Resto],Lista,R):-
     append(Lista,[[Id,Soma_pontos]],Lista_aim),
     counter_points(Resto,Lista_aim,R).
     
+corresponde_preco(Id,Preco):-
+    verdadeiro(Id,_),
+    gosta(Id,_,_,_,_,Preco_facto),
+    Preco_facto<Preco.
 
 
 %Apartir da resposta do usar ir verificar que factos correspondem a este
-demo(P,Preco):- provavelfacto(Id,P:Id_p:Points,Preco),
+demo(P):- provavelfacto(Id,P:Id_p:Points),
 write('Derived ') , write(Id) , write(" from "), write(P),write(" id "),write(Id_p),write(" Which points are "),write(Points),nl,
 assert(verdadeiro(Id,P:Id_p:Points)),
-demo(P,Preco).
+demo(P).
 
 demo(_,_):-
     write('No more facts').
 
-provavelfacto(Id,P:Id_p:Points,Preco):-
+provavelfacto(Id,P:Id_p:Points):-
     if Cond then P:Id_p:Points,
     \+ verdadeiro(Id,P:Id_p:Points) ,
-    verificarfacto(Id,Cond,Preco).
+    verificarfacto(Id,Cond).
 
-verificarfacto(Id,entre:X:e:Y,Preco):-
-    gosta(Id,_,_,X1,_,P),
-    P<Preco,
+verificarfacto(Id,entre:X:e:Y):-
+    gosta(Id,_,_,X1,_,_),
     X1 > X,
     X1 < Y.
 
-verificarfacto(Id,B1 and B2,Preco):-
-verificarfacto(Id,B1,Preco),
-verificarfacto(Id,B2,Preco).
+verificarfacto(Id,B1 and B2):-
+verificarfacto(Id,B1),
+verificarfacto(Id,B2).
 
-verificarfacto(Id,B1 or B2,Preco):-
-    verificarfacto(Id,B1,Preco);
-    verificarfacto(Id,B2,Preco).
+verificarfacto(Id,B1 or B2):-
+    verificarfacto(Id,B1);
+    verificarfacto(Id,B2).
 
-verificarfacto(Id,B,Preco):-
-  gosta(Id,B,_,_,_,P),
-  P<Preco.
+verificarfacto(Id,B):-
+  gosta(Id,B,_,_,_,_).
+  
 
-verificarfacto(Id,B,Preco):-
-    gosta(Id,_,B,_,_,P),
-    P<Preco.
+verificarfacto(Id,B):-
+    gosta(Id,_,B,_,_,_).
+    
 
-verificarfacto(Id,B,Preco):-
-    gosta(Id,_,_,B,_,P),
-    P<Preco.
+verificarfacto(Id,B):-
+    gosta(Id,_,_,B,_,_).
+    
 
-verificarfacto(Id,B,Preco):-
-    gosta(Id,_,_,_,B,P),
-    P<Preco.
+verificarfacto(Id,B):-
+    gosta(Id,_,_,_,B,_).
+    
 
-verificarfacto(Id,_:Id_p:_,_):-
-    findall(Id_verify,verdadeiro(Id,_:Id_verify:_),Bag),
-    member(Id_p,Bag).
-
-
-verificarfacto(Id, P1:Id_p:P2 and B ,Preco):-
-    verificarfacto(Id,P1:Id_p:P2,_),
-    verificarfacto(Id,B,Preco).
-
-verificarfacto(Id, P1:Id_p:P2 or B ,Preco):-
-    verificarfacto(Id,P1:Id_p:P2,_);
-    verificarfacto(Id,B,Preco).
-
-verificarfacto(Id, P1:Id_p:P2 and P3:Id_p2:P4 ,_):-
-    verificarfacto(Id,P1:Id_p:P2,_),
-    verificarfacto(Id,P3:Id_p2:P4,_).
-
-verificarfacto(Id, P1:Id_p:P2 or P3:Id_p2:P4 ,_):-
-    verificarfacto(Id,P1:Id_p:P2,_),
-    verificarfacto(Id,P3:Id_p2:P4,_).
+verificarfacto(Id,B,_):-
+    verdadeiro(Id,B:_).
     
 
 
@@ -102,19 +87,10 @@ verificarfacto(Id, P1:Id_p:P2 or P3:Id_p2:P4 ,_):-
 
 if entre:4:e:6 then bonita:1:20.
 
-if bonita:1:20 and bonita:1:20 and bonita:1:20 and bonita:1:20 then bonitacacete:1:1000.
-
 if pedro and marta then bonita:2:30.
 
-if bonita:1:20 and koalas then bonita:3:40.
+if bonita and pedro then calhau:1:20.
 
-if bonita:1:20 and pedro then bonita:4:100.
-
-if louis and koalas then julia:1:30.
-
-if candace and cancas then k:1:100.
-
-if louis or pilas then mud_bath:1:40. 
 
 
 
