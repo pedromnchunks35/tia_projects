@@ -8,16 +8,15 @@
 fact(ex).
 fact(gd).
 
-exp(V:overall):-
+exp(V:X):-
     fact(V),
-    write("Deu").
+    write(X).
 
-exp(V1:overall):-
+exp(V1:X1):-
     fact(V1),
-    write("Deu").
+    write(X1).
 
 
-exp(V:overall and V1:overall:X):-
-    exp(V:overall),
-    exp(V1:overall).
+exp(V and X):-
+    exp(V),
     exp(X).
