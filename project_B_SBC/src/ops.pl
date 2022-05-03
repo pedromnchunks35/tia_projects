@@ -518,115 +518,115 @@ list_top_5(Xs, Ys) :-
 /*Pergunta 1*/
 
 %resposta confort 
-/*   id: 1 pontos: 10  */
+/*   id: 1 */
 if ex then confort1:1:0.
-/*   id: 2 pontos: 5  */
-if 663 and confort1 then confort:2:5.
+/*   id: 2 pontos: 1*/
+if 663 and confort1 then confort:2:1.
 
 %resposta place to sleep
-/* id: 1 pontos: 13*/
+/* id: 1 */
 if gd then place_to_sleep1:1:0.
-/* id: 2 pontos: 3*/
+/* id: 2 */
 if 1970 and place_to_sleep1 then place_to_sleep2:1:0.
-/* id: 3 pontos: 2*/
+/* id: 3 */
 if 669 and place_to_sleep2 then place_to_sleep3:3:0.
-/* id: 4 pontos: 2*/
+/* id: 4 */
 if 1493 and place_to_sleep3 then place_to_sleep4:4:0.
-/* id: 5 pontos: 10*/
-if <=446 and place_to_sleep4 then place_to_sleep:5:10.
+/* id: 5 pontos: 1*/
+if <=446 and place_to_sleep4 then place_to_sleep:5:1.
 
 %resposta place to work
-/* id: 1  pontos: 7*/
+/* id: 1  */
 if ta then place_to_work1:1:0.
-/* id: 2 pontos: 3*/
-if 1974 and place_to_work1 then place_to_work:2:3.
+/* id: 2 pontos: 1*/
+if 1974 and place_to_work1 then place_to_work:2:1.
 
 
 
 /*Pergunta 2*/
 
 %resposta i love it
-/* id: 1 pontos: 10*/
+/* id: 1 */
 if 2081 then i_love_it1:1:0.
-/* id: 2 pontos: 10*/
+/* id: 2*/
 if pave and i_love_it1 then i_love_it2:2:0.
-/* id: 3 pontos: 2*/
+/* id: 3 */
 if pave and i_love_it2 then i_love_it3:3:0.
-/* id: 4 pontos: 5*/
-if 1982 and i_love_it3 then i_love_it:4:5.
+/* id: 4 pontos: 1*/
+if 1982 and i_love_it3 then i_love_it:4:1.
 
 %resposta its irritant
-/* id: 1 pontos: 10*/
+/* id: 1 */
 if 2081 then i_love_it1:1:0.
-/* id: 2 pontos: 10*/
+/* id: 2 */
 if pave and i_love_it1 then i_love_it2:2:0.
-/* id: 3 pontos: 2*/
+/* id: 3 */
 if empty and i_love_it2 then i_love_it3:3:0.
-/* id: 4 pontos: 5*/
+/* id: 4 */
 if 1 and i_love_it3 then i_love_it4:4:0.
-/* id: 5 pontos: 7*/
+/* id: 5 */
 if 140494 and i_love_it4 then i_love_it5:5:0.
-/* id: 6 pontos: 3*/
-if 569 and i_love_it5 then i_love_it:6:3.
+/* id: 6 pontos: 1*/
+if 569 and i_love_it5 then i_love_it:6:1.
 
 
 
 /*pergunta 3*/
 
 %resposta i like people
-/* id: 1 pontos: 5*/
+/* id: 1 */
 if 87 then i_like_people1:1:0.
-/* id: 2 pontos: 3*/
+/* id: 2 */
 if 105 and i_like_people1 then i_like_people2:2:0.
-/* id: 1 pontos: 8*/
+/* id: 1 */
 if 185 and i_like_people2 then i_like_people3:3:0.
-/* id: 2 pontos: 3*/
+/* id: 2 */
 if 2604 and i_like_people3 then i_like_people4:4:0.
-/* id: 1 pontos: 2*/
+/* id: 1 */
 if 2655 and i_like_people4 then i_like_people5:5:0.
-/* id: 2 pontos: 6*/
-if 611 and i_like_people5 then i_like_people:6:6.
+/* id: 2 pontos: 1*/
+if 611 and i_like_people5 then i_like_people:6:1.
 
 %resposta neutral
-/* id: 1 pontos: 10*/
+/* id: 1 */
 if 87 then neutral1:1:0.
-/* id: 2 pontos: 12*/
-if 105 and neutral1 then neutral:2:20.
+/* id: 2 pontos: 1*/
+if 105 and neutral1 then neutral:2:1.
 
 %resposta i dont rly like people
-/* id: 1 pontos: 10*/
-if 87 then i_dont_like_people:1:10.
+/* id: 1 pontos: 1*/
+if 87 then i_dont_like_people:1:1.
 
 
 
 /*Pergunta 4*/
 
 %resposta jazz
-/* id: 1 pontos: 3*/
+/* id: 1 */
 if 1 then jazz1:1:0.
-/* id: 2 pontos: 1*/
+/* id: 2 */
 if 1640 and jazz1 then jazz2:2:0.
-/* id: 3 pontos: 1*/
+/* id: 3 */
 if 1993 and jazz2 then jazz3:3:0.
 /* id: 4 pontos: 1*/
 if vinylsd and jazz3 then jazz:4:1.
 
 %resposta pop
-/* id: 1 pontos: 3*/
+/* id: 1 */
 if 1 then pop1:1:0.
-/* id: 2 pontos: 1*/
+/* id: 2 */
 if 1604 and pop1 then pop2:2:0.
-/* id: 3 pontos: 1*/
+/* id: 3 */
 if 1993 and pop2 then pop3:3:0.
 /* id: 4 pontos: 1*/
 if metalsd and pop3 then pop:4:1.
 
 %resposta rap
-/* id: 1 pontos: 3*/
+/* id: 1*/
 if 1 then rap1:1:0.
-/* id: 2 pontos: 1*/
+/* id: 2 */
 if 1604 and rap1 then rap2:2:0.
-/* id: 3 pontos: 1*/
+/* id: 3 */
 if 1993 and rap2 then rap3:3:0.
 /* id: 4 pontos: 1*/
 if cmentbd and rap3 then rap:4:1.
@@ -635,174 +635,174 @@ if cmentbd and rap3 then rap:4:1.
 
 /*Pergunta 5*/
 %resposta yes, a lot
-/* id: 1 pontos: 15*/
-if ex then yes_a_lot:1:15.
+/* id: 1 pontos: 1*/
+if ex then yes_a_lot:1:1.
 
 %resposta sou um campeao
-/* id: 1 pontos: 10*/
-if gd then champion:1:10.
+/* id: 1 pontos: 1*/
+if gd then champion:1:1.
 
 %resposta nop
-/* id: 1 pontos: 5*/
-if empty then not_rly:1:5.
+/* id: 1 pontos: 1*/
+if empty then not_rly:1:1.
 
 
 
 /*Pergunta 6*/
 %resposta sim , grande
-/* id: 1 pontos: 15*/
+/* id: 1 */
 if 1fam then big_one1:1:0.
-/* id: 2 pontos: 10*/
-if slv1 and big_one1 then big_one:2:10.
+/* id: 2 pontos: 1*/
+if slv1 and big_one1 then big_one:2:1.
 
 %resposta sim
-/* id: 1 pontos: 12*/
+/* id: 1 */
 if 1fam then yes_family1:1:0.
-/* id: 2 pontos: 10*/
-if 2story and yes_family1 then yes_family:2:10.
+/* id: 2 pontos: 1*/
+if 2story and yes_family1 then yes_family:2:1.
 
 %resposta no
-/* id: 1 pontos: 10*/
+/* id: 1*/
 if twnhse then no_family1:1:0.
-/* id: 2 pontos: 8*/
-if 1story and no_family1 then no_family:2:8.
+/* id: 2 pontos: 1*/
+if 1story and no_family1 then no_family:2:1.
 
 
 
 /*7º Pergunta*/
 
 %resposta sim , favorita
-/* id: 1 pontos: 5*/
+/* id: 1 */
 if 1849 then yes_favorite_fireplace1:1:0.
-/* id: 2 pontos: 1*/
+/* id: 2 */
 if 509 and yes_favorite_fireplace1 then yes_favorite_fireplace2:2:0.
-/* id: 3 pontos: 8*/
+/* id: 3 */
 if 798 and yes_favorite_fireplace2 then yes_favorite_fireplace3:3:0.
-/* id: 4 pontos: 10*/
+/* id: 4 */
 if 307 and yes_favorite_fireplace3 then yes_favorite_fireplace4:4:0.
-/* id: 5 pontos: 2*/
+/* id: 5 */
 if 792 and yes_favorite_fireplace4 then yes_favorite_fireplace5:5:0.
-/* id: 6 pontos: 7*/
+/* id: 6 */
 if 2001 and yes_favorite_fireplace5 then yes_favorite_fireplace6:6:0.
-/* id: 7 pontos: 5*/
+/* id: 7 */
 if 3079 and yes_favorite_fireplace6 then yes_favorite_fireplace7:7:0.
-/* id: 8 pontos: 3*/
-if pconc and yes_favorite_fireplace7 then yes_favorite_fireplace:8:3.
+/* id: 8 pontos: 1*/
+if pconc and yes_favorite_fireplace7 then yes_favorite_fireplace:8:1.
 
 %resposta okay
-/* id: 1 pontos: 7*/
+/* id: 1 */
 if 1849 then its_ok_fireplace1:1:0.
-/* id: 2 pontos: 3*/
+/* id: 2 */
 if 508 and its_ok_fireplace1 then its_ok_fireplace2:2:0.
-/* id: 3 pontos: 2*/
+/* id: 3 */
 if 798 and its_ok_fireplace2 then its_ok_fireplace3:3:0.
-/* id: 4 pontos: 9*/
+/* id: 4 */
 if 307 and its_ok_fireplace3 then its_ok_fireplace4:4:0.
-/* id: 5 pontos: 8*/
+/* id: 5 */
 if 792 and its_ok_fireplace4 then its_ok_fireplace5:5:0.
-/* id: 6 pontos: 3*/
+/* id: 6 */
 if 2001 and its_ok_fireplace5 then its_ok_fireplace6:6:0.
-/* id: 7 pontos: 4*/
+/* id: 7 */
 if 345 and its_ok_fireplace6 then its_ok_fireplace7:7:0.
-/* id: 8 pontos: 2*/
-if 1959 and its_ok_fireplace7 then its_ok_fireplace:8:2.
+/* id: 8 pontos: 1*/
+if 1959 and its_ok_fireplace7 then its_ok_fireplace:8:1.
 
 %resposta nop
-/* id: 1 pontos: 5*/
-if empty then not_rly_fireplace:1:5.
+/* id: 1 pontos: 1*/
+if empty then not_rly_fireplace:1:1.
 
 
 
 /*8º Pergunta*/
 
 %resposta sim , bastante
-/* id: 1 pontos: 4*/
+/* id: 1 */
 if 9 then yes_alot_appear1:1:0.
-/* id: 2 pontos: 11*/
+/* id: 2 */
 if 8 and yes_alot_appear1 then yes_alot_appear2:2:0.
-/* id: 3 pontos: 7*/
+/* id: 3 */
 if 2003 and yes_alot_appear2 then yes_alot_appear3:3:0.
-/* id: 4 pontos: 9*/
+/* id: 4 */
 if 1432 and yes_alot_appear3 then yes_alot_appear4:4:0.
-/* id: 5 pontos: 2*/
-if 142 and yes_alot_appear4 then yes_alot_appear:5:2.
+/* id: 5 pontos: 1*/
+if 142 and yes_alot_appear4 then yes_alot_appear:5:1.
 
 %resposta um bocado
-/* id: 1 pontos: 12*/
+/* id: 1 */
 if 9 then just_a_bit_appear1:1:0.
-/* id: 2 pontos: 2*/
+/* id: 2 */
 if 8 and just_a_bit_appear1 then just_a_bit_appear2:2:0.
-/* id: 3 pontos: 6*/
+/* id: 3 */
 if 1985 and just_a_bit_appear2 then just_a_bit_appear3:3:0.
-/* id: 4 pontos: 8*/
+/* id: 4 */
 if 76 and just_a_bit_appear3 then just_a_bit_appear4:4:0.
-/* id: 5 pontos: 5*/
+/* id: 5 */
 if gd and just_a_bit_appear4 then just_a_bit_appear5:5:0.
 /* id: 6 pontos: 1*/
 if 0 and just_a_bit_appear5 then just_a_bit_appear:6:1.
 
 %resposta nop
-/* id: 1 pontos: 9*/
+/* id: 1 */
 if 9 then not_rly_appear1:1:0.
-/* id: 2 pontos: 10*/
+/* id: 2 */
 if 8 and not_rly_appear1 then not_rly_appear2:2:0.
-/* id: 3 pontos: 4*/
+/* id: 3 */
 if 1985 and not_rly_appear2 then not_rly_appear3:3:0.
-/* id: 4 pontos: 3*/
+/* id: 4 */
 if 7 and not_rly_appear3 then not_rly_appear4:4:0.
-/* id: 5 pontos: 6*/
-if 2008 and not_rly_appear4 then not_rly_appear:5:20.
+/* id: 5 pontos: 1*/
+if 2008 and not_rly_appear4 then not_rly_appear:5:1.
 
 
 
 /*9º Pergunta*/
 
 %resposta yes i love it
-/* id: 1 pontos: 10*/
+/* id: 1 */
 if 2081 then yes_i_love_it1:1:0.
-/* id: 2 pontos: 8*/
+/* id: 2 */
 if 2379 and yes_i_love_it1 then yes_i_love_it2:2:0.
-/* id: 3 pontos: 6*/
+/* id: 3 */
 if 1971 and yes_i_love_it2 then yes_i_love_it3:3:0.
-/* id: 4 pontos: 4*/
+/* id: 4 */
 if rm and yes_i_love_it3 then yes_i_love_it4:4:0.
-/* id: 5 pontos: 2*/
-if 5 and yes_i_love_it4 then yes_i_love_it:5:2.
+/* id: 5 pontos: 1*/
+if 5 and yes_i_love_it4 then yes_i_love_it:5:1.
 
 %resposta i prefer the desert
-/* id: 1 pontos: 12*/
+/* id: 1 */
 if 2081 then i_prefer_desert1:1:0.
-/* id: 2 pontos: 10*/
+/* id: 2 */
 if 2379 and i_prefer_desert1 then i_prefer_desert2:2:0.
-/* id: 3 pontos: 1*/
+/* id: 3 */
 if 1971 and i_prefer_desert2 then i_prefer_desert3:3:0.
-/* id: 4 pontos: 5*/
+/* id: 4 */
 if rm and i_prefer_desert3 then i_prefer_desert4:4:0.
-/* id: 5 pontos: 4*/
+/* id: 5 */
 if 5 and i_prefer_desert4 then i_prefer_desert5:5:0.
-/* id: 6 pontos: 6*/
+/* id: 6 */
 if gtl and i_prefer_desert5 then i_prefer_desert6:6:0.
-/* id: 7 pontos: 2*/
-if 1997 and i_prefer_desert6 then i_prefer_desert:7:2.
+/* id: 7 pontos: 1*/
+if 1997 and i_prefer_desert6 then i_prefer_desert:7:1.
 
 %resposta i prefer beatches
-/* id: 1 pontos: 10*/
+/* id: 1 */
 if 2081 then i_prefer_beatches1:1:0.
-/* id: 2 pontos: 11*/
+/* id: 2 */
 if 2379 and i_prefer_beatches1 then i_prefer_beatches2:2:0.
-/* id: 3 pontos: 7*/
+/* id: 3 */
 if 1971 and i_prefer_beatches2 then i_prefer_beatches3:3:0.
-/* id: 4 pontos: 5*/
-if rm and i_prefer_beatches3 then i_prefer_beatches:4:5.
+/* id: 4 pontos: 1*/
+if rm and i_prefer_beatches3 then i_prefer_beatches:4:1.
 
 %resposta i prefer green areas
-/* id: 1 pontos: 15*/
+/* id: 1 */
 if 2081 then i_prefer_green_zones1:1:0.
-/* id: 2 pontos: 9*/
+/* id: 2 */
 if 2379 and i_prefer_green_zones1 then i_prefer_green_zones2:2:0.
-/* id: 3 pontos: 2*/
+/* id: 3 */
 if 1971 and i_prefer_green_zones2 then i_prefer_green_zones3:3:0.
-/* id: 4 pontos: 4*/
-if fv and i_prefer_green_zones3 then i_prefer_green_zones:4:4.
+/* id: 4 pontos: 1*/
+if fv and i_prefer_green_zones3 then i_prefer_green_zones:4:1.
 
 
