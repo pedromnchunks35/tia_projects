@@ -248,13 +248,13 @@ verificarfacto(Id,B,Preco):-
    P<Preco.
 /****************************************************************************************************************************************************************/
 %A.1 value 2stFirSF 45
-verificarfacto(Id,2nd_first_square_feet_menor_igual:B,Preco):-
+verificarfacto(Id,n2nd_first_square_feet_menor_igual:B,Preco):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,P),
    Value=<B,
    P<Preco.
 /****************************************************************************************************************************************************************/
 %A.1 value 1stFirSF 44
-verificarfacto(Id,1nd_first_square_feet_maior:B,Preco):-
+verificarfacto(Id,n1nd_first_square_feet_maior:B,Preco):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,P),
    Value>B,
    P<Preco.
@@ -548,21 +548,21 @@ if empty then not_rly:1:1.
 /*Pergunta 6*/
 %resposta sim , grande
 /* id: 1 */
-if 1fam then big_one1:1:0.
+if n1fam then big_one1:1:0.
 /* id: 2 pontos: 1*/
 if slv1 and big_one1 then big_one:2:1.
 
 %resposta sim
 /* id: 1 */
-if 1fam then yes_family1:1:0.
+if n1fam then yes_family1:1:0.
 /* id: 2 pontos: 1*/
-if 2story and yes_family1 then yes_family:2:1.
+if n2story and yes_family1 then yes_family:2:1.
 
 %resposta no
 /* id: 1*/
 if twnhse then no_family1:1:0.
 /* id: 2 pontos: 1*/
-if 1story and no_family1 then no_family:2:1.
+if n1story and no_family1 then no_family:2:1.
 
 
 
@@ -570,9 +570,9 @@ if 1story and no_family1 then no_family:2:1.
 
 %resposta sim , favorita
 /* id: 1 */
-if 2nd_first_square_feet_menor_igual:1849 then yes_favorite_fireplace1:1:0.
+if n2nd_first_square_feet_menor_igual:1849 then yes_favorite_fireplace1:1:0.
 /* id: 2 */
-if 1nd_first_square_feet_maior:509 and yes_favorite_fireplace1 then yes_favorite_fireplace2:2:0.
+if n1nd_first_square_feet_maior:509 and yes_favorite_fireplace1 then yes_favorite_fireplace2:2:0.
 /* id: 3 */
 if area_entrada_menor_igual:798 and yes_favorite_fireplace2 then yes_favorite_fireplace3:3:0.
 /* id: 4 */
@@ -588,9 +588,9 @@ if pconc and yes_favorite_fireplace7 then yes_favorite_fireplace:8:1.
 
 %resposta okay
 /* id: 1 */
-if 2nd_first_square_feet_menor_igual:1849 then its_ok_fireplace1:1:0.
+if n2nd_first_square_feet_menor_igual:1849 then its_ok_fireplace1:1:0.
 /* id: 2 */
-if 1nd_first_square_feet_maior:509 and its_ok_fireplace1 then its_ok_fireplace2:2:0.
+if n1nd_first_square_feet_maior:509 and its_ok_fireplace1 then its_ok_fireplace2:2:0.
 /* id: 3 */
 if area_entrada_menor_igual:798 and its_ok_fireplace2 then its_ok_fireplace3:3:0.
 /* id: 4 */
