@@ -347,13 +347,13 @@ list_top_5(Xs, Ys) :-
 
 %resposta confort 
 /*   id: 1 */
-if ex then confort1:1:0.
+if extqualex then confort1:1:0.
 /*   id: 2 pontos: 1*/
 if garage_menor_igual:663 and confort1 then confort:2:1.
 
 %resposta place to sleep
 /* id: 1 */
-if gd then place_to_sleep1:1:0.
+if extqualgd then place_to_sleep1:1:0.
 /* id: 2 */
 if ano_construido_maior:1970 and place_to_sleep1 then place_to_sleep2:1:0.
 /* id: 3 */
@@ -365,7 +365,7 @@ if garage_menor_igual:446 and place_to_sleep4 then place_to_sleep:5:1.
 
 %resposta place to work
 /* id: 1  */
-if ta then place_to_work1:1:0.
+if extqualta then place_to_work1:1:0.
 /* id: 2 pontos: 1*/
 if espaço_sala_menor_igual:1974 and place_to_work1 then place_to_work:2:1.
 
@@ -462,15 +462,15 @@ if cmentbd and rap3 then rap:4:1.
 /*Pergunta 5*/
 %resposta yes, a lot
 /* id: 1 pontos: 1*/
-if ex then yes_a_lot:1:1.
+if poolex then yes_a_lot:1:1.
 
 %resposta sou um campeao
 /* id: 1 pontos: 1*/
-if gd then champion:1:1.
+if poolgd then champion:1:1.
 
 %resposta nop
 /* id: 1 pontos: 1*/
-if empty then not_rly:1:1.
+if poolempty then not_rly:1:1.
 
 
 
@@ -563,7 +563,7 @@ if ano_construido_maior:1985 and just_a_bit_appear2 then just_a_bit_appear3:3:0.
 /* id: 4 */
 if area_entrada_3season_menor_igual:76 and just_a_bit_appear3 then just_a_bit_appear4:4:0.
 /* id: 5 */
-if gd and just_a_bit_appear4 then just_a_bit_appear5:5:0.
+if kitchengd and just_a_bit_appear4 then just_a_bit_appear5:5:0.
 /* id: 6 pontos: 1*/
 if numero_carros_garagem_maior:0 and just_a_bit_appear5 then just_a_bit_appear:6:1.
 
