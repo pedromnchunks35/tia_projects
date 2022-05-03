@@ -94,7 +94,7 @@ provavelfacto(Id,P:Id_p:Points):-
 %A.4
 verificarfacto(Id,B1 and B2):-
    verificarfacto(Id,B1),
-   verificarfacto(Id,B2,Preco).
+   verificarfacto(Id,B2).
 /****************************************************************************************************************************************************************/
 %A.5 value ExterQual 28
 verificarfacto(Id,B):-
@@ -149,9 +149,9 @@ verificarfacto(Id,condition_maior:B):-
    Value>B.
 /****************************************************************************************************************************************************************/
 %A.16 value SalePrice 81
-verificarfacto(Id,valor_venda_maior:B):-
-   rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
-   P>B.
+%verificarfacto(Id,valor_venda_maior:B):-
+%   rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,P),
+%  P>B.
 /****************************************************************************************************************************************************************/
 %A.17 value MSSubClass 2
 verificarfacto(Id,tipo_casa_maior:B):-
@@ -245,7 +245,7 @@ verificarfacto(Id,ano_remodulacao_maior:B):-
 /****************************************************************************************************************************************************************/
 %A.36 value YearRemodAdd 21
 verificarfacto(Id,ano_remodulacao_menor_igual:B):-
-   rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
+   rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
 %A.37 value TotalBsmtSF 39
@@ -265,7 +265,7 @@ verificarfacto(Id,B):-
 %A.40 value GarageCars 62
 verificarfacto(Id,numero_carros_garagem_maior:B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
-   Valeu>B.
+   Value>B.
 /****************************************************************************************************************************************************************/
 %A.41 value MSZoning 3
 verificarfacto(Id,B):-
@@ -361,7 +361,7 @@ if garage_menor_igual:663 and confort1 then confort:2:1.
 /* id: 1 */
 if extqualgd then place_to_sleep1:1:0.
 /* id: 2 */
-if ano_construido_maior:1970 and place_to_sleep1 then place_to_sleep2:1:0.
+if  limite(ano_construido_maior,1970)/*ano_construido_maior:1970*/ and place_to_sleep1 then place_to_sleep2:1:0.
 /* id: 3 */
 if garage_menor_igual:669 and place_to_sleep2 then place_to_sleep3:3:0.
 /* id: 4 */
@@ -398,10 +398,8 @@ if pave and i_love_it1 then i_love_it2:2:0.
 if empty and i_love_it2 then i_love_it3:3:0.
 /* id: 4 */
 if condition_maior:1 and i_love_it3 then i_love_it4:4:0.
-/* id: 5 */
-if valor_venda_maior:140494 and i_love_it4 then i_love_it5:5:0.
-/* id: 6 pontos: 1*/
-if espaco_sala_maior:569 and i_love_it5 then i_love_it:6:1.
+/* id: 5 pontos: 1*/
+if espaco_sala_maior:569 and i_love_it4 then i_love_it:5:1.
 
 
 
