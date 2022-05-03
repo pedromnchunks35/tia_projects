@@ -505,7 +505,7 @@ GarageType: Garage location
        Detchd	Detached from home
        NA	No Garage
 		
-GarageYrBlt: Year garage was built
+GarageYrBlt - VlaUE 60: Year garage was built
 		
 GarageFinish: Interior finish of the garage
 
@@ -546,7 +546,7 @@ WoodDeckSF: Wood deck area in square feet
 
 OpenPorchSF: Open porch area in square feet
 
-EnclosedPorch: Enclosed porch area in square feet
+EnclosedPorch vALUE 69: Enclosed porch area in square feet
 
 3SsnPorch: Three season porch area in square feet
 
