@@ -5,9 +5,9 @@
 :- op( 700, fx, then).
 :- op( 300, fy, or).
 :- op( 200, fy, and).
-:- op( 103, fy, maior).
-:- op( 102, fy, igual).
-:- op( 101, fy, menor_igual).
+:- op( 100, fy, maior).
+:- op( 100, fy, igual).
+:- op( 100, fy, menor_igual).
 
 %Funcao para ir buscar carateristicas
 /****************************************************************************************************************************************************************/
@@ -93,10 +93,10 @@ provavelfacto(Id,P:Id_p:Points):-
    %comprovar
    verificarfacto(Id,Cond).
 /*==============================================================================================================================================================*/
-%A.4
-verificarfacto(Id,B1 and B2):-
-   verificarfacto(Id,B1),
-   verificarfacto(Id,B2).
+% %A.4
+% verificarfacto(Id,B1 and B2):-
+%    verificarfacto(Id,B1),
+%    verificarfacto(Id,B2).
 /****************************************************************************************************************************************************************/
 %A.5 value ExterQual 28
 verificarfacto(Id,B):-
@@ -638,11 +638,11 @@ if maior(lot_area,2379) and maior(ano_construido,1971) and rm then i_prefer_beat
 % if i_prefer_beatches 3 and rm then i_prefer_beatches:4:1.
 
 %resposta i prefer green areas
-if maior(lot_area,2379) and maior(ano_construido,1971) and fv then i_prefer_green_zones:4:1.
+%if maior(lot_area,2379) and maior(ano_construido,1971) and fv then i_prefer_green_zones:4:1.
 /* id: 1 */
-if lot_area_maior 2379 then i_prefer_green_zones:2.
+if maior(lot_area,2379) then i_prefer_green_zones:2:0.
 /* id: 3 */
-if i_prefer_green_zones 2 and ano_construido_maior 1971 then i_prefer_green_zones:3.
+if i_prefer_green_zones 2 and maior(ano_construido,1971) then i_prefer_green_zones:3:0.
 /* id: 4 pontos: 1*/
 if i_prefer_green_zones 3 and fv then i_prefer_green_zones:4:1.
 
