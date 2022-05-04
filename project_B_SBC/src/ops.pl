@@ -93,6 +93,16 @@ provavelfacto(Id,P:Id_p:Points):-
    %comprovar
    verificarfacto(Id,Cond).
 /*==============================================================================================================================================================*/
+%A.4
+%funcao de verificacao de facto e por sua vez aprovacao do mesmo caso nao seja facto
+provavelfacto(Id,P:Id_p:Points):-
+   %ir buscar a regra
+   if Cond and Cond then P:Id_p:Points,
+   %se a regra nao estiver comprovada verificar se é possivel comprovar
+   \+ verdadeiro(Id,P:Id_p:Points),
+   %comprovar
+   verificarfacto(Id,Cond).
+/*==============================================================================================================================================================*/
 % %A.4
 % verificarfacto(Id,B1 and B2):-
 %    verificarfacto(Id,B1),
@@ -332,19 +342,6 @@ remover_pares([_-V|Ps], [V|Vs]) :-
 %C1.3
 %funcao para retirar da lista os 5 primeiros elementos da mesma
 top5(Src,N,L) :- findall(E, (nth1(I,Src,E), I =< N), L).
-/*==============================================================================================================================================================*/
-%C1.4
-list_top_5(Xs, Ys) :-
-   %identificamos cada lista com o seu respetivo valor da pontuacao
-   listar_pares(Xs, Ps),
-   %ordenamos os valores das identifacoes por ordem crescente
-   keysort(Ps, PsS),
-   %removemos as identificacoes anteriormente adicionadas
-   remover_pares(PsS, Ms),
-   %revertemos a lista
-   reverse(Ms, Os),
-   %retiramos os 5 primeiros elementos da lista
-   top5(Os, 5, Ys).
 /*==============================================================================================================================================================*/
 /****************************************************************************************************************************************************************/
 
