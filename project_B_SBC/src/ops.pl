@@ -2,9 +2,12 @@
 :- dynamic(verdadeiro/2).
 %operadores
 :- op( 800, fx, if). 
-:- op( 700, xfx, then). 
-:- op( 300, xfy, or). 
-:- op( 200, xfy, and).
+:- op( 700, fx, then). 
+:- op( 300, fy, or). 
+:- op( 200, fy, and).
+:- op( 100, fy, maior).
+:- op( 99, fy, menor_igual).
+:- op( 98, fy, igual).
 
 
 %Funcao para ir buscar carateristicas
@@ -101,37 +104,37 @@ verificarfacto(Id,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
 /****************************************************************************************************************************************************************/
 %A.6 value GarageArea 63
-verificarfacto(Id,garage_menor_igual:B):-
+verificarfacto(Id,menor_igual,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
 %A.7 value YearBuilt 20
-verificarfacto(Id,ano_construido_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /****************************************************************************************************************************************************************/
 %A.8 value YearBuilt 20
-verificarfacto(Id,ano_construido_menor_igual:B):-
+verificarfacto(Id,menor_igual,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
 %A.9 value 1stFlrSF 44
-verificarfacto(Id,primeiro_andar_menor_igual:B):-
+verificarfacto(Id,menor_igual,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
 %A.10 value GrLivArea 47
-verificarfacto(Id,espaco_sala_menor_igual:B):-
+verificarfacto(Id,menor_igual,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
 %A.11 value GrLivArea 47
-verificarfacto(Id,espaco_sala_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /****************************************************************************************************************************************************************/
 %A.12 value LotArea 5
-verificarfacto(Id,lot_area_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /****************************************************************************************************************************************************************/
@@ -144,7 +147,7 @@ verificarfacto(Id,B):-
    rentops(Id,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
 /****************************************************************************************************************************************************************/
 %A.15 value OverallCond 19
-verificarfacto(Id,condition_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /****************************************************************************************************************************************************************/
@@ -154,17 +157,17 @@ verificarfacto(Id,condition_maior:B):-
 %  P>B.
 /****************************************************************************************************************************************************************/
 %A.17 value MSSubClass 2
-verificarfacto(Id,tipo_casa_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /****************************************************************************************************************************************************************/
 %A.18 value MSSubClass 2
-verificarfacto(Id,tipo_casa_menor_igual:B):-
+verificarfacto(Id,menor_igual,B):-
    rentops(Id,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
 %A.19 value MSSubClass 2
-verificarfacto(Id,tipo_casa_igual:B):-
+verificarfacto(Id,igual,B):-
    rentops(Id,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=B.
 /****************************************************************************************************************************************************************/
@@ -181,12 +184,12 @@ verificarfacto(Id,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
 /****************************************************************************************************************************************************************/
 %A.23 value OverallQuall 18
-verificarfacto(Id,qualidade_geral_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /****************************************************************************************************************************************************************/
 %A.24 value OverallQuall 18
-verificarfacto(Id,qualidade_geral_menor_igual:B):-
+verificarfacto(Id,menor_igual,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
@@ -195,32 +198,32 @@ verificarfacto(Id,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_).
 /****************************************************************************************************************************************************************/
 %A.26 value 2stFirSF 45
-verificarfacto(Id,n2nd_first_square_feet_menor_igual:B):-
+verificarfacto(Id,menor_igual,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
 %A.27 value 1stFirSF 44
-verificarfacto(Id,n1nd_first_square_feet_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /****************************************************************************************************************************************************************/
 %A.28 value EnclosedPorch 69
-verificarfacto(Id,area_entrada_menor_igual:B):-
+verificarfacto(Id,menor_igual,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
 %A.29 value 3SsnPorch 70
-verificarfacto(Id,area_entrada_3season_menor_igual:B):-
+verificarfacto(Id,menor_igual,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
 %A.30 value BedroomAbvGr 52
-verificarfacto(Id,quartos_acima_media_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /****************************************************************************************************************************************************************/
 %A.31 value BedroomAbvGr 52
-verificarfacto(Id,quartos_acima_media_menor_igual:B):-
+verificarfacto(Id,menor_igual,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
@@ -229,7 +232,7 @@ verificarfacto(Id,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
 /****************************************************************************************************************************************************************/
 %A.33 value ScreenPorch 71
-verificarfacto(Id,screen_porch_area_menor_igual:B):-
+verificarfacto(Id,menor_igual,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
@@ -239,22 +242,22 @@ verificarfacto(Id,B):-
    B=Value.
 /****************************************************************************************************************************************************************/
 %A.35 value YearRemodAdd 21
-verificarfacto(Id,ano_remodulacao_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /****************************************************************************************************************************************************************/
 %A.36 value YearRemodAdd 21
-verificarfacto(Id,ano_remodulacao_menor_igual:B):-
+verificarfacto(Id,menor_igual,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value=<B.
 /****************************************************************************************************************************************************************/
 %A.37 value TotalBsmtSF 39
-verificarfacto(Id,basement_square_feet_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /****************************************************************************************************************************************************************/
 %A.38 value MasVnrArea 27
-verificarfacto(Id,venner_square_feet_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /****************************************************************************************************************************************************************/
@@ -263,7 +266,7 @@ verificarfacto(Id,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
 /****************************************************************************************************************************************************************/
 %A.40 value GarageCars 62
-verificarfacto(Id,numero_carros_garagem_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /****************************************************************************************************************************************************************/
@@ -276,7 +279,7 @@ verificarfacto(Id,B:-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
 /****************************************************************************************************************************************************************/
 %A.43 GarageYrBlt value 60
-verificarfacto(Id,ano_garagem_construido_maior:B):-
+verificarfacto(Id,maior,B):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 /*==============================================================================================================================================================*/
@@ -353,25 +356,25 @@ list_top_5(Xs, Ys) :-
 
 %resposta confort 
 /*   id: 1 */
-if extqualex then confort1:1:0.
+if extqualex then confort:1.
 /*   id: 2 pontos: 1*/
-if garage_menor_igual:663 and confort1 then confort:2:1.
+if confort 1 and menor_igual 663 then confort:2:1.
 
 %resposta place to sleep
 /* id: 1 */
-if extqualgd then place_to_sleep1:1:0.
+if extqualgd then place_to_sleep:1.
 /* id: 2 */
-if  limite(ano_construido_maior,1970)/*ano_construido_maior:1970*/ and place_to_sleep1 then place_to_sleep2:1:0.
+if  ano_construido_maior:1970 and ano_construido_maior 1970 then place_to_sleep:1.
 /* id: 3 */
-if garage_menor_igual:669 and place_to_sleep2 then place_to_sleep3:3:0.
+if garage_menor_igual:669 and place_to_sleep2 then place_to_sleep:3.
 /* id: 4 */
-if primeiro_andar_menor_igual:1493 and place_to_sleep3 then place_to_sleep4:4:0.
+if primeiro_andar_menor_igual:1493 and place_to_sleep3 then place_to_sleep:4.
 /* id: 5 pontos: 1*/
 if garage_menor_igual:446 and place_to_sleep4 then place_to_sleep:5:1.
 
 %resposta place to work
 /* id: 1  */
-if extqualta then place_to_work1:1:0.
+if extqualta then place_to_work:1.
 /* id: 2 pontos: 1*/
 if espaço_sala_menor_igual:1974 and place_to_work1 then place_to_work:2:1.
 
@@ -381,23 +384,23 @@ if espaço_sala_menor_igual:1974 and place_to_work1 then place_to_work:2:1.
 
 %resposta i love it
 /* id: 1 */
-if lot_area_maior:2081 then i_love_it1:1:0.
+if lot_area_maior:2081 then i_love_it:1.
 /* id: 2*/
-if pave and i_love_it1 then i_love_it2:2:0.
+if pave and i_love_it1 then i_love_it:2.
 /* id: 3 */
-if pave and i_love_it2 then i_love_it3:3:0.
+if pave and i_love_it2 then i_love_it:3.
 /* id: 4 pontos: 1*/
 if ano_construido_maior:1982 and i_love_it3 then i_love_it:4:1.
 
 %resposta its irritant
 /* id: 1 */
-if lot_area_maior:2081 then i_love_it1:1:0.
+if lot_area_maior:2081 then i_love_it:1.
 /* id: 2 */
-if pave and i_love_it1 then i_love_it2:2:0.
+if pave and i_love_it1 then i_love_it:2.
 /* id: 3 */
-if empty and i_love_it2 then i_love_it3:3:0.
+if empty and i_love_it2 then i_love_it:3.
 /* id: 4 */
-if condition_maior:1 and i_love_it3 then i_love_it4:4:0.
+if condition_maior:1 and i_love_it3 then i_love_it:4.
 /* id: 5 pontos: 1*/
 if espaco_sala_maior:569 and i_love_it4 then i_love_it:5:1.
 
@@ -407,19 +410,19 @@ if espaco_sala_maior:569 and i_love_it4 then i_love_it:5:1.
 
 %resposta i like people
 /* id: 1 */
-if tipo_casa_maior:87 then i_like_people1:1:0.
+if tipo_casa_maior:87 then i_like_people:1.
 /* id: 2 */
-if tipo_casa_igual:185 and i_like_people1 then i_like_people2:2:0.
+if tipo_casa_igual:185 and i_like_people1 then i_like_people:2.
 /* id: 2 */
-if espaço_sala_menor_igual:2604 and i_like_people2 then i_like_people3:3:0.
+if espaço_sala_menor_igual:2604 and i_like_people2 then i_like_people:3.
 /* id: 1 */
-if lot_area_maior:2655 and i_like_people3 then i_like_people4:4:0.
+if lot_area_maior:2655 and i_like_people3 then i_like_people:4.
 /* id: 2 pontos: 1*/
 if garage_menor_igual:611 and i_like_people4 then i_like_people:5:1.
 
 %resposta neutral
 /* id: 1 */
-if tipo_casa_maior:87 then neutral1:1:0.
+if tipo_casa_maior:87 then neutral:1.
 /* id: 2 pontos: 1*/
 if tipo_casa_menor_igual:105 and neutral1 then neutral:2:1.
 
@@ -433,31 +436,31 @@ if tipo_casa_menor_igual:87 then i_dont_like_people:1:1.
 
 %resposta jazz
 /* id: 1 */
-if qualidade_geral_maior:1 then jazz1:1:0.
+if qualidade_geral_maior:1 then jazz:1.
 /* id: 2 */
-if lot_area_maior:1640 and jazz1 then jazz2:2:0.
+if lot_area_maior:1640 and jazz1 then jazz:2.
 /* id: 3 */
-if ano_construido_maior:1993 and jazz2 then jazz3:3:0.
+if ano_construido_maior:1993 and jazz2 then jazz:3.
 /* id: 4 pontos: 1*/
 if vinylsd and jazz3 then jazz:4:1.
 
 %resposta pop
 /* id: 1 */
-if qualidade_geral_maior:1 then pop1:1:0.
+if qualidade_geral_maior:1 then pop:1.
 /* id: 2 */
-if lot_area_maior:1604 and pop1 then pop2:2:0.
+if lot_area_maior:1604 and pop1 then pop:2.
 /* id: 3 */
-if ano_construido_maior:1993 and pop2 then pop3:3:0.
+if ano_construido_maior:1993 and pop2 then pop:3.
 /* id: 4 pontos: 1*/
 if metalsd and pop3 then pop:4:1.
 
 %resposta rap
 /* id: 1*/
-if qualidade_geral_maior:1 then rap1:1:0.
+if qualidade_geral_maior:1 then rap:1.
 /* id: 2 */
-if lot_area_maior:1604 and rap1 then rap2:2:0.
+if lot_area_maior:1604 and rap1 then rap:2.
 /* id: 3 */
-if ano_construido_maior:1993 and rap2 then rap3:3:0.
+if ano_construido_maior:1993 and rap2 then rap:3.
 /* id: 4 pontos: 1*/
 if cmentbd and rap3 then rap:4:1.
 
@@ -481,19 +484,19 @@ if poolempty then not_rly:1:1.
 /*Pergunta 6*/
 %resposta sim , grande
 /* id: 1 */
-if n1fam then big_one1:1:0.
+if n1fam then big_one:1.
 /* id: 2 pontos: 1*/
 if slv1 and big_one1 then big_one:2:1.
 
 %resposta sim
 /* id: 1 */
-if n1fam then yes_family1:1:0.
+if n1fam then yes_family:1.
 /* id: 2 pontos: 1*/
 if n2story and yes_family1 then yes_family:2:1.
 
 %resposta no
 /* id: 1*/
-if twnhse then no_family1:1:0.
+if twnhse then no_family:1.
 /* id: 2 pontos: 1*/
 if n1story and no_family1 then no_family:2:1.
 
@@ -503,37 +506,37 @@ if n1story and no_family1 then no_family:2:1.
 
 %resposta sim , favorita
 /* id: 1 */
-if n2nd_first_square_feet_menor_igual:1849 then yes_favorite_fireplace1:1:0.
+if n2nd_first_square_feet_menor_igual:1849 then yes_favorite_fireplace:1.
 /* id: 2 */
-if n1nd_first_square_feet_maior:509 and yes_favorite_fireplace1 then yes_favorite_fireplace2:2:0.
+if n1nd_first_square_feet_maior:509 and yes_favorite_fireplace1 then yes_favorite_fireplace:2.
 /* id: 3 */
-if area_entrada_menor_igual:798 and yes_favorite_fireplace2 then yes_favorite_fireplace3:3:0.
+if area_entrada_menor_igual:798 and yes_favorite_fireplace2 then yes_favorite_fireplace:3.
 /* id: 4 */
-if area_entrada_3season_menor_igual:307 and yes_favorite_fireplace3 then yes_favorite_fireplace4:4:0.
+if area_entrada_3season_menor_igual:307 and yes_favorite_fireplace3 then yes_favorite_fireplace:4.
 /* id: 5 */
-if espaco_sala_maior:792 and yes_favorite_fireplace4 then yes_favorite_fireplace5:5:0.
+if espaco_sala_maior:792 and yes_favorite_fireplace4 then yes_favorite_fireplace:5.
 /* id: 6 */
-if quartos_anima_media_maior:2001 and yes_favorite_fireplace5 then yes_favorite_fireplace6:6:0.
+if quartos_anima_media_maior:2001 and yes_favorite_fireplace5 then yes_favorite_fireplace:6.
 /* id: 7 */
-if lot_area_maior:3079 and yes_favorite_fireplace6 then yes_favorite_fireplace7:7:0.
+if lot_area_maior:3079 and yes_favorite_fireplace6 then yes_favorite_fireplace:7.
 /* id: 8 pontos: 1*/
 if pconc and yes_favorite_fireplace7 then yes_favorite_fireplace:8:1.
 
 %resposta okay
 /* id: 1 */
-if n2nd_first_square_feet_menor_igual:1849 then its_ok_fireplace1:1:0.
+if n2nd_first_square_feet_menor_igual:1849 then its_ok_fireplace:1.
 /* id: 2 */
-if n1nd_first_square_feet_maior:509 and its_ok_fireplace1 then its_ok_fireplace2:2:0.
+if n1nd_first_square_feet_maior:509 and its_ok_fireplace1 then its_ok_fireplace:2.
 /* id: 3 */
-if area_entrada_menor_igual:798 and its_ok_fireplace2 then its_ok_fireplace3:3:0.
+if area_entrada_menor_igual:798 and its_ok_fireplace2 then its_ok_fireplace:3.
 /* id: 4 */
-if area_entrada_3season_menor_igual:307 and its_ok_fireplace3 then its_ok_fireplace4:4:0.
+if area_entrada_3season_menor_igual:307 and its_ok_fireplace3 then its_ok_fireplace:4.
 /* id: 5 */
-if espaco_sala_maior:792 and its_ok_fireplace4 then its_ok_fireplace5:5:0.
+if espaco_sala_maior:792 and its_ok_fireplace4 then its_ok_fireplace:5.
 /* id: 6 */
-if quartos_anima_media_menor_igual:2001 and its_ok_fireplace5 then its_ok_fireplace6:6:0.
+if quartos_anima_media_menor_igual:2001 and its_ok_fireplace5 then its_ok_fireplace:6.
 /* id: 7 */
-if screen_porch_area_menor_igual:345 and its_ok_fireplace6 then its_ok_fireplace7:7:0.
+if screen_porch_area_menor_igual:345 and its_ok_fireplace6 then its_ok_fireplace:7.
 /* id: 8 pontos: 1*/
 if ano_construido_maior:1959 and its_ok_fireplace7 then its_ok_fireplace:8:1.
 
@@ -547,39 +550,39 @@ if empty then not_rly_fireplace:1:1.
 
 %resposta sim , bastante
 /* id: 1 */
-if qualidade_geral_menor_igual:9 then yes_alot_appear1:1:0.
+if qualidade_geral_menor_igual:9 then yes_alot_appear:1.
 /* id: 2 */
-if qualidade_geral_maior:8 and yes_alot_appear1 then yes_alot_appear2:2:0.
+if qualidade_geral_maior:8 and yes_alot_appear1 then yes_alot_appear:2.
 /* id: 3 */
-if no_remodulacao_maior:2003 and yes_alot_appear2 then yes_alot_appear3:3:0.
+if no_remodulacao_maior:2003 and yes_alot_appear2 then yes_alot_appear:3.
 /* id: 4 */
-if basement_square_feet_maior:1432 and yes_alot_appear3 then yes_alot_appear4:4:0.
+if basement_square_feet_maior:1432 and yes_alot_appear3 then yes_alot_appear:4.
 /* id: 5 pontos: 1*/
 if venner_square_feet_maior:142 and yes_alot_appear4 then yes_alot_appear:5:1.
 
 %resposta um bocado
 /* id: 1 */
-if qualidade_geral_menor_igual:9 then just_a_bit_appear1:1:0.
+if qualidade_geral_menor_igual:9 then just_a_bit_appear:1.
 /* id: 2 */
-if qualidade_geral_menor_igual:8 and just_a_bit_appear1 then just_a_bit_appear2:2:0.
+if qualidade_geral_menor_igual:8 and just_a_bit_appear1 then just_a_bit_appear:2.
 /* id: 3 */
-if ano_construido_maior:1985 and just_a_bit_appear2 then just_a_bit_appear3:3:0.
+if ano_construido_maior:1985 and just_a_bit_appear2 then just_a_bit_appear:3.
 /* id: 4 */
-if area_entrada_3season_menor_igual:76 and just_a_bit_appear3 then just_a_bit_appear4:4:0.
+if area_entrada_3season_menor_igual:76 and just_a_bit_appear3 then just_a_bit_appear:4.
 /* id: 5 */
-if kitchengd and just_a_bit_appear4 then just_a_bit_appear5:5:0.
+if kitchengd and just_a_bit_appear4 then just_a_bit_appear:5.
 /* id: 6 pontos: 1*/
 if numero_carros_garagem_maior:0 and just_a_bit_appear5 then just_a_bit_appear:6:1.
 
 %resposta nop
 /* id: 1 */
-if qualidade_geral_menor_igual:9 then not_rly_appear1:1:0.
+if qualidade_geral_menor_igual:9 then not_rly_appear:1.
 /* id: 2 */
-if qualidade_geral_menor_igual:8 and not_rly_appear1 then not_rly_appear2:2:0.
+if qualidade_geral_menor_igual:8 and not_rly_appear1 then not_rly_appear:2.
 /* id: 3 */
-if ano_construido_menor_igual:1985 and not_rly_appear2 then not_rly_appear3:3:0.
+if ano_construido_menor_igual:1985 and not_rly_appear2 then not_rly_appear:3.
 /* id: 4 */
-if qualidade_geral_menor_igual:7 and not_rly_appear3 then not_rly_appear4:4:0.
+if qualidade_geral_menor_igual:7 and not_rly_appear3 then not_rly_appear:4.
 /* id: 5 pontos: 1*/
 if no_remodulacao_menor_igual:2008 and not_rly_appear4 then not_rly_appear:5:1.
 
@@ -589,49 +592,49 @@ if no_remodulacao_menor_igual:2008 and not_rly_appear4 then not_rly_appear:5:1.
 
 %resposta yes i love it
 /* id: 1 */
-if lot_area_maior:2081 then yes_i_love_it1:1:0.
+if lot_area_maior:2081 then yes_i_love_it:1.
 /* id: 2 */
-if lot_area_maior:2379 and yes_i_love_it1 then yes_i_love_it2:2:0.
+if lot_area_maior:2379 and yes_i_love_it1 then yes_i_love_it:2.
 /* id: 3 */
-if ano_construido_maior:1971 and yes_i_love_it2 then yes_i_love_it3:3:0.
+if ano_construido_maior:1971 and yes_i_love_it2 then yes_i_love_it:3.
 /* id: 4 */
-if rm and yes_i_love_it3 then yes_i_love_it4:4:0.
+if rm and yes_i_love_it3 then yes_i_love_it:4.
 /* id: 5 pontos: 1*/
 if qualidade_geral_menor_igual:5 and yes_i_love_it4 then yes_i_love_it:5:1.
 
 %resposta i prefer the desert
 /* id: 1 */
-if lot_area_maior:2081 then i_prefer_desert1:1:0.
+if lot_area_maior:2081 then i_prefer_desert:1.
 /* id: 2 */
-if lot_area_maior:2379 and i_prefer_desert1 then i_prefer_desert2:2:0.
+if lot_area_maior:2379 and i_prefer_desert1 then i_prefer_desert:2.
 /* id: 3 */
-if ano_construido_maior:1971 and i_prefer_desert2 then i_prefer_desert3:3:0.
+if ano_construido_maior:1971 and i_prefer_desert2 then i_prefer_desert:3.
 /* id: 4 */
-if rm and i_prefer_desert3 then i_prefer_desert4:4:0.
+if rm and i_prefer_desert3 then i_prefer_desert:4.
 /* id: 5 */
-if qualidade_geral_maior:5 and i_prefer_desert4 then i_prefer_desert5:5:0.
+if qualidade_geral_maior:5 and i_prefer_desert4 then i_prefer_desert:5.
 /* id: 6 */
-if gtl and i_prefer_desert5 then i_prefer_desert6:6:0.
+if gtl and i_prefer_desert5 then i_prefer_desert:6.
 /* id: 7 pontos: 1*/
 if 1997 and i_prefer_desert6 then i_prefer_desert:7:1.
 
 %resposta i prefer beatches
 /* id: 1 */
-if lot_area_maior:2081 then i_prefer_beatches1:1:0.
+if lot_area_maior:2081 then i_prefer_beatches:1.
 /* id: 2 */
-if lot_area_maior:2379 and i_prefer_beatches1 then i_prefer_beatches2:2:0.
+if lot_area_maior:2379 and i_prefer_beatches1 then i_prefer_beatches:2.
 /* id: 3 */
-if ano_garagem_construido_maior:1971 and i_prefer_beatches2 then i_prefer_beatches3:3:0.
+if ano_garagem_construido_maior:1971 and i_prefer_beatches2 then i_prefer_beatches:3.
 /* id: 4 pontos: 1*/
 if rm and i_prefer_beatches3 then i_prefer_beatches:4:1.
 
 %resposta i prefer green areas
 /* id: 1 */
-if lot_area_maior:2081 then i_prefer_green_zones1:1:0.
+if lot_area_maior:2081 then i_prefer_green_zones:1.
 /* id: 2 */
-if lot_area_maior:2379 and i_prefer_green_zones1 then i_prefer_green_zones2:2:0.
+if lot_area_maior:2379 and i_prefer_green_zones1 then i_prefer_green_zones:2.
 /* id: 3 */
-if ano_construido_maior:1971 and i_prefer_green_zones2 then i_prefer_green_zones3:3:0.
+if ano_construido_maior:1971 and i_prefer_green_zones2 then i_prefer_green_zones:3.
 /* id: 4 pontos: 1*/
 if fv and i_prefer_green_zones3 then i_prefer_green_zones:4:1.
 
