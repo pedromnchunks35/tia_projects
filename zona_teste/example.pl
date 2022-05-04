@@ -4,6 +4,7 @@
 :- op( 700, xfx, then). 
 :- op( 300, xfy, or). 
 :- op( 200, xfy, and).
+:- op( 100, fy , bonita).
 
 
 gosta(1,pedro,marta,5,9,2000).
@@ -49,11 +50,6 @@ provavelfacto(Id,P:Id_p:Points):-
     \+ verdadeiro(Id,P:Id_p:Points) ,
     verificarfacto(Id,Cond).
 
-verificarfacto(Id,entre:X:e:Y):-
-    gosta(Id,_,_,X1,_,_),
-    X1 > X,
-    X1 < Y.
-
 verificarfacto(Id,B1 and B2):-
 verificarfacto(Id,B1),
 verificarfacto(Id,B2).
@@ -78,20 +74,31 @@ verificarfacto(Id,B):-
     gosta(Id,_,_,_,B,_).
     
 
-verificarfacto(Id,B,_):-
+verificarfacto(Id,B):-
     verdadeiro(Id,B:_).
-    
+
+verificarfacto(Id,bonita X):-
+    verdadeiro(Id,bonita:X:_).
+
+verificarfacto(Id,maior(data_construcao,X)):-
+    gosta(Id,_,_,_,_,C),
+    C>X.
+
+verificarfacto(Id,limite(qualidade,X,Y)):-
+    gosta(Id,_,_,Valor,_,_),
+    X<Valor,
+    Y>Valor.
 
 
 %QUEREMOS QUE TENHA UM ID DE RESPOSTA E OS PONTOS ASSOCIADOS A ESSE ID
 
-if entre:4:e:6 then bonita:1:20.
+if marta and pedro then bonita:2:20.  
 
-if pedro and marta then bonita:2:30.
+if maior(data_construcao,1970) and pedro then  bonita:1:20.
 
-if bonita and pedro then calhau:1:20.
+if limite(qualidade,3,9) then fodace:1:100.
 
-
+if  bonita 1 and marta then   bonita:4:100 .
 
 
 

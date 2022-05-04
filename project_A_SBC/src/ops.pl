@@ -5,6 +5,7 @@
 :- op( 700, xfx, then). 
 :- op( 300, xfy, or). 
 :- op( 200, xfy, and).
+:- op( 100, fy , confort).
 
 
 %Funcao para ir buscar carateristicas
@@ -92,24 +93,24 @@ provavelfacto(Id,P:Id_p:Points):-
    verificarfacto(Id,Cond).
 /*==============================================================================================================================================================*/
 %A.4
-verificarfacto(Id,qual_entre:X:e:Y):-
+verificarfacto(Id,limite(qualidade,X,Y)):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,X1,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    X1 > X,
    X1 < Y.
 /*==============================================================================================================================================================*/
 %A.5
-verificarfacto(Id,condi_entre:X:e:Y):-
+verificarfacto(Id,limite(condicao,X,Y)):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,X1,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    X1 > X,
    X1 < Y.
 /*==============================================================================================================================================================*/
 %A.6
-verificarfacto(Id,bath_sup:X):-
+verificarfacto(Id,superior(bath,X)):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,X1,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    X1 > X.
 /*==============================================================================================================================================================*/
 %A.7
-verificarfacto(Id,beed_sup:X):-
+verificarfacto(Id,superior(beed,X)):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,X1,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    X1 > X.
 /*==============================================================================================================================================================*/
@@ -168,12 +169,12 @@ verificarfacto(Id,B):-
 rentops(Id,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
 /*==============================================================================================================================================================*/
 %A.21 value 57
-verificarfacto(Id,sup_fire:B):-
+verificarfacto(Id,superior(fire,B)):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
                                  Value>B.
 /*==============================================================================================================================================================*/
 %A.22 value 57
-verificarfacto(Id,fire_entre:B:e:B1):-
+verificarfacto(Id,limite(fire,B,B1)):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
                                  Value>B,
                                  Value<B1.
@@ -198,10 +199,14 @@ verificarfacto(Id,B):-
 rentops(Id,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
 /*==============================================================================================================================================================*/
 %A.28 factos verdadeiros
-verificarfacto(Id,B):-
-   verdadeiro(Id,B:_). 
+verificarfacto(Id,confort X):-
+   verdadeiro(Id,confort:X:_). 
 /*==============================================================================================================================================================*/
-%A.29 corresponde preco
+%A.29 factos verdadeiros
+verificarfacto(Id,B):-
+   verdadeiro(Id,B:_:_). 
+/*==============================================================================================================================================================*/
+%A.30 corresponde preco
 corresponde_preco(Id,Preco):-
       verdadeiro(Id,_),
       rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Preco_facto),
@@ -278,13 +283,13 @@ list_top_5(Xs, Ys) :-
 /*   id: 1 pontos: 10  */
 if allpub then confort:1:1.
 /*   id: 2 pontos: 5  */
-if qual_entre:8:e:10 then confort:2:1.
+if limite(qualidade,8,10) then confort:2:1.
 /*   id: 3 pontos: 4 */
-if condi_entre:8:e:10 then confort:3:1.
+if limite(condicao,5,10) then confort:3:1.
 /*   id: 4 pontos: 3 */
-if bath_sup:0 then confort:4:1.
+if superior(bath,0) then confort:4:1.
 /*   id: 5 pontos: 6 */
-if beed_sup:0 then confort:5:1.
+if superior(beed,0) then confort:5:1.
 /* id: 6 pontos: 6*/
 if kitchenex then confort:6:1.
 
@@ -292,13 +297,13 @@ if kitchenex then confort:6:1.
 /* id: 1 pontos: 13*/
 if allpub then place_to_sleep:1:1.
 /* id: 2 pontos: 3*/
-if qual_entre:5:e:10 then place_to_sleep:2:1.
+if limite(qualidade,5,10) then place_to_sleep:2:1.
 /* id: 3 pontos: 2*/
-if condi_entre:5:e:10 then place_to_sleep:3:1.
+if limite(condicao,5,10) then place_to_sleep:3:1.
 /* id: 4 pontos: 2*/
-if bath_sup:-1 then place_to_sleep:4:1.
+if superior(bath,-1) then place_to_sleep:4:1.
 /* id: 5 pontos: 10*/
-if beed_sup:0 then place_to_sleep:5:1.
+if superior(beed,0) then place_to_sleep:5:1.
 /* id: 6 pontos: 10 */
 if kitchengd then place_to_sleep:6:1.
 
@@ -306,11 +311,11 @@ if kitchengd then place_to_sleep:6:1.
 /* id: 1  pontos: 7*/
 if nosewr or allpub then place_to_work:1:1.
 /* id: 2 pontos: 3*/
-if qual_entre:0:e:10 then place_to_work:2:1.
+if limite(qualidade,0,10) then place_to_work:2:1.
 /* id: 3 pontos: 2*/
-if condi_entre:0:e:10 then place_to_work:3:1.
+if limite(condicao,0,10) then place_to_work:3:1.
 /* id: 4 pontos: 2*/
-if bath_sup:-1 then place_to_work:4:1.
+if superior(bath,-1) then place_to_work:4:1.
 
 /*Pergunta 2*/
 
@@ -355,7 +360,7 @@ if wdshake or wdshngl then jazz:4:1.
 /* id: 5 pontos: 1*/
 if wdsdng or wdshing or stone then jazz:5:1.
 /* id: 6 pontos: 10*/
-if confort then jazz:6:1.
+if confort 1 then jazz:6:1.
 
 %resposta pop
 /* id: 1 pontos: 3*/
@@ -409,13 +414,13 @@ if 120 or 150 or 50 then no_family:1:1.
 
 %resposta sim , favorita
 /* id: 1 pontos: 5*/
-if sup_fire:1 then yes_favorite_fireplace:1:1.
+if superior(fire,1) then yes_favorite_fireplace:1:1.
 /* id: 2 pontos: 3*/
 if fireex or firegd or fireta then yes_favorite_fireplace:2:1.
 
 %resposta okay
 /* id: 1 pontos: 7*/
-if fire_entre:0:e:3 then its_ok_fireplace:1:1.
+if limite(fire,0,3) then its_ok_fireplace:1:1.
 /* id: 1 pontos: 3*/
 if firefa or fireta then its_ok_fireplace:2:1.
 
