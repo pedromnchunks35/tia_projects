@@ -1,7 +1,6 @@
 %factos dinamicos
 :- dynamic(verdadeiro/2).
 %operadores
-<<<<<<< HEAD
 :- op( 800, fx, if).
 :- op( 700, xfx, then).
 :- op( 300, xfy, or).
@@ -32,19 +31,6 @@
 % :- op( 77, fx, i_prefer_beatches).
 % :- op( 76, fx, i_prefer_green_zones).
 
-=======
-:- op( 800, fx, if). 
-:- op( 700, xfx, then). 
-:- op( 300, xfy, or). 
-:- op( 200, xfy, and).
-:- op( 100, fy , confort).
-:- op( 100, fy , menor_igual).
-:- op( 100, fy , place_to_sleep).
-:- op( 100, fy , ano_construido_maior).
-:- op( 100, fy , garage_menor_igual).
-:- op( 100, fy , primeiro_andar_menor_igual).
-:- op( 100, fy , place_to_work).
->>>>>>> 5980b49710403fda5d38dcad1000890a049573bd
 
 
 
@@ -132,7 +118,6 @@ provavelfacto(Id,P:Id_p:Points):-
    %comprovar
    verificarfacto(Id,Cond).
 /*==============================================================================================================================================================*/
-
 % % %A.4
 % verificarfacto(Id,B1 and B2):-
 %    verificarfacto(Id,B1),
@@ -321,121 +306,6 @@ verificarfacto(Id,maior(ano_garagem_construido,B)):-
    rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
    Value>B.
 
-%A.4
-verificarfacto(Id,limite(qualidade,X,Y)):-
-   rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,X1,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
-   X1 > X,
-   X1 < Y.
-/*==============================================================================================================================================================*/
-%A.5
-verificarfacto(Id,limite(condicao,X,Y)):-
-   rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,X1,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
-   X1 > X,
-   X1 < Y.
->>>>>>> 5980b49710403fda5d38dcad1000890a049573bd
-/*==============================================================================================================================================================*/
-%A.6
-verificarfacto(Id,superior(bath,X)):-
-   rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,X1,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
-   X1 > X.
-/*==============================================================================================================================================================*/
-%A.7
-verificarfacto(Id,superior(beed,X)):-
-   rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,X1,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
-   X1 > X.
-/*==============================================================================================================================================================*/
-%A.8
-verificarfacto(Id,B1 and B2):-
-   verificarfacto(Id,B1),
-   verificarfacto(Id,B2).
-/*==============================================================================================================================================================*/
-%A.9
-verificarfacto(Id,B1 or B2):-
-   verificarfacto(Id,B1);
-   verificarfacto(Id,B2).
-/*==============================================================================================================================================================*/
-%A.10 value10
-verificarfacto(Id,B):-
-rentops(Id,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.11 value 54
-verificarfacto(Id,B):-
-rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.12 value 3
-verificarfacto(Id,B):-
-rentops(Id,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.13 value 16
-verificarfacto(Id,B):-
-rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.14 value 6
-verificarfacto(Id,B):-
-rentops(Id,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.15 value 8
-verificarfacto(Id,B):-
-rentops(Id,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.16 value 22
-verificarfacto(Id,B):-
-rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_). 
-/*==============================================================================================================================================================*/
-%A.17 value 23
-verificarfacto(Id,B):-
-rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.18 value 24
-verificarfacto(Id,B):-
-rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.19 value 73
-verificarfacto(Id,B):-
-rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.20 value 2
-verificarfacto(Id,B):-
-rentops(Id,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.21 value 57
-verificarfacto(Id,superior(fire,B)):-
-   rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
-                                 Value>B.
-/*==============================================================================================================================================================*/
-%A.22 value 57
-verificarfacto(Id,limite(fire,B,B1)):-
-   rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,Value,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_),
-                                 Value>B,
-                                 Value<B1.
-/*==============================================================================================================================================================*/
-%A.23 value 58
-verificarfacto(Id,B):-
-   rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.24 value 28
-verificarfacto(Id,B):-
-rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.25 value 29
-verificarfacto(Id,B):-
-   rentops(Id,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.26 value 28 && 29 passe 
-verificarfacto(Id,dar_pontos_simplesmente_passe).
-/*==============================================================================================================================================================*/
-%A.27 value 13
-verificarfacto(Id,B):-
-rentops(Id,_,_,_,_,_,_,_,_,_,_,_,B,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_).
-/*==============================================================================================================================================================*/
-%A.28 factos verdadeiros
-verificarfacto(Id,confort X):-
-   verdadeiro(Id,confort:X:_). 
-/*==============================================================================================================================================================*/
-%A.29 factos verdadeiros
-verificarfacto(Id,B):-
-   verdadeiro(Id,B:_:_). 
-/*==============================================================================================================================================================*/
 %A.30 corresponde preco
 corresponde_preco(Id,Preco):-
       verdadeiro(Id,_),
@@ -514,7 +384,7 @@ list_top_5(Xs, Ys) :-
 % /*   id: 1 */
 if extqualex then confort:1:2.
 % /*   id: 2 pontos: 1*/
-if menor_igual(garagem,663) then confort:2:1.
+if menor_igual(garagem,663.0) then confortYTTTT:2:1.
 
 %resposta place to sleep
 %if extqualgd and maior(ano_construido,1970) and menor_igual(garage,669) and menor_igual(primeiro_andar,1493) and menor_igual(garage,446) then place_to_sleep:1:1.
@@ -528,7 +398,7 @@ if menor_igual(garage,669) then place_to_sleep:3:1.
 if menor_igual(primeiro_andar,1493) then place_to_sleep:4:1.
 % /* id: 5 pontos: 1*/
 if menor_igual(garage,446) then place_to_sleep:5:1.
-
+->yes_alot_appear
 %resposta place to work
 %if extqualta and menor_igual(espaco_sala,1974) then place_to_work:2:1.
 % /* id: 1  */
@@ -545,9 +415,9 @@ if menor_igual(espaco_sala,1974) then place_to_work:2:1.
 % /* id: 1 */
 if maior(lot_area,2081) then i_love_it:1:1.
 % /* id: 2*/
-if pave then i_love_it:2:1.
+if streetpave then i_love_it:2:1.
 % /* id: 3 */
-if pave then i_love_it:3:1.
+if alleypave then i_love_it:3:1.
 % /* id: 4 pontos: 1*/
 if maior(ano_construido,1982) then i_love_it:4:1.
 
@@ -556,9 +426,9 @@ if maior(ano_construido,1982) then i_love_it:4:1.
 % /* id: 1 */
 if maior(lot_area,2081) then its_irritant:1:1.
 % /* id: 2 */
-if pave then its_irritant:2:1.
+if streetpave then its_irritant:2:1.
 % /* id: 3 */
-if empty then its_irritant:3:1.
+if alleyempty then its_irritant:3:1.
 % /* id: 4 */
 if maior(condition:1) then its_irritant:4:1.
 % /* id: 5 pontos: 1*/
@@ -606,7 +476,7 @@ if maior(lot_area,1640) then jazz:2:1.
 % /* id: 3 */
 if maior(ano_construido,1993) then jazz:3:1.
 % /* id: 4 pontos: 1*/
-if vinylsd then jazz:4:1.
+if ext2vinylsd then jazz:4:1.
 
 %resposta pop
 %if maior(qualidade_geral,1) and maior(lot_area,1604) and maior(ano_construido,1993) and metalsd then pop:1:1.
@@ -617,7 +487,7 @@ if maior(lot_area,1604) then pop:2:1.
 % /* id: 3 */
 if maior(ano_construido,1993) then pop:3:1.
 % /* id: 4 pontos: 1*/
-if metalsd then pop:4:1.
+if ext2metalsd then pop:4:1.
 
 %resposta rap
 %if maior(qualidade_geral,1) and maior(lot_area,1604) and maior(ano_construido,1993) and cmentbd then rap:1:1.
@@ -628,7 +498,7 @@ if maior(lot_area,1604) then rap:2:1.
 % /* id: 3 */
 if maior(ano_construido,1993) then rap:3:1.
 % /* id: 4 pontos: 1*/
-if cmentbd then rap:4:1.
+if ext2cmentbd then rap:4:1.
 
 
 
@@ -653,21 +523,21 @@ if poolempty then not_rly:1:1.
 % /* id: 1 */
 if n1fam then big_one:1:1.
 % /* id: 2 pontos: 1*/
-if slv1 then big_one:2:1.
+if hsslv1 then big_one:2:1.
 
 %resposta sim
 %if n1fam and n2story then yes_family:1:1.
 % /* id: 1 */
 if n1fam then yes_family:1:1.
 % /* id: 2 pontos: 1*/
-if n2story then yes_family:2:1.
+if hsn2story then yes_family:2:1.
 
 %resposta no
 %if twnhse and n1story then no_family:1:1.
 % /* id: 1*/
 if twnhse then no_family:1:1.
 % /* id: 2 pontos: 1*/
-if n1story then no_family:2:1.
+if hsn1story then no_family:2:1.
 
 
 
@@ -675,7 +545,7 @@ if n1story then no_family:2:1.
 %if menor_igual(n2nd_first_square_feet_,1849) and maior(n1nd_first_square_feet,509) and menor_igual(area_entrada,798) and menor_igual(area_entrada_3season,307) and maior(espaco_sala,792) and maior(quartos_anima_media,2001) and maior(lot_area,3079) and pconc then yes_favorite_fireplace:1:1.
 % %resposta sim , favorita
 % /* id: 1 */
-if  menor_igual(n2nd_first_square_feet_,1849) then yes_favorite_fireplace:1:1.
+if menor_igual(n2nd_first_square_feet_,1849) then yes_favorite_fireplace:1:1.
 % /* id: 2 */
 if maior(n1nd_first_square_feet,509) then yes_favorite_fireplace:2:1.
 % /* id: 3 */
@@ -689,7 +559,7 @@ if maior(quartos_anima_media,2001) then yes_favorite_fireplace:6:1.
 % /* id: 7 */
 if maior(lot_area,3079) then yes_favorite_fireplace:7:1.
 % /* id: 8 pontos: 1*/
-if pconc then yes_favorite_fireplace:8:1.
+if foundationpconc then yes_favorite_fireplace:8:1.
 
 %resposta okay
 %if menor_igual(n2nd_first_square_feet_,1849) and maior(n1nd_first_square_feet,509) and menor_igual(area_entrada,798) and menor_igual(area_entrada_3season,307) and maior(espaco_sala,792) and maior(quartos_anima_media,2001) and menor_igual(screen_por_area,345) and maior(ano_construido,1959) then its_ok_fireplace:8:1.
@@ -721,39 +591,39 @@ if empty then not_rly_fireplace:1:1.
 %resposta sim , bastante
 %if menor_igual(qualidade_geral,9) and maior(qualidade_geral,8) and maior(no_remodulacao,2003) and maior(basement_square_feet,1432) and maior(venner_square_feet,142) then yes_alot_appear:1:1.
 % /* id: 1 */
-if menor_igual(qualidade_geral,9) then yes_alot_appear:1:1.
+if menor_igual(qualidade_geral,9) then yes_alot_appear1:1:1.
 % /* id: 2 */
-if maior(qualidade_geral,8) then yes_alot_appear:2:1.
+if maior(qualidade_geral,8) then yes_alot_appear2:2:1.
 % /* id: 3 */
-if maior(no_remodulacao,2003) then yes_alot_appear:3:1.
+if maior(no_remodulacao,2003) then yes_alot_appear3:3:1.
 % /* id: 4 */
-if maior(basement_square_feet,1432) then yes_alot_appear:4:1.
+if maior(basement_square_feet,1432) then yes_alot_appear4:4:1.
 % /* id: 5 pontos: 1*/
-if maior(venner_square_feet,142) then yes_alot_appear:5:1.
+if maior(venner_square_feet,142) then yes_alot_appear5:5:1.
 
 %resposta um bocado
 %if menor_igual(qualidade_geral,9) and menor_igual(qualidade_geral,8) and maior(ano_construido,1985) and menor_igual(area_entrada,76) and kitchengd and menor_igual(area_entrada,76) then just_a_bit_appear:6:1.
 % /* id: 1 */
-if menor_igual(qualidade_geral,9) then just_a_bit_appear:1:1.
+if menor_igual(qualidade_geral,9) then just_a_bit_appear1:1:1.
 % /* id: 2 */
-if menor_igual(qualidade_geral,8) then just_a_bit_appear:2:1.
+if menor_igual(qualidade_geral,8) then just_a_bit_appear2:2:1.
 % /* id: 3 */
-if maior(ano_construido,1985) then just_a_bit_appear:3:1.
+if maior(ano_construido,1985) then just_a_bit_appear3:3:1.
 % /* id: 4 */
-if menor_igual(area_entrada,76) then just_a_bit_appear:4:1.
+if menor_igual(area_entrada,76) then just_a_bit_appear4:4:1.
 % /* id: 5 */
-if kitchengd then just_a_bit_appear:5:1.
+if kitchengd then just_a_bit_appear5:5:1.
 % /* id: 6 pontos: 1*/
-if menor_igual(area_entrada,76) then just_a_bit_appear:6:1.
+if menor_igual(area_entrada,76) then just_a_bit_appear6:6:1.
 
 %resposta nop
 %if menor_igual(ano_construido,1985) and menor_igual(qualidade_geral,7) and menor_igual(no_remodulacao,2008) then not_rly_appear:5:1.
 % /* id: 1 */
-if menor_igual(ano_construido,1985) then not_rly_appear:3:1.
+if menor_igual(ano_construido,1985) then not_rly_appear:1:1.
 % /* id: 4 */
-if menor_igual(qualidade_geral,7) then not_rly_appear:4:1.
+if menor_igual(qualidade_geral,7) then not_rly_appear:2:1.
 % /* id: 5 pontos: 1*/
-if menor_igual(no_remodulacao,2008) then not_rly_appear:5:1.
+if menor_igual(no_remodulacao,2008) then not_rly_appear:3:1.
 
 
 
@@ -762,46 +632,46 @@ if menor_igual(no_remodulacao,2008) then not_rly_appear:5:1.
 %resposta yes i love it
 %if maior(lot_area,2379) and maior(ano_construido,1971) and rm and menor_igual(qualidade_geral,5) then yes_i_love_it:1:1.
 % /* id: 1 */
-if maior(lot_area,2379) then yes_i_love_it:2:1.
+if maior(lot_area,2379) then yes_i_love_it:1:1.
 % /* id: 3 */
-if maior(ano_construido,1971) then yes_i_love_it:3:1.
+if maior(ano_construido,1971) then yes_i_love_it:2:1.
 % /* id: 4 */
-if rm then yes_i_love_it:4:1.
+if mszrm then yes_i_love_it:3:1.
 % /* id: 5 pontos: 1*/
-if menor_igual(qualidade_geral,5) then yes_i_love_it:5:1.
+if menor_igual(qualidade_geral,5) then yes_i_love_it:4:1.
 
 %resposta i prefer the desert
 %if maior(lot_area,2379) and maior(ano_construido,1971) and rm and maior(qualidade_geral,5) and gtl and maior(ano_garagem_construido,1997) then i_prefer_desert:7:1.
 % /* id: 1 */
-if  maior(lot_area,2379) then i_prefer_desert:2:1.
+if  maior(lot_area,2379) then i_prefer_desert:1:1.
 % /* id: 3 */
-if maior(ano_construido,1971) then i_prefer_desert:3:1.
+if maior(ano_construido,1971) then i_prefer_desert:2:1.
 % /* id: 4 */
-if rm then i_prefer_desert:4:1.
+if mszrm then i_prefer_desert:3:1.
 % /* id: 5 */
-if maior(qualidade_geral,5) then i_prefer_desert:5:1.
+if maior(qualidade_geral,5) then i_prefer_desert:4:1.
 % /* id: 6 */
-if gtl then i_prefer_desert:6:1.
+if lsgtl then i_prefer_desert5::1.
 % /* id: 7 pontos: 1*/
-if maior(ano_garagem_construido,1997) then i_prefer_desert:7:1.
+if maior(ano_garagem_construido,1997) then i_prefer_desert:6:1.
 
 %resposta i prefer beatches
 %if maior(lot_area,2379) and maior(ano_construido,1971) and rm then i_prefer_beatches:1:1.
 % /* id: 1 */
-if maior(lot_area,2379) then i_prefer_beatches:2:1.
+if maior(lot_area,2379) then i_prefer_beatches:1:1.
 % /* id: 3 */
-if maior(ano_construido,1971) then i_prefer_beatches:3:1.
+if maior(ano_construido,1971) then i_prefer_beatches:2:1.
 % /* id: 4 pontos: 1*/
-if rm then i_prefer_beatches:4:1.
+if mszrm then i_prefer_beatches:3:1.
 
 %resposta i prefer green areas
 %if maior(lot_area,2379) and maior(ano_construido,1971) and fv then i_prefer_green_zones:4:1.
 /* id: 1 */
-if maior(lot_area,2379) then i_prefer_green_zones:2:1.
+if maior(lot_area,2379) then i_prefer_green_zones:1:1.
 /* id: 3 */
-if maior(ano_construido,1971) then i_prefer_green_zones:3:1.
+if maior(ano_construido,1971) then i_prefer_green_zones:2:1.
 /* id: 4 pontos: 1*/
-if fv then i_prefer_green_zones:4:1.
+if mszfv then i_prefer_green_zones:3:1.
 
 
 

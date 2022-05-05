@@ -74,13 +74,13 @@ public class App {
         String line = "";
 
         /*Instanciar local do ficheiro*/
-        File file_first = new File("../../project_A_SBC/src/bd.pl");
+        File file_first = new File("../../project_B_SBC/src/bd.pl");
 
         /*VERIFICAR SE O FILE EXISTE.. SE NAO EXISTIR CRIA UM E ESCREVE SENAO NAO ESCREVE NADA*/
         if(file_first.createNewFile()){
 
         /*escritor que vai ser usado la em baixo para escrever*/
-        FileWriter mywriter = new FileWriter("../../project_A_SBC/src/bd.pl");
+        FileWriter mywriter = new FileWriter("../../project_B_SBC/src/bd.pl");
 
         /*MSG DE COMEÇO*/
         System.out.println("**INICIALIZANDO A ESCRITA**");
@@ -186,7 +186,7 @@ public class App {
                 try {
 
                     /*escrever em si usando a funcao de cima clear que basicamente coloca os campos segundo a sintaxe prolog*/
-                    mywriter.write("rentops("+clear(values[0])+","+clear(values[2])+","+clear(values[3])+","+clear(values[4])+","+clear(values[5])+","+clear(values[6])+","+clear(values[7])+","+clear(values[8])+","+clear(values[9])+","+clear(values[10])+","+clear(values[11])+","+clear(values[12])+","+clear(values[13])+","+clear(values[14])+","+clear(values[15])+","+clear(values[16])+","+clear(values[17])+","+clear(values[18])+","+clear(values[19])+","+clear(values[20])+","+clear(values[21])+","+clear(values[22])+","+clear(values[23])+","+clear(values[24])+","+clear(values[25])+","+clear(values[26])+","+clear(values[27])+","+"extqual"+clear(values[28])+","+"extcond"+clear(values[29])+","+clear(values[30])+","+clear(values[31])+","+clear(values[32])+","+clear(values[33])+","+clear(values[34])+","+clear(values[35])+","+clear(values[36])+","+clear(values[37])+","+clear(values[38])+","+clear(values[39])+","+clear(values[40])+","+clear(values[41])+","+clear(values[42])+","+clear(values[43])+","+clear(values[44])+","+clear(values[45])+","+clear(values[46])+","+clear(values[47])+","+clear(values[48])+","+clear(values[49])+","+clear(values[50])+","+clear(values[51])+","+clear(values[52])+","+clear(values[53])+","+"kitchen"+clear(values[54])+","+clear(values[55])+","+clear(values[56])+","+clear(values[57])+","+"fire"+clear(values[58])+","+clear(values[59])+","+clear(values[60])+","+clear(values[61])+","+clear(values[62])+","+clear(values[63])+","+clear(values[64])+","+clear(values[65])+","+clear(values[66])+","+clear(values[67])+","+clear(values[68])+","+clear(values[69])+","+clear(values[70])+","+clear(values[71])+","+clear(values[72])+","+"pool"+clear(values[73])+","+clear(values[74])+","+clear(values[75])+","+clear(values[76])+","+clear(values[77])+","+clear(values[78])+","+clear(values[79])+","+clear(values[80])+","+clear(values[81])+").\n");
+                    mywriter.write("rentops("+clear(values[0])+","+clear(values[2])+","+clear(values[3])+","+clear(values[4])+","+clear(values[5])+","+"street"+clear(values[6])+","+"alley"+clear(values[7])+","+clear(values[8])+","+clear(values[9])+","+clear(values[10])+","+clear(values[11])+","+"ls"+clear(values[12])+","+clear(values[13])+","+clear(values[14])+","+clear(values[15])+","+clear(values[16])+","+"hs"+clear(values[17])+","+clear(values[18])+","+clear(values[19])+","+clear(values[20])+","+clear(values[21])+","+clear(values[22])+","+clear(values[23])+","+clear(values[24])+","+"ext2"+clear(values[25])+","+clear(values[26])+","+clear(values[27])+","+"extqual"+clear(values[28])+","+"extcond"+clear(values[29])+","+"foundation"+clear(values[30])+","+clear(values[31])+","+clear(values[32])+","+clear(values[33])+","+clear(values[34])+","+clear(values[35])+","+clear(values[36])+","+clear(values[37])+","+clear(values[38])+","+clear(values[39])+","+clear(values[40])+","+clear(values[41])+","+clear(values[42])+","+clear(values[43])+","+clear(values[44])+","+clear(values[45])+","+clear(values[46])+","+clear(values[47])+","+clear(values[48])+","+clear(values[49])+","+clear(values[50])+","+clear(values[51])+","+clear(values[52])+","+clear(values[53])+","+"kitchen"+clear(values[54])+","+clear(values[55])+","+clear(values[56])+","+clear(values[57])+","+"fire"+clear(values[58])+","+clear(values[59])+","+clear(values[60])+","+clear(values[61])+","+clear(values[62])+","+clear(values[63])+","+clear(values[64])+","+clear(values[65])+","+clear(values[66])+","+clear(values[67])+","+clear(values[68])+","+clear(values[69])+","+clear(values[70])+","+clear(values[71])+","+clear(values[72])+","+"pool"+clear(values[73])+","+clear(values[74])+","+clear(values[75])+","+clear(values[76])+","+clear(values[77])+","+clear(values[78])+","+clear(values[79])+","+clear(values[80])+","+clear(values[81])+").\n");
 
                 } catch (Exception e) {
 
