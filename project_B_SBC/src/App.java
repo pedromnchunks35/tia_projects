@@ -29,7 +29,7 @@ public class App {
         // Detalhes do ecra
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
         //Tamanho da janela relativo
-        int window_width= (int)(size.getWidth()*0.30);
+        int window_width= (int)(size.getWidth()*0.40);
         int window_height= (int)(size.getHeight()*0.30);
         //Setar tamanho
         frame.setSize(window_width,window_height);
@@ -124,7 +124,7 @@ public class App {
                         //setar visivel 
                         questions.setVisible(true);
                         //setar nova loc do botao 
-                        button.setLocation((int)(window_width*0.432),(int)(window_height*0.60));
+                        button.setLocation((int)(window_width*0.432),(int)(window_height*0.70));
                         //setar combo visivel
                         combo.setVisible(true);
                         //setar loc da combo
@@ -429,7 +429,7 @@ public class App {
                         //Setar tamanho
                         frame.setSize(window_width,window_height+100);
                         //SETAR POSI DO BOTAO
-                        button.setLocation((int)(window_width*0.432),(int)(window_height*0.90));
+                        button.setLocation((int)(window_width*0.432),(int)(window_height*0.93));
                     
                         
                         //adicionar um evento em que o rato passa por cima 
