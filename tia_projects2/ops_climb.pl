@@ -1,18 +1,38 @@
+/******************************************************************/
+%criterio de paragem , ou seja quando só tiver um elemento
 eval([_],0).
-eval(L,E):- custo_alojamento(L,CA),custo_distancia(L,CD), E is CA + CD.
+%juntar custos
+eval(L,E):-
+	%custo alojamento 
+	custo_alojamento(L,CA),
+	%custo distancia
+	custo_distancia(L,CD),
+	%somar custos 
+	E is CA + CD.
+/******************************************************************/
 
-
+/******************************************************************/ç
+%ir verificar a solucao
 change(S, SNEW):-
-    findall(X,(caminho(l1,l2,X),custo_alojamento(X,C),C =< 450),L), length(L,LE), random(1,LE,R), nth0(R,L,SNEW),
+	%ir buscar todas as solucoes de l1 a l2 cujo preco é inferior a 450
+    findall(X,(caminho(l1,l2,X),custo_alojamento(X,C),C =< 450),L), 
+	%verificar tamanho de lista
+	length(L,LE),
+	%buscar posi na lista random 
+	random(1,LE,R),
+	%ir buscar elemento atraves dessa posi random 
+	nth0(R,L,SNEW),
+	%verificar se as listas sao diferentes
      dif(SNEW,S).
+/******************************************************************/
 
-
-
+/******************************************************************/
+%init da funcao hill climbing , passamos solucao inicial , numero de iteracoes , probs e o tipo de func 
 demo:- hill_climbing([l2,l4,l3,l1],[30,1,0,min],S),write(S).
-
+/******************************************************************/
 % assumes eval(Solution,Result)
 % assumes change(S1,S2)
-
+/******************************************************************/
 % return SR, the best value of S1 and S2: SR (solution) and ER (eval)
 best(Prob,Opt,S1,E1,S2,E2,SR,ER):-
 	eval(S2,E2),
@@ -54,3 +74,4 @@ hill_climbing(S1,E1,I,Iter,Verbose,Prob,Opt,SFinal):-
 	I1 is I+1,
         show(I1,Verbose,S1,E1,S2,E2),
 	hill_climbing(S2,E2,I1,Iter,Verbose,Prob,Opt,SFinal).
+/******************************************************************/
