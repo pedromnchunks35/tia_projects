@@ -18,7 +18,8 @@ cabeca(P,Preco,R):-
     findall(_,demo(P),_),
     findall(Id,corresponde_preco(Id,Preco),Bag),
     sort(Bag,New),
-    counter_points(New,[],R).
+    counter_points(New,[],Points_list),
+    list_top_5(Points_list,R).
 
 counter_points([],Lista,R):-
     append([],Lista,R).
@@ -42,13 +43,54 @@ write('Derived ') , write(Id) , write(" from "), write(P),write(" id "),write(Id
 assert(verdadeiro(Id,P:Id_p:Points)),
 demo(P).
 
-demo(_,_):-
+demo(_):-
     write('No more facts').
 
 provavelfacto(Id,P:Id_p:Points):-
     if Cond then P:Id_p:Points,
     \+ verdadeiro(Id,P:Id_p:Points) ,
     verificarfacto(Id,Cond).
+
+
+/*funcao para ordenar os top 5 ids pela pontuacao*/
+/*Categoria C*/
+/****************************************************************************************************************************************************************/
+/*==============================================================================================================================================================*/
+%C1.1
+%funcao para adicionar uma identificacao a cada lista, essa identificacao será o valor da pontuacao
+listar_pares([], []).
+listar_pares([E|Es], [B-E|Ps]) :-
+   E = [_,B],
+   listar_pares(Es, Ps).
+/*==============================================================================================================================================================*/
+%C1.2
+%funcao para remover os identificadores que inserimos acima
+remover_pares([], []).
+remover_pares([_-V|Ps], [V|Vs]) :-
+   remover_pares(Ps, Vs).
+/*==============================================================================================================================================================*/
+%C1.3
+%funcao para retirar da lista os 5 primeiros elementos da mesma
+top5(Src,N,L) :- findall(E, (nth1(I,Src,E), I =< N), L).
+/*==============================================================================================================================================================*/
+%C1.4
+list_top_5(Xs, Ys) :-
+   %identificamos cada lista com o seu respetivo valor da pontuacao
+   listar_pares(Xs, Ps),
+   %ordenamos os valores das identifacoes por ordem crescente 
+   keysort(Ps, PsS),
+   %removemos as identificacoes anteriormente adicionadas
+   remover_pares(PsS, Ms),
+   %revertemos a lista
+   reverse(Ms, Os),
+   %retiramos os 5 primeiros elementos da lista
+   top5(Os, 5, Ys).
+/*==============================================================================================================================================================*/
+/****************************************************************************************************************************************************************/
+
+
+
+
 
 verificarfacto(Id,B1 and B2):-
 verificarfacto(Id,B1),
@@ -91,14 +133,11 @@ verificarfacto(Id,limite(qualidade,X,Y)):-
 
 
 %QUEREMOS QUE TENHA UM ID DE RESPOSTA E OS PONTOS ASSOCIADOS A ESSE ID
+if marta and pedro or elsa  then bonita:1:20.  
 
-if marta and pedro then bonita:2:20.  
+if maior(data_construcao,1970) and pedro then  bonita:2:20.
 
-if maior(data_construcao,1970) and pedro then  bonita:1:20.
-
-if limite(qualidade,3,9) then fodace:1:100.
-
-if  bonita 1 and marta then   bonita:4:100 .
+if bonita 2 and pedro then bonita:3:30.
 
 
 
