@@ -84,18 +84,7 @@ public class App{
     bb2.setBackground(new Color(116,253,111,250));//set background color
     bb2.setFont(new Font("Calibri", Font.BOLD, 18));//set font and text size
 
-    if (a = 0){
-    Query q1 = 
-    new Query( 
-	"consult", 
-	new Term[] {new Atom("test.pl")} 
-    );
-
-    Query q2=
-        new Query(
-            "child of",
-            new Term[] {new Atom(""), new Atom(""), new Atom(""), new Atom("")}
-        )
+    if (a == 0){
 
 
     //ADD TO JFRAME
@@ -263,3 +252,5 @@ public class App{
     f.setVisible(true);//making the frame visible  
     }  
 } 
+
+}
