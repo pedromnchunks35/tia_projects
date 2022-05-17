@@ -1,3 +1,4 @@
+%Operações 
 path(A,B,D,V,Caminho):-caminho(A,B,Caminho),custo_distancia(Caminho,D),custo_alojamento(Caminho,V), V =< 450.
 
 findapath(A,B,Custo,C):-path(A,B,D,V,C), Custo is D + V.
