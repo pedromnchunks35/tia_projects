@@ -1,4 +1,4 @@
-package src;
+
 import org.jpl7.Query;
 import org.jpl7.Term;
 import org.jpl7.Variable;
@@ -22,7 +22,7 @@ import java.util.Map;
 
 
 public class App{ 
-    static String result, LI, LF, nProbably, A1, A2; 
+    static String result, LI, LF, nProbably; 
     static int  nIteractions, nPaccing;
     public static void main(String[] args) {  
     JFrame f=new JFrame();//creating instance of JFrame  
@@ -84,8 +84,8 @@ public class App{
     Q.setBounds(60,210,800, 40);//x axis, y axis, width, height  
     Q.setFont(new Font("Calibri", Font.BOLD, 16));//set font and weight
 
-
-    JSpinner s = new JSpinner();
+    SpinnerNumberModel model = new SpinnerNumberModel(1,1,200,1);
+    JSpinner s = new JSpinner(model);
     s.setBounds(180, 210, 100, 30);
     
 
@@ -298,7 +298,7 @@ public class App{
             System.out.println("ITERACTION " + nIteractions);
             
             
-            s2.setModel(new SpinnerNumberModel(0,0,nIteractions,1));
+            s2.setModel(new SpinnerNumberModel(1,1,nIteractions,1));
         }
     } );
 
@@ -343,24 +343,35 @@ public class App{
             nProbably = ProbsCombo.getSelectedItem().toString();
             System.out.println("Probably " + nProbably);
 
+
             
             Query q1 = new Query("consult('bd.pl').");
             q1.hasSolution();
-            Query q2 = new Query("consult('ops_geral.pl').");
+            Query q2 = new Query("consult('ops_gera.pl').");
             q2.hasSolution();
-            Query q3 = new Query("findminpath("+LI+","+LF+",A1,A2");
+            Query q3 = new Query("findminpath("+LI+","+LF+",A1,A2).");
 
-            P2.setText(q3.oneSolution().get);
+            try{
+                P2.setText("<html>Comprimento: " + q3.oneSolution().get("A1").toString()+ "<br/>Caminho: " + q3.oneSolution().get("A2").toString()+"</html>");
+            }
+            catch (NullPointerException eee){
+                P2.setText("PATH DOES NOT EXIST");
+            }
             
 
-            Query q4 = new Query("consult('bd.pl').");
-            q1.hasSolution();
-            Query q5 = new Query("consult('ops_climbV2.pl').");
-            q2.hasSolution();
-            Query q6 = new Query("demo("+LI+","+LF+","+nIteractions+","+nPaccing+","+nProbably);
-            Map<String,Term> resposta2=q3.oneSolution();
 
-            P4.setText();
+            Query q5 = new Query("consult('ops_climbV2.pl').");
+            q5.hasSolution();
+            Query q6 = new Query("demo("+LI+","+LF+","+nIteractions+","+nPaccing+","+nProbably+", Result).");
+
+            try{
+                P4.setText("Caminho: "+q6.oneSolution().get("Result").toString());
+            }
+            catch (NullPointerException ee){
+                P4.setText("PATH DOES NOT EXIST");
+            }
+
+    
         }
     } );
 
