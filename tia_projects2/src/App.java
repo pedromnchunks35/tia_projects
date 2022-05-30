@@ -349,9 +349,8 @@ public class App{
             Query q2 = new Query("consult('ops_geral.pl').");
             q2.hasSolution();
             Query q3 = new Query("findminpath("+LI+","+LF+",A1,A2");
-            Map<String,Term> resposta1=q3.oneSolution();
 
-            P2.setText(resposta1);
+            P2.setText(q3.oneSolution().get);
             
 
             Query q4 = new Query("consult('bd.pl').");
@@ -361,7 +360,7 @@ public class App{
             Query q6 = new Query("demo("+LI+","+LF+","+nIteractions+","+nPaccing+","+nProbably);
             Map<String,Term> resposta2=q3.oneSolution();
 
-            P4.setText(q4.hasSolution(resposta2));
+            P4.setText();
         }
     } );
 
