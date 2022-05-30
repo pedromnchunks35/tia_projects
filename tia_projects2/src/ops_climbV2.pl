@@ -27,6 +27,11 @@ change(S, SNEW,[Cam1,Cam2]):-
 /******************************************************************/
 
 /******************************************************************/
+% cam1 - inicial
+% cam2 - destino
+% numiter - numero de itreações
+% verbose - paccing
+% prob - probabilidade de sucesso
 %init da funcao hill climbing , passamos solucao inicial , numero de iteracoes , probs e o tipo de func 
 demo(Cam1,Cam2,Numiter,Verbose,Prob,Resultado):-
 	findall(X,(caminho(Cam1,Cam2,X),custo_alojamento(X,C),C =< 450),L),  
