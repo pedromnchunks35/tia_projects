@@ -3,6 +3,11 @@ path(A,B,D,V,Caminho):-caminho(A,B,Caminho),custo_distancia(Caminho,D),custo_alo
 
 findapath(A,B,Custo,C):-path(A,B,D,V,C), Custo is D + V.
 
+% X - posição inicial
+% Y . Posição findal
+% W - Custo total
+% P - Caminho
+
 :-dynamic(solucao/2).
 findminpath(X, Y, W, P) :- \+ solucao(_, _),
                            findapath(X, Y, W1, P1),
