@@ -33,13 +33,14 @@ change(S, SNEW,[Cam1,Cam2]):-
 % verbose - paccing
 % prob - probabilidade de sucesso
 %init da funcao hill climbing , passamos solucao inicial , numero de iteracoes , probs e o tipo de func 
-demo(Cam1,Cam2,Numiter,Verbose,Prob):-
+demo(Cam1,Cam2,Numiter,Verbose,Prob,Resultado):-
 	findall(X,(caminho(Cam1,Cam2,X),custo_alojamento(X,C),C =< 450),L),  
 	length(L,Lengthsol),
 	Lengthsol >= 2,
 	nth0(0,L,K),
 	hill_climbing(K,[Numiter,Verbose,Prob,min],[Cam1,Cam2],S),
-	write(S).
+	write(S),
+	Resultado=S.
 /******************************************************************/
 % assumes eval(Solution,Result)
 % assumes change(S1,S2)
